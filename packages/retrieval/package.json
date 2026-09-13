@@ -1,0 +1,12 @@
+{
+  "name": "@mecha-bot/retrieval",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@mecha-bot/shared": "workspace:*",
+    "@mecha-bot/academic": "workspace:*"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@mecha-bot/shared": ["packages/shared/src/index.ts"],
+      "@mecha-bot/academic": ["packages/academic/src/index.ts"],
+      "@mecha-bot/database": ["packages/database/src/index.ts"],
+      "@mecha-bot/ai": ["packages/ai/src/index.ts"],
+      "@mecha-bot/retrieval": ["packages/retrieval/src/index.ts"],
+      "@mecha-bot/scheduler": ["packages/scheduler/src/index.ts"],
+      "@mecha-bot/telegram": ["packages/telegram/src/index.ts"]
+    },
+    "noEmit": true
+  },
+  "include": ["packages/*/src/**/*", "apps/*/src/**/*", "tests/**/*", "scripts/**/*"]
+}

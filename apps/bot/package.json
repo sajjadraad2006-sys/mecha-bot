@@ -1,0 +1,20 @@
+{
+  "name": "@mecha-bot/bot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@mecha-bot/shared": "workspace:*",
+    "@mecha-bot/academic": "workspace:*",
+    "@mecha-bot/database": "workspace:*",
+    "@mecha-bot/ai": "workspace:*",
+    "@mecha-bot/retrieval": "workspace:*",
+    "@mecha-bot/scheduler": "workspace:*",
+    "@mecha-bot/telegram": "workspace:*",
+    "dotenv": "^16.4.7"
+  }
+}
