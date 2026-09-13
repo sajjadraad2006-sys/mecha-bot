@@ -24,18 +24,25 @@ Mecha Bot is a Telegram-based academic assistant and student companion built spe
 - **Time & Clock Engine**: UTC timestamp storage with `Asia/Baghdad` local academic date conversions and `FakeClock` for testing.
 - **Automated Testing & Quality Suite**: Strict TypeScript, ESLint, Prettier, and Vitest test suite.
 
-### What is Intentionally Deferred to Later Milestones
+### Canonical Milestone Roadmap (M0 through M16)
 
-- **M1**: Student onboarding and stage/semester selection flow.
-- **M2**: Ingestion of verified University of Basrah curriculum.
-- **M3**: Live timetable schedules and room allocations.
-- **M4**: Automated study reminder and deadline notification jobs.
-- **M5**: Daily check-in dialogues and study timers.
-- **M6**: PDF extraction and source indexing pipeline.
-- **M7**: Semantic vector search / RAG retrieval.
-- **M8**: Production Gemini / Groq live API integrations.
-- **M14**: Telegram Mini App (Web App).
-- **M15**: Production Cloudflare Workers deployment.
+- **M0**: Technical Foundation & Architectural Hardening _(Current — Complete)_
+- **M1**: Student Onboarding (Stage 1..4 & Semester 1..8 Selection)
+- **M2**: Academic Core (University of Basrah Curriculum Ingestion)
+- **M3**: Timetable (Weekly Schedule & Lecture Room Navigator)
+- **M4**: Reminders (Deadlines & Quiz Alerts Dispatcher)
+- **M5**: Daily Companion (Study Check-ins & Session Logging)
+- **M6**: Sources / Ingestion (Verified Course Materials & Provenance)
+- **M7**: Search / RAG (Intent-Aware Contextual Search)
+- **M8**: AI Brain (Zero-Cost Free Tier Provider Routing & Privacy by Architecture)
+- **M9**: Study Navigator (Topic Hierarchy & Prerequisites Visualizer)
+- **M10**: Exams & Quizzes (Past Exams Archive & Practice Quizzes)
+- **M11**: Admin / Course Editors (Course Pulse & Faculty Roster Tools)
+- **M12**: File Distribution (Native Telegram Documents & Zero-Egress Storage)
+- **M13**: Student Dashboard (Academic Summary & Mastery Metrics)
+- **M14**: Mini App (Interactive Timetable & Syllabus Web App)
+- **M15**: Hardening (Performance, Rate Limiting & Cloudflare Workers / D1)
+- **M16**: Production Release (Department Handover & Official Launch)
 
 ---
 
@@ -70,7 +77,7 @@ Edit `.env` to provide your Telegram bot token obtained from [@BotFather](https:
 ```ini
 NODE_ENV=development
 LOG_LEVEL=info
-TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
+TELEGRAM_BOT_TOKEN=<your-dev-bot-token>
 DATABASE_PATH=./data/mecha_bot.sqlite
 DEFAULT_TIMEZONE=Asia/Baghdad
 ALLOW_PAID_AI=false

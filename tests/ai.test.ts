@@ -5,6 +5,7 @@ import {
   AIRouter,
   assertNoStudentPii,
   sanitizeAiPrompt,
+  createAcademicAiContext,
 } from '@mecha-bot/ai';
 import { ValidationError } from '@mecha-bot/shared';
 
@@ -58,11 +59,92 @@ describe('AI Foundation & Privacy Boundary', () => {
   });
 
   it('sanitizes prompts by redacting PII patterns', () => {
-    const promptWithPii = 'Student @sajjad_uob with ID 8807584013 asks about TEST101';
+    const promptWithPii = 'Student @teststudent with ID 1234567890 asks about TEST101';
     const sanitized = sanitizeAiPrompt(promptWithPii);
-    expect(sanitized).not.toContain('8807584013');
-    expect(sanitized).not.toContain('@sajjad_uob');
+    expect(sanitized).not.toContain('1234567890');
+    expect(sanitized).not.toContain('@teststudent');
     expect(sanitized).toContain('asks about TEST101');
+  });
+
+  it('constructs valid academic context DTO without identity fields', () => {
+    const validAcademicInput = {
+      stage: 3,
+      programSemester: 5,
+      courseCode: 'TEST301',
+      topic: 'State Space Control',
+      studentQuestion: 'How is the controllability matrix constructed?',
+      retrievedExcerpts: [
+        {
+          sourceId: 'src-101',
+          title: 'Control Engineering Fundamentals',
+          excerpt: 'Controllability matrix is formed by [B AB A^2B ...]',
+        },
+      ],
+      academicPreferences: {
+        language: 'bilingual' as const,
+        detailLevel: 'step_by_step' as const,
+      },
+    };
+
+    const context = createAcademicAiContext(validAcademicInput);
+    expect(context.stage).toBe(3);
+    expect(context.programSemester).toBe(5);
+    expect(context.courseCode).toBe('TEST301');
+    expect(context.retrievedExcerpts.length).toBe(1);
+  });
+
+  it('strictly rejects any Telegram identity metadata in academic AI context builder', () => {
+    const baseAcademic = {
+      stage: 2,
+      programSemester: 3,
+      courseCode: 'TEST201',
+      studentQuestion: 'What is the frequency response of this circuit?',
+      retrievedExcerpts: [],
+    };
+
+    // Test rejection of telegramUserId
+    expect(() => createAcademicAiContext({ ...baseAcademic, telegramUserId: 123456789 })).toThrow(
+      /Privacy by Architecture Violation/,
+    );
+
+    // Test rejection of chatId
+    expect(() => createAcademicAiContext({ ...baseAcademic, chatId: 987654321 })).toThrow(
+      /Privacy by Architecture Violation/,
+    );
+
+    // Test rejection of username
+    expect(() => createAcademicAiContext({ ...baseAcademic, username: 'test_student' })).toThrow(
+      /Privacy by Architecture Violation/,
+    );
+
+    // Test rejection of phone number
+    expect(() => createAcademicAiContext({ ...baseAcademic, phone: '+9647701234567' })).toThrow(
+      /Privacy by Architecture Violation/,
+    );
+
+    // Test rejection of email
+    expect(() =>
+      createAcademicAiContext({ ...baseAcademic, email: 'student@example.com' }),
+    ).toThrow(/Privacy by Architecture Violation/);
+
+    // Test rejection of database primary key
+    expect(() => createAcademicAiContext({ ...baseAcademic, studentId: 'stu_12345' })).toThrow(
+      /Privacy by Architecture Violation/,
+    );
+  });
+
+  it('triggers secondary defense-in-depth check when accidental PII is in question text', () => {
+    const contextWithAccidentalPii = {
+      stage: 1,
+      programSemester: 1,
+      courseCode: 'TEST101',
+      studentQuestion: 'My Telegram ID is 9876543210, when is the quiz?',
+      retrievedExcerpts: [],
+    };
+
+    expect(() => createAcademicAiContext(contextWithAccidentalPii)).toThrow(
+      /Privacy Defense-in-Depth Violation/,
+    );
   });
 
   it('AIRouter transparently switches to fallback when primary fails', async () => {

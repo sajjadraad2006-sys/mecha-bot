@@ -27,3 +27,29 @@ export const AcademicResponseSchema = z.object({
 });
 
 export type AcademicResponse = z.infer<typeof AcademicResponseSchema>;
+
+export const AcademicSourceExcerptSchema = z.object({
+  sourceId: z.string().min(1),
+  title: z.string().min(1),
+  excerpt: z.string().min(1),
+  page: z.number().int().positive().optional(),
+});
+
+export const AcademicAiContextSchema = z
+  .object({
+    stage: z.number().int().min(1).max(4),
+    programSemester: z.number().int().min(1).max(8),
+    courseCode: z.string().min(1),
+    topic: z.string().optional(),
+    studentQuestion: z.string().min(1),
+    retrievedExcerpts: z.array(AcademicSourceExcerptSchema).default([]),
+    academicPreferences: z
+      .object({
+        language: z.enum(['ar', 'en', 'bilingual']).optional(),
+        detailLevel: z.enum(['concise', 'detailed', 'step_by_step']).optional(),
+      })
+      .optional(),
+  })
+  .strict();
+
+export type AcademicAiContext = z.infer<typeof AcademicAiContextSchema>;

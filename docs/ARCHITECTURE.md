@@ -49,11 +49,11 @@
 3. Strict environment schema validation enforces `ALLOW_PAID_AI=false`, `ALLOW_PAID_STORAGE=false`, and `ALLOW_BILLING_FALLBACK=false`.
 4. All external providers are abstracted behind pure interfaces with zero-cost implementations (`node:sqlite` locally, free tier Cloudflare Workers / D1 in production, free tier AI routing).
 
-### 2.2 Privacy by Design
+### 2.2 Privacy by Architecture + Defense in Depth
 
-1. **Zero Student PII to AI**: AI interfaces receive only sanitized academic context (e.g. course code, topic name, theoretical inquiry).
-2. Telegram IDs, usernames, student names, phone numbers, and emails are strictly prohibited from entering AI prompts and payloads.
-3. The `assertNoStudentPii` validator inspects outgoing payloads and immediately halts processing with a `ValidationError` if any private identifier pattern is detected.
+1. **Structural Isolation (Primary Guard)**: AI interfaces accept ONLY an allowlisted, narrow `AcademicAiContextDTO` (`stage`, `programSemester`, `courseCode`, `topic`, `studentQuestion`, `retrievedExcerpts`, `academicPreferences`).
+2. **Prohibited Identity Metadata**: `telegramUserId`, `chatId`, `username`, `phone`, `email`, `studentId`, and `displayName` are strictly excluded from the AI context DTO schema and rejected by validation. Application code never passes `StudentProfile` or Telegram `Context` to AI services.
+3. **Defense-in-Depth Secondary Guard**: Best-effort PII detection (`assertNoStudentPii`) and regex redaction (`sanitizeAiPrompt`) inspect outgoing payloads as a secondary safety net against accidental identifiers embedded in free-text questions. Rather than claiming absolute guarantees, privacy is enforced through architectural data boundaries backed by multi-layered defensive validation.
 
 ### 2.3 Layered Monorepo Architecture
 
@@ -125,4 +125,4 @@ All handler execution is wrapped in `createErrorBoundaryMiddleware`. Uncaught ex
 
 ### 4.3 Log Sanitization
 
-The structured logger automatically redacts Telegram bot tokens (e.g. `8807584013:AA...`) and sensitive keys (`apiKey`, `password`, `secret`, `authorization`, `credentials`) to prevent credential leaks.
+The structured logger automatically redacts Telegram bot tokens (e.g. `1234567890:AA...`) and sensitive keys (`apiKey`, `password`, `secret`, `authorization`, `credentials`) to prevent credential leaks.

@@ -1,4 +1,5 @@
 # Milestone M0 Verification & Architecture Report
+
 ## Mechatronics Academic Assistant (Mecha Bot) — University of Basrah
 
 **Date**: September 14, 2026  
@@ -14,8 +15,7 @@
 - **Project Name & Purpose**: Mecha Bot is a dedicated, production-quality academic companion and study assistant for the undergraduate students of the Mechatronics Engineering Department, College of Engineering, University of Basrah. It is not a generic AI wrapper; it models the academic reality of the curriculum, stage progression, semester calendars, and course authority.
 - **Scope Delivered**: Milestone M0 (Technical Foundation only). Zero business logic from M1 (no onboarding state machine, no live curriculum ingestion, no active student dialogs). Pure, robust infrastructure, typed domain models, database schema with migrations, unit/integration test suite, local D1 compatibility harness, and long-polling runner.
 - **Zero-Cost Architecture**: Built strictly on zero-cost infrastructure. Enforced at runtime via schema validation (`ALLOW_PAID_AI=false`, `ALLOW_PAID_STORAGE=false`, `ALLOW_BILLING_FALLBACK=false`). Local runtime runs entirely on Node 24 built-in `node:sqlite` and local long-polling. Production architecture is structured for free-tier Cloudflare Workers and D1.
-- **Academic Context**: Explicitly models all 4 undergraduate stages and 8 program semesters (Stage 1 = Semesters 1 & 2; Stage 2 = Semesters 3 & 4; Stage 3 = Semesters 5 & 6; Stage 4 = Semesters 7 & 8), with support for multi-semester courses (e.g. Graduation Projects spanning Semesters 7 and 8) via separate `Course` and `CourseOffering` entities.
-- **Privacy Statement**: Privacy by Design. Student Telegram IDs, usernames, and phone numbers are strictly prohibited from AI prompts or external services. Enforced by automated sanitizers (`assertNoStudentPii`). Machine logs redact all bot tokens, API keys, and sensitive fields.
+- **Privacy Statement**: Privacy by Architecture + Defense in Depth. Student Telegram IDs, usernames, phone numbers, and emails are strictly excluded from AI prompts and payloads by structural design via the allowlisted `AcademicAiContextDTO`. Backed by secondary defense-in-depth best-effort PII pattern inspection (`assertNoStudentPii`). Machine logs automatically redact all bot tokens, API keys, and sensitive fields.
 
 ---
 
@@ -23,19 +23,19 @@
 
 All commands were executed in the project root on Node.js v24.19.0 and pnpm v12.4.1.
 
-| Check / Command | Expected Outcome | Actual Outcome | Status |
-| :--- | :--- | :--- | :--- |
-| `pnpm lint` | ESLint passes with 0 errors and 0 warnings | 0 errors, 0 warnings across all packages, apps, scripts, and tests | **PASS** |
-| `pnpm format:check` | Prettier validates all source files match formatting rules | All matched files use Prettier code style | **PASS** |
-| `pnpm typecheck` | TypeScript compiler (`tsc --noEmit`) passes with 0 type errors | Strict typechecking completed with 0 errors across 9 workspaces | **PASS** |
-| `pnpm test` | All Vitest test suites execute and pass (0 failed, 0 skipped) | 15 test files passed, 53 total unit/integration tests passed | **PASS** |
-| `pnpm test:coverage` | Statement coverage meets or exceeds 80% threshold | **84.97%** statements, 79.84% branches, 83.45% functions, 84.97% lines | **PASS** |
-| `pnpm db:migrate` | Forward-only SQL migrations apply idempotently to SQLite DB | Migration `0001_initial_schema.sql` applied cleanly with SHA-256 checksum recorded | **PASS** |
-| `pnpm db:seed:test` | Seeds synthetic test fixtures (`TEST101`, `TEST102`, `TEST402_PROJ`) | Seeded academic years, curriculum versions, courses, offerings, and calendar periods | **PASS** |
-| `pnpm db:reset` | Drops and rebuilds database from scratch via migration runner | Database reset and reconstructed cleanly with 29 tables | **PASS** |
-| `pnpm db:compat:d1` | Wrangler local D1 migration execution without remote connections | 41 D1 SQL statements executed; smoke test confirmed 29 tables created | **PASS** |
-| `pnpm build` | Project builds cleanly (`tsc --noEmit`) | Completed with code 0 and 0 diagnostics | **PASS** |
-| `pnpm verify` | Master gate running lint, format, typecheck, test, and build | All verification steps passed in sequence with zero failures | **PASS** |
+| Check / Command      | Expected Outcome                                                     | Actual Outcome                                                                       | Status   |
+| :------------------- | :------------------------------------------------------------------- | :----------------------------------------------------------------------------------- | :------- |
+| `pnpm lint`          | ESLint passes with 0 errors and 0 warnings                           | 0 errors, 0 warnings across all packages, apps, scripts, and tests                   | **PASS** |
+| `pnpm format:check`  | Prettier validates all source files match formatting rules           | All matched files use Prettier code style                                            | **PASS** |
+| `pnpm typecheck`     | TypeScript compiler (`tsc --noEmit`) passes with 0 type errors       | Strict typechecking completed with 0 errors across 9 workspaces                      | **PASS** |
+| `pnpm test`          | All Vitest test suites execute and pass (0 failed, 0 skipped)        | 15 test files passed, 53 total unit/integration tests passed                         | **PASS** |
+| `pnpm test:coverage` | Statement coverage meets or exceeds 80% threshold                    | **84.97%** statements, 79.84% branches, 83.45% functions, 84.97% lines               | **PASS** |
+| `pnpm db:migrate`    | Forward-only SQL migrations apply idempotently to SQLite DB          | Migration `0001_initial_schema.sql` applied cleanly with SHA-256 checksum recorded   | **PASS** |
+| `pnpm db:seed:test`  | Seeds synthetic test fixtures (`TEST101`, `TEST102`, `TEST402_PROJ`) | Seeded academic years, curriculum versions, courses, offerings, and calendar periods | **PASS** |
+| `pnpm db:reset`      | Drops and rebuilds database from scratch via migration runner        | Database reset and reconstructed cleanly with 29 tables                              | **PASS** |
+| `pnpm db:compat:d1`  | Wrangler local D1 migration execution without remote connections     | 41 D1 SQL statements executed; smoke test confirmed 29 tables created                | **PASS** |
+| `pnpm build`         | Project builds cleanly (`tsc --noEmit`)                              | Completed with code 0 and 0 diagnostics                                              | **PASS** |
+| `pnpm verify`        | Master gate running lint, format, typecheck, test, and build         | All verification steps passed in sequence with zero failures                         | **PASS** |
 
 ---
 
@@ -64,7 +64,7 @@ mecha-bot/
 │   └── synthetic-fixtures.json   # Synthetic test curriculum fixtures (TEST101..TEST402)
 ├── docs/
 │   ├── ARCHITECTURE.md           # System architecture, boundaries, zero-cost principles
-│   ├── MILESTONES.md             # Complete M0 -> M8 milestone roadmap
+│   ├── MILESTONES.md             # Complete M0 -> M16 canonical milestone roadmap
 │   └── M0_REPORT.md              # Milestone M0 verification and architecture report
 ├── eslint.config.mjs             # ESLint 9 flat config (TypeScript-ESLint strict)
 ├── migrations/
@@ -216,6 +216,7 @@ mecha-bot/
 ### Cloudflare D1 Compatibility Verification
 
 The `scripts/d1-compat.ts` harness executes `0001_initial_schema.sql` directly against a clean, isolated local Cloudflare D1 instance via Wrangler (`wrangler d1 execute DB --local`).
+
 - **Mode**: STRICT LOCAL-ONLY. No `--remote` flag, no Cloudflare account or credentials required.
 - **Verification Result**: All 41 SQL statements (table definitions and indexes) executed with zero syntax or engine errors. Smoke query confirmed `total_tables = 29`. Temporary `.wrangler` state cleaned up automatically.
 
@@ -224,6 +225,7 @@ The `scripts/d1-compat.ts` harness executes `0001_initial_schema.sql` directly a
 ## 5. Architectural Decisions & Research Corrections
 
 ### 1. Semester & Stage Modeling
+
 - The Mechatronics degree is strictly structured into 4 stages and 8 program semesters:
   - Stage 1: Program Semesters 1 and 2
   - Stage 2: Program Semesters 3 and 4
@@ -233,6 +235,7 @@ The `scripts/d1-compat.ts` harness executes `0001_initial_schema.sql` directly a
 - Separated `Course` from `CourseOffering`. A single course (such as `TEST402_PROJ`) can have multiple offerings across different semesters (e.g. Semester 7 Part 1 and Semester 8 Part 2).
 
 ### 2. Academic Time Foundation
+
 - Created `academic_years` and `academic_calendar_periods`.
 - Periods include `PRE_SEMESTER`, `TEACHING`, `EXAMS`, `BREAK`, and `SUMMER_TRAINING`.
 - Implemented `AcademicCalendarService`:
@@ -241,10 +244,12 @@ The `scripts/d1-compat.ts` harness executes `0001_initial_schema.sql` directly a
   - `getNextTeachingDay(date, stage)`: Computes the next valid instructional calendar date.
 
 ### 3. Course Pulse & Student Baseline Foundation
+
 - Created `course_pulses` table and domain interface: Records where the lecturer/class actually reached (`current_topic_id`, `actual_teaching_week`, `confidence`, `updated_by`).
 - Created `student_course_states`: Supports mid-semester joiners by tracking student-specific entry baselines (`baseline_topic_id`, `baseline_source: SHARED_COURSE_PULSE | STUDENT_CONFIRMED | STUDENT_ENTERED | INFERRED`). A student joining in Week 7 is not treated as starting in Week 1.
 
 ### 4. Contextual Source Authority
+
 - Preserved the `SourceAuthority` enum: `OFFICIAL_DEPARTMENT`, `LECTURER_CURRENT`, `OFFICIAL_UOB`, `PAST_EXAM_VERIFIED`, `OPEN_ACADEMIC`, `STUDENT_SUBMITTED`, `UNVERIFIED`.
 - Rejected a single global numeric ranking. Authority is contextual.
 - Implemented `RetrievalPolicy`: Ranks sources dynamically according to user intent:
@@ -254,17 +259,21 @@ The `scripts/d1-compat.ts` harness executes `0001_initial_schema.sql` directly a
   - `CONCEPT_EXPLANATION`: Prioritizes `LECTURER_CURRENT` > `OFFICIAL_DEPARTMENT` > `OPEN_ACADEMIC`.
 
 ### 5. Source Provenance & Evidence Model
+
 - Added `EvidenceScope` classification: `EXACT_COURSE`, `SAME_DEPARTMENT_ARCHIVE`, `SAME_UNIVERSITY_RELATED_COURSE`, `OPEN_ACADEMIC_EQUIVALENT`, `BIBLIOGRAPHIC_ONLY`, `STUDENT_PROVIDED`.
 - Created `source_evidence` table storing metadata: `origin_url`, `origin_department`, `origin_university`, `academic_year`, `verified`, and `distribution_allowed`.
 - Distinctly separates related University of Basrah materials from official Mechatronics syllabus documents without making unfounded copyright or syllabus equivalency assumptions.
 
 ### 6. Course Staff Assignment Model
+
 - Added `course_staff_assignments`: Maps course offerings to faculty members with explicit roles, academic year, and verification status. Decouples general faculty specialization rosters from yearly course allocations.
 
 ### 7. D1 Compatibility Harness
+
 - Added Wrangler local D1 verification (`pnpm db:compat:d1`). Isolated and completely local. Runs without cloud network access.
 
 ### 8. Time Storage Rules
+
 - Machine timestamps (`created_at`, `updated_at`, audit entries) are stored in UTC (ISO 8601 `YYYY-MM-DDTHH:mm:ss.sssZ`).
 - Academic calendar boundaries and student schedules use explicit local calendar dates (`YYYY-MM-DD`) anchored in `Asia/Baghdad` timezone to prevent date-shifting across midnight boundaries.
 
@@ -273,6 +282,7 @@ The `scripts/d1-compat.ts` harness executes `0001_initial_schema.sql` directly a
 ## 6. Testing & Code Quality
 
 ### Summary Statistics
+
 - **Total Test Suites**: 15 test files
 - **Total Tests Executed**: 53 tests
 - **Tests Passed**: 53 (100%)
@@ -321,13 +331,14 @@ The `scripts/d1-compat.ts` harness executes `0001_initial_schema.sql` directly a
 
 ## 8. Privacy & Security
 
-1. **PII Sanitization**: `assertNoStudentPii(text)` runs on all outgoing AI and external payloads. It detects and throws on:
+1. **Privacy by Architecture (Primary Layer)**: Outgoing AI context is encapsulated strictly within the allowlisted `AcademicAiContextDTO`. By architectural design, identity fields (`telegramUserId`, `chatId`, `username`, `phone`, `email`, `studentId`, `displayName`) are not accepted by the builder or schema. Application code never forwards user profile records or Telegram `Context` objects to AI providers.
+2. **Defense-in-Depth Best-Effort PII Inspection (Secondary Layer)**: `assertNoStudentPii(data)` and `sanitizeAiPrompt(text)` run as an automated secondary safety net against accidental identifiers in user question text. They inspect for:
    - Telegram user IDs (`user_id: 12345678`)
    - Telegram usernames (`@username`)
    - Iraqi phone numbers (`+964...`, `077...`, `078...`)
    - Email addresses
-2. **Log Redaction**: `Logger` sanitizes all log outputs and structured metadata. Replaces bot tokens (`8807584013:...`), bearer tokens, and API keys with `[REDACTED]`.
-3. **Idempotency Defense**: Incoming Telegram updates are hashed into unique idempotency keys stored in `idempotency_keys` table to guarantee that retried Telegram updates are processed exactly once.
+3. **Log Redaction**: `Logger` sanitizes all log outputs and structured metadata. Replaces bot tokens (e.g. `1234567890:...`), bearer tokens, and API keys with `[REDACTED]`.
+4. **Idempotency Defense**: Incoming Telegram updates are hashed into unique idempotency keys stored in `idempotency_keys` table to guarantee that retried Telegram updates are processed exactly once.
 
 ---
 
@@ -344,7 +355,7 @@ The `scripts/d1-compat.ts` harness executes `0001_initial_schema.sql` directly a
    ```bash
    cp .env.example .env
    ```
-   Configure `TELEGRAM_BOT_TOKEN=8807584013:AAHRjLnZOUV58EwA9L7TvkrGX6_fWtz_hbI`.
+   Configure `TELEGRAM_BOT_TOKEN=<your-dev-bot-token>`.
 4. Initialize database:
    ```bash
    pnpm db:migrate
@@ -356,6 +367,7 @@ The `scripts/d1-compat.ts` harness executes `0001_initial_schema.sql` directly a
    ```
 
 ### Graceful Shutdown
+
 The application handles `SIGINT` and `SIGTERM`. When received, the runner halts the Telegram polling loop, terminates active middleware pipelines, closes the SQLite database connection, and exits with code 0.
 
 ---
@@ -371,9 +383,11 @@ The application handles `SIGINT` and `SIGTERM`. When received, the runner halts 
 ## 11. Transition to M1 Readiness
 
 ### Hard Milestone Boundary
+
 **Milestone M0 is complete. Milestone M1 has NOT been started.**
 
 ### M1 Readiness Checklist
+
 - [x] 29 database tables migrated and validated on SQLite and Cloudflare D1.
 - [x] Academic domain entities (Stage, Program Semester, Calendar, Course Pulse, Evidence Scope, Authority) implemented and tested.
 - [x] Repository abstractions tested with transaction rollback and foreign key verification.

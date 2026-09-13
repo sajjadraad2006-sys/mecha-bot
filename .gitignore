@@ -40,3 +40,10 @@ pnpm-debug.log*
 .vscode/
 *.swp
 *.swo
+
+# Academic research & raw materials (PDFs, scans, textbooks, exams, lecture notes)
+/مصادر/
+/data/raw/
+/tools/ingestion/workspace/
+/tools/ingestion/temp/
+
