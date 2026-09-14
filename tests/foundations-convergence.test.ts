@@ -1,10 +1,7 @@
 import { describe, it, expect } from 'vitest';
 
 // 1. Cross-package imports using monorepo path aliases
-import {
-  loadAcademicCoreDataset,
-  SourceAuthority as AcademicSourceAuthority,
-} from '@mecha-bot/academic';
+import { loadAcademicCoreDataset } from '@mecha-bot/academic';
 import { TimetableService, detectConflicts, TimetableSlot } from '@mecha-bot/timetable';
 import { ReminderSchedulerService, buildReminderTimes } from '@mecha-bot/scheduler';
 import { CompanionService, InMemoryCompanionRepository } from '@mecha-bot/companion';
