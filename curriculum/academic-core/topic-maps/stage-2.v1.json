@@ -1,0 +1,420 @@
+[
+  {
+    "topicKey": "mct212-stress-and-strain",
+    "courseCode": "MCT212",
+    "titleEn": "Concept of Stress and Strain",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Mechanics of Materials Archive (MEA214)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Related department course archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct212-axial-loading",
+    "courseCode": "MCT212",
+    "titleEn": "Axially Loaded Members and Stress Distribution",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Mechanics of Materials Archive (MEA214)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Related department course archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct212-torsion",
+    "courseCode": "MCT212",
+    "titleEn": "Torsion of Circular Shafts",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Mechanics of Materials Archive (MEA214)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Related department course archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct212-shear-and-moment",
+    "courseCode": "MCT212",
+    "titleEn": "Shear Force and Bending Moment Diagrams in Beams",
+    "orderIndex": 4,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Mechanics of Materials Archive (MEA214)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Related department course archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct212-beam-deflection",
+    "courseCode": "MCT212",
+    "titleEn": "Deflection of Beams and Superposition",
+    "orderIndex": 5,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Mechanics of Materials Archive (MEA214)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Related department course archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct213-crystal-structures",
+    "courseCode": "MCT213",
+    "titleEn": "Crystal Structures and Defects in Metals",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Production Engineering Course (BEM125)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Production engineering metallurgy archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct213-phase-diagrams",
+    "courseCode": "MCT213",
+    "titleEn": "Phase Diagrams and Iron-Carbon Equilibrium",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Production Engineering Course (BEM125)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Production engineering metallurgy archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct213-heat-treatment",
+    "courseCode": "MCT213",
+    "titleEn": "Heat Treatment Processes of Steels",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Production Engineering Course (BEM125)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Production engineering metallurgy archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct215-dc-generator-principles",
+    "courseCode": "MCT215",
+    "titleEn": "DC Generator Operating Principles and Types",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Electrical Machines Archive (Chapter One D.C Machine)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "UoB Electrical Engineering machines archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct215-dc-motor-characteristics",
+    "courseCode": "MCT215",
+    "titleEn": "DC Motor Types, Characteristics, and Torque",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Electrical Machines Archive (Chapter One D.C Machine)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "UoB Electrical Engineering machines archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct215-speed-control-dc",
+    "courseCode": "MCT215",
+    "titleEn": "Speed Control and Starting Methods for DC Motors",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Electrical Machines Archive (Chapter One D.C Machine)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "UoB Electrical Engineering machines archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct217-first-law",
+    "courseCode": "MCT217",
+    "titleEn": "First Law of Thermodynamics and Energy Conservation",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Thermodynamics I Archive (Dr. Mahmood Shaker)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical engineering thermodynamics lecture notes"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct217-reversible-processes",
+    "courseCode": "MCT217",
+    "titleEn": "Reversible Non-Flow and Steady Flow Processes",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Thermodynamics I Archive (Dr. Mahmood Shaker)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical engineering thermodynamics lecture notes"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct217-second-law-entropy",
+    "courseCode": "MCT217",
+    "titleEn": "Second Law of Thermodynamics and Entropy Concept",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Thermodynamics I Archive (Dr. Mahmood Shaker)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical engineering thermodynamics lecture notes"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct217-gas-power-cycles",
+    "courseCode": "MCT217",
+    "titleEn": "Air Standard Power Cycles: Otto and Diesel Cycles",
+    "orderIndex": 4,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Thermodynamics I Archive (Dr. Mahmood Shaker)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical engineering thermodynamics lecture notes"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct222-three-phase-induction-motors",
+    "courseCode": "MCT222",
+    "titleEn": "Three-Phase Induction Motor Principles and Equivalent Circuit",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Electrical Machines Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Related AC machines material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct222-synchronous-machines",
+    "courseCode": "MCT222",
+    "titleEn": "Synchronous Generators and Motors Characteristics",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Electrical Machines Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Related AC machines material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct224-kinematic-mechanisms",
+    "courseCode": "MCT224",
+    "titleEn": "Kinematic Analysis of Linkages and Planar Mechanisms",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Theory of Machines Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical engineering machine theory material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct224-gears-and-gear-trains",
+    "courseCode": "MCT224",
+    "titleEn": "Gears, Gear Trains, and Epicyclic Gear Systems",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Theory of Machines Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical engineering machine theory material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct224-cam-mechanisms",
+    "courseCode": "MCT224",
+    "titleEn": "Cam Design and Follower Motion Analysis",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Theory of Machines Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical engineering machine theory material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct225-op-amp-fundamentals",
+    "courseCode": "MCT225",
+    "titleEn": "Operational Amplifiers: Inverting and Non-Inverting Circuits",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "Current MCT Faculty Electronics Teaching Archive",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Faculty archive for analogue electronics"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct225-active-filters",
+    "courseCode": "MCT225",
+    "titleEn": "Active Filter Design (Low-pass, High-pass, Band-pass)",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "Current MCT Faculty Electronics Teaching Archive",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Faculty archive for analogue electronics"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  }
+]

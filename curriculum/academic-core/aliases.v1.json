@@ -1,0 +1,1423 @@
+[
+  {
+    "courseCode": "MCT111",
+    "alias": "ماث 1",
+    "normalizedAlias": "ماث 1",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT111",
+    "alias": "math 1",
+    "normalizedAlias": "math 1",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT111",
+    "alias": "رياضيات 1",
+    "normalizedAlias": "رياضيات 1",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT111",
+    "alias": "mathematics 1",
+    "normalizedAlias": "mathematics 1",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT112",
+    "alias": "دوائر 1",
+    "normalizedAlias": "دوائر 1",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT112",
+    "alias": "دوائر كهربائية 1",
+    "normalizedAlias": "دوائر كهربائية 1",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT112",
+    "alias": "circuits 1",
+    "normalizedAlias": "circuits 1",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT112",
+    "alias": "electrical circuits 1",
+    "normalizedAlias": "electrical circuits 1",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT113",
+    "alias": "مبادئ حاسوب",
+    "normalizedAlias": "مبادئ حاسوب",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT113",
+    "alias": "computer principles",
+    "normalizedAlias": "computer principles",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT114",
+    "alias": "كيمياء",
+    "normalizedAlias": "كيمياء",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT114",
+    "alias": "chemistry",
+    "normalizedAlias": "chemistry",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT115",
+    "alias": "ستاتك",
+    "normalizedAlias": "ستاتك",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT115",
+    "alias": "ستاتيك",
+    "normalizedAlias": "ستاتيك",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT115",
+    "alias": "statics",
+    "normalizedAlias": "statics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT115",
+    "alias": "ميكانيك سكوني",
+    "normalizedAlias": "ميكانيك سكوني",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT116",
+    "alias": "عربي 1",
+    "normalizedAlias": "عربي 1",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT116",
+    "alias": "arabic 1",
+    "normalizedAlias": "arabic 1",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT117",
+    "alias": "رسم هندسي بالحاسوب",
+    "normalizedAlias": "رسم هندسي بالحاسوب",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT117",
+    "alias": "engineering drawing",
+    "normalizedAlias": "engineering drawing",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT117",
+    "alias": "كاد",
+    "normalizedAlias": "كاد",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT117",
+    "alias": "cad",
+    "normalizedAlias": "cad",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT121",
+    "alias": "ماث 2",
+    "normalizedAlias": "ماث 2",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT121",
+    "alias": "math 2",
+    "normalizedAlias": "math 2",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT121",
+    "alias": "رياضيات 2",
+    "normalizedAlias": "رياضيات 2",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT121",
+    "alias": "mathematics 2",
+    "normalizedAlias": "mathematics 2",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT122",
+    "alias": "دوائر 2",
+    "normalizedAlias": "دوائر 2",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT122",
+    "alias": "circuits 2",
+    "normalizedAlias": "circuits 2",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT122",
+    "alias": "دوائر كهربائية 2",
+    "normalizedAlias": "دوائر كهربائية 2",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT123",
+    "alias": "لوجك",
+    "normalizedAlias": "لوجك",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT123",
+    "alias": "تصميم رقمي",
+    "normalizedAlias": "تصميم رقمي",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT123",
+    "alias": "نظم رقمية",
+    "normalizedAlias": "نظم رقمية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT123",
+    "alias": "digital",
+    "normalizedAlias": "digital",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT123",
+    "alias": "digital systems",
+    "normalizedAlias": "digital systems",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT124",
+    "alias": "فيزياء",
+    "normalizedAlias": "فيزياء",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT124",
+    "alias": "physics",
+    "normalizedAlias": "physics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT125",
+    "alias": "داينمك",
+    "normalizedAlias": "داينمك",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT125",
+    "alias": "داينمكس",
+    "normalizedAlias": "داينمكس",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT125",
+    "alias": "dynamics",
+    "normalizedAlias": "dynamics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT125",
+    "alias": "ميكانيك حركي",
+    "normalizedAlias": "ميكانيك حركي",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT126",
+    "alias": "انكليزي 1",
+    "normalizedAlias": "انكليزي 1",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT126",
+    "alias": "english 1",
+    "normalizedAlias": "english 1",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT127",
+    "alias": "حقوق الانسان",
+    "normalizedAlias": "حقوق الانسان",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT127",
+    "alias": "ديمقراطية",
+    "normalizedAlias": "ديمقراطية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT127",
+    "alias": "human rights",
+    "normalizedAlias": "human rights",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT211",
+    "alias": "ماث 3",
+    "normalizedAlias": "ماث 3",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT211",
+    "alias": "math 3",
+    "normalizedAlias": "math 3",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT211",
+    "alias": "رياضيات 3",
+    "normalizedAlias": "رياضيات 3",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT212",
+    "alias": "مقاومة",
+    "normalizedAlias": "مقاومة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT212",
+    "alias": "مقاومة مواد",
+    "normalizedAlias": "مقاومة مواد",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT212",
+    "alias": "strength of materials",
+    "normalizedAlias": "strength of materials",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT213",
+    "alias": "معادن",
+    "normalizedAlias": "معادن",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT213",
+    "alias": "هندسة معادن",
+    "normalizedAlias": "هندسة معادن",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT213",
+    "alias": "metallurgy",
+    "normalizedAlias": "metallurgy",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT213",
+    "alias": "metals engineering",
+    "normalizedAlias": "metals engineering",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT214",
+    "alias": "حوسبة وذكاء اصطناعي",
+    "normalizedAlias": "حوسبة وذكاء اصطناعي",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT214",
+    "alias": "computing and ai",
+    "normalizedAlias": "computing and ai",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT215",
+    "alias": "مكائن دي سي",
+    "normalizedAlias": "مكائن دي سي",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT215",
+    "alias": "مكائن تيار مستمر",
+    "normalizedAlias": "مكائن تيار مستمر",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT215",
+    "alias": "dc machines",
+    "normalizedAlias": "dc machines",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT215",
+    "alias": "electrical machines dc",
+    "normalizedAlias": "electrical machines dc",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT216",
+    "alias": "انكليزي 2",
+    "normalizedAlias": "انكليزي 2",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT216",
+    "alias": "english 2",
+    "normalizedAlias": "english 2",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT217",
+    "alias": "ثرمو",
+    "normalizedAlias": "ثرمو",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT217",
+    "alias": "ترمو",
+    "normalizedAlias": "ترمو",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT217",
+    "alias": "ثرموداينمك",
+    "normalizedAlias": "ثرموداينمك",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT217",
+    "alias": "ترموداينمك",
+    "normalizedAlias": "ترموداينمك",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT217",
+    "alias": "ديناميك حرارة",
+    "normalizedAlias": "ديناميك حرارة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT217",
+    "alias": "thermo",
+    "normalizedAlias": "thermo",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT217",
+    "alias": "thermodynamics",
+    "normalizedAlias": "thermodynamics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT221",
+    "alias": "معادلات تفاضلية",
+    "normalizedAlias": "معادلات تفاضلية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT221",
+    "alias": "تفاضلية",
+    "normalizedAlias": "تفاضلية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT221",
+    "alias": "differential equations",
+    "normalizedAlias": "differential equations",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT221",
+    "alias": "de",
+    "normalizedAlias": "de",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT222",
+    "alias": "مكائن اي سي",
+    "normalizedAlias": "مكائن اي سي",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT222",
+    "alias": "مكائن تيار متناوب",
+    "normalizedAlias": "مكائن تيار متناوب",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT222",
+    "alias": "ac machines",
+    "normalizedAlias": "ac machines",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT222",
+    "alias": "electrical machines ac",
+    "normalizedAlias": "electrical machines ac",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT223",
+    "alias": "اوب",
+    "normalizedAlias": "اوب",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT223",
+    "alias": "برمجة كيانية",
+    "normalizedAlias": "برمجة كيانية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT223",
+    "alias": "oop",
+    "normalizedAlias": "oop",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT223",
+    "alias": "object oriented programming",
+    "normalizedAlias": "object oriented programming",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT224",
+    "alias": "مكائن",
+    "normalizedAlias": "مكائن",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT224",
+    "alias": "نظرية الات",
+    "normalizedAlias": "نظرية الات",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT224",
+    "alias": "نظرية المكائن",
+    "normalizedAlias": "نظرية المكائن",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT224",
+    "alias": "theory of machines",
+    "normalizedAlias": "theory of machines",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT225",
+    "alias": "الكترونيك",
+    "normalizedAlias": "الكترونيك",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT225",
+    "alias": "الكترونيات",
+    "normalizedAlias": "الكترونيات",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT225",
+    "alias": "electronics",
+    "normalizedAlias": "electronics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT226",
+    "alias": "جرائم حزب البعث",
+    "normalizedAlias": "جرائم حزب البعث",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT226",
+    "alias": "جرائم البعث",
+    "normalizedAlias": "جرائم البعث",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT227",
+    "alias": "عربي 2",
+    "normalizedAlias": "عربي 2",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT227",
+    "alias": "arabic 2",
+    "normalizedAlias": "arabic 2",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT311",
+    "alias": "جبر خطي",
+    "normalizedAlias": "جبر خطي",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT311",
+    "alias": "linear algebra",
+    "normalizedAlias": "linear algebra",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT312",
+    "alias": "اهتزازات",
+    "normalizedAlias": "اهتزازات",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT312",
+    "alias": "اهتزازات ميكانيكية",
+    "normalizedAlias": "اهتزازات ميكانيكية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT312",
+    "alias": "vibration",
+    "normalizedAlias": "vibration",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT312",
+    "alias": "vibrations",
+    "normalizedAlias": "vibrations",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT312",
+    "alias": "mechanical vibrations",
+    "normalizedAlias": "mechanical vibrations",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT313",
+    "alias": "موائع",
+    "normalizedAlias": "موائع",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT313",
+    "alias": "فلويد",
+    "normalizedAlias": "فلويد",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT313",
+    "alias": "ميكانيك موائع",
+    "normalizedAlias": "ميكانيك موائع",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT313",
+    "alias": "fluid",
+    "normalizedAlias": "fluid",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT313",
+    "alias": "fluids",
+    "normalizedAlias": "fluids",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT313",
+    "alias": "fluid mechanics",
+    "normalizedAlias": "fluid mechanics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT314",
+    "alias": "سيطرة",
+    "normalizedAlias": "سيطرة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT314",
+    "alias": "سيطرة 1",
+    "normalizedAlias": "سيطرة 1",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT314",
+    "alias": "كنترول",
+    "normalizedAlias": "كنترول",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT314",
+    "alias": "كنترول 1",
+    "normalizedAlias": "كنترول 1",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT314",
+    "alias": "control",
+    "normalizedAlias": "control",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT314",
+    "alias": "control 1",
+    "normalizedAlias": "control 1",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT314",
+    "alias": "control systems 1",
+    "normalizedAlias": "control systems 1",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT324",
+    "alias": "سيطرة",
+    "normalizedAlias": "سيطرة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT324",
+    "alias": "سيطرة 2",
+    "normalizedAlias": "سيطرة 2",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT324",
+    "alias": "كنترول",
+    "normalizedAlias": "كنترول",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT324",
+    "alias": "كنترول 2",
+    "normalizedAlias": "كنترول 2",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT324",
+    "alias": "control",
+    "normalizedAlias": "control",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT324",
+    "alias": "control 2",
+    "normalizedAlias": "control 2",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT324",
+    "alias": "control systems 2",
+    "normalizedAlias": "control systems 2",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT315",
+    "alias": "معمارية الحاسوب",
+    "normalizedAlias": "معمارية الحاسوب",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT315",
+    "alias": "تنظيم الحاسبة",
+    "normalizedAlias": "تنظيم الحاسبة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT315",
+    "alias": "computer organization",
+    "normalizedAlias": "computer organization",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT315",
+    "alias": "computer architecture",
+    "normalizedAlias": "computer architecture",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT316",
+    "alias": "باور",
+    "normalizedAlias": "باور",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT316",
+    "alias": "الكترونيات قدرة",
+    "normalizedAlias": "الكترونيات قدرة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT316",
+    "alias": "إلكترونيات قدرة",
+    "normalizedAlias": "الكترونيات قدرة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT316",
+    "alias": "power electronics",
+    "normalizedAlias": "power electronics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT317",
+    "alias": "انتقال حرارة",
+    "normalizedAlias": "انتقال حرارة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT317",
+    "alias": "هيت",
+    "normalizedAlias": "هيت",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT317",
+    "alias": "heat transfer",
+    "normalizedAlias": "heat transfer",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT321",
+    "alias": "تحليلات عددية",
+    "normalizedAlias": "تحليلات عددية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT321",
+    "alias": "احصاء",
+    "normalizedAlias": "احصاء",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT321",
+    "alias": "numerical analysis",
+    "normalizedAlias": "numerical analysis",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT321",
+    "alias": "numerical analysis and statistics",
+    "normalizedAlias": "numerical analysis and statistics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT322",
+    "alias": "اقتصاد هندسي",
+    "normalizedAlias": "اقتصاد هندسي",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT322",
+    "alias": "engineering economy",
+    "normalizedAlias": "engineering economy",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT323",
+    "alias": "سنسورات",
+    "normalizedAlias": "سنسورات",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT323",
+    "alias": "حساسات",
+    "normalizedAlias": "حساسات",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT323",
+    "alias": "متحسسات",
+    "normalizedAlias": "متحسسات",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT323",
+    "alias": "sensors",
+    "normalizedAlias": "sensors",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT323",
+    "alias": "instrumentation",
+    "normalizedAlias": "instrumentation",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT323",
+    "alias": "sensors and instrumentation",
+    "normalizedAlias": "sensors and instrumentation",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT325",
+    "alias": "اتمتة",
+    "normalizedAlias": "اتمتة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT325",
+    "alias": "منظومات الاتمتة",
+    "normalizedAlias": "منظومات الاتمتة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT325",
+    "alias": "automation",
+    "normalizedAlias": "automation",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT325",
+    "alias": "automation systems",
+    "normalizedAlias": "automation systems",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT325",
+    "alias": "plc",
+    "normalizedAlias": "plc",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT326",
+    "alias": "DSP",
+    "normalizedAlias": "dsp",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT326",
+    "alias": "dsp",
+    "normalizedAlias": "dsp",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT326",
+    "alias": "معالجة اشارة",
+    "normalizedAlias": "معالجة اشارة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT326",
+    "alias": "معالجة الإشارة",
+    "normalizedAlias": "معالجة الاشارة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT326",
+    "alias": "معالجة الاشارة الرقمية",
+    "normalizedAlias": "معالجة الاشارة الرقمية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT326",
+    "alias": "digital signal processing",
+    "normalizedAlias": "digital signal processing",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT327",
+    "alias": "طاقة متجددة",
+    "normalizedAlias": "طاقة متجددة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT327",
+    "alias": "renewable energy",
+    "normalizedAlias": "renewable energy",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT411",
+    "alias": "امبدد",
+    "normalizedAlias": "امبدد",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT411",
+    "alias": "انظمة مضمنة",
+    "normalizedAlias": "انظمة مضمنة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT411",
+    "alias": "embedded",
+    "normalizedAlias": "embedded",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT411",
+    "alias": "embedded systems",
+    "normalizedAlias": "embedded systems",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT412",
+    "alias": "تصميم 1",
+    "normalizedAlias": "تصميم 1",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT412",
+    "alias": "تصميم ميكانيكي 1",
+    "normalizedAlias": "تصميم ميكانيكي 1",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT412",
+    "alias": "machine design 1",
+    "normalizedAlias": "machine design 1",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT412",
+    "alias": "mechanical design 1",
+    "normalizedAlias": "mechanical design 1",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT413",
+    "alias": "ذكاء اصطناعي",
+    "normalizedAlias": "ذكاء اصطناعي",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT413",
+    "alias": "artificial intelligence",
+    "normalizedAlias": "artificial intelligence",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT413",
+    "alias": "ai",
+    "normalizedAlias": "ai",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "P4MCT",
+    "alias": "مشروع",
+    "normalizedAlias": "مشروع",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "P4MCT",
+    "alias": "مشروع التخرج",
+    "normalizedAlias": "مشروع التخرج",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "P4MCT",
+    "alias": "المشروع الهندسي",
+    "normalizedAlias": "المشروع الهندسي",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "P4MCT",
+    "alias": "project",
+    "normalizedAlias": "project",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "P4MCT",
+    "alias": "graduation project",
+    "normalizedAlias": "graduation project",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "P4MCT",
+    "alias": "engineering project",
+    "normalizedAlias": "engineering project",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT414",
+    "alias": "ادارة مشاريع",
+    "normalizedAlias": "ادارة مشاريع",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT414",
+    "alias": "project management",
+    "normalizedAlias": "project management",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT415",
+    "alias": "درونز",
+    "normalizedAlias": "درونز",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT415",
+    "alias": "طائرات مسيرة",
+    "normalizedAlias": "طائرات مسيرة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT415",
+    "alias": "drones",
+    "normalizedAlias": "drones",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT416",
+    "alias": "شبكات صناعية",
+    "normalizedAlias": "شبكات صناعية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT416",
+    "alias": "اتصالات صناعية",
+    "normalizedAlias": "اتصالات صناعية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT416",
+    "alias": "industrial communication networks",
+    "normalizedAlias": "industrial communication networks",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT416",
+    "alias": "industrial networks",
+    "normalizedAlias": "industrial networks",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT421",
+    "alias": "بايو",
+    "normalizedAlias": "بايو",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT421",
+    "alias": "ميكاترونكس احيائي",
+    "normalizedAlias": "ميكاترونكس احيائي",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT421",
+    "alias": "biomechatronics",
+    "normalizedAlias": "biomechatronics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT422",
+    "alias": "تصميم 2",
+    "normalizedAlias": "تصميم 2",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT422",
+    "alias": "تصميم ميكانيكي 2",
+    "normalizedAlias": "تصميم ميكانيكي 2",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT422",
+    "alias": "machine design 2",
+    "normalizedAlias": "machine design 2",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT422",
+    "alias": "mechanical design 2",
+    "normalizedAlias": "mechanical design 2",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT423",
+    "alias": "هندسة صناعية",
+    "normalizedAlias": "هندسة صناعية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT423",
+    "alias": "industrial engineering",
+    "normalizedAlias": "industrial engineering",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT424",
+    "alias": "روبوتات",
+    "normalizedAlias": "روبوتات",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT424",
+    "alias": "انظمة روبوتية",
+    "normalizedAlias": "انظمة روبوتية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT424",
+    "alias": "robotics",
+    "normalizedAlias": "robotics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT424",
+    "alias": "robotic systems",
+    "normalizedAlias": "robotic systems",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT425",
+    "alias": "اخلاقيات المهنة",
+    "normalizedAlias": "اخلاقيات المهنة",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT425",
+    "alias": "ethics",
+    "normalizedAlias": "ethics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT425",
+    "alias": "professional ethics",
+    "normalizedAlias": "professional ethics",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT426",
+    "alias": "رؤية حاسوبية",
+    "normalizedAlias": "رؤية حاسوبية",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT426",
+    "alias": "معالجة صور",
+    "normalizedAlias": "معالجة صور",
+    "locale": "ar",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT426",
+    "alias": "computer vision",
+    "normalizedAlias": "computer vision",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT426",
+    "alias": "image processing",
+    "normalizedAlias": "image processing",
+    "locale": "en",
+    "status": "CURATED"
+  },
+  {
+    "courseCode": "MCT426",
+    "alias": "image processing and computer vision",
+    "normalizedAlias": "image processing and computer vision",
+    "locale": "en",
+    "status": "CURATED"
+  }
+]

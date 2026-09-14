@@ -1,0 +1,114 @@
+[
+  {
+    "topicKey": "mct121-w5-methods-of-integration-integration-",
+    "prerequisiteTopicKey": "mct111-w10-integrals-part-1",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "Integration methods in Math 2 require basic integration from Math 1"
+  },
+  {
+    "topicKey": "mct121-w6-methods-of-integration-trigonometri",
+    "prerequisiteTopicKey": "mct121-w5-methods-of-integration-integration-",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "Trigonometric integrals require integration by parts fundamentals"
+  },
+  {
+    "topicKey": "mct121-w14-complex-numbers-de-moivre-s-theorem",
+    "prerequisiteTopicKey": "mct111-w2-functions-and-their-types",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "Transcendental functions require general functions foundation"
+  },
+  {
+    "topicKey": "mct122-w13-three-phase-systems-balanced-star-w",
+    "prerequisiteTopicKey": "mct112-w14-first-order-rl-and-rc-transients",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "RC transient response builds on DC transient fundamentals"
+  },
+  {
+    "topicKey": "mct122-w7-sinusoidal-steady-state-analysis-us",
+    "prerequisiteTopicKey": "mct112-w5-nodal-analysis",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "AC steady-state analysis builds on DC nodal analysis"
+  },
+  {
+    "topicKey": "mct122-w7-sinusoidal-steady-state-analysis-us",
+    "prerequisiteTopicKey": "mct112-w6-mesh-analysis",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "AC steady-state analysis builds on DC mesh analysis"
+  },
+  {
+    "topicKey": "mct122-w9-ac-power-instantaneous-real-reactiv",
+    "prerequisiteTopicKey": "mct122-w6-phasors-and-complex-impedance-repre",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "AC power calculations build on phasor representations"
+  },
+  {
+    "topicKey": "mct123-w8-the-karnaugh-map-k-map-method-for-2",
+    "prerequisiteTopicKey": "mct123-w5-basic-definitions-and-rules-of-bool",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "K-map minimization requires Boolean algebra axioms"
+  },
+  {
+    "topicKey": "mct123-w8-the-karnaugh-map-k-map-method-for-2",
+    "prerequisiteTopicKey": "mct123-w6-canonical-and-standard-forms-sum-of",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "Karnaugh mapping requires canonical SOP/POS forms"
+  },
+  {
+    "topicKey": "mct123-w11-combinational-logic-design-procedur",
+    "prerequisiteTopicKey": "mct123-w4-binary-logic-gates-and-or-not-xor-x",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "Combinational logic design requires logic gate primitives"
+  },
+  {
+    "topicKey": "mct123-w12-design-of-adders-half-adder-and-ful",
+    "prerequisiteTopicKey": "mct123-w11-combinational-logic-design-procedur",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "Adder circuit design requires combinational design procedures"
+  },
+  {
+    "topicKey": "mct125-w1-kinematics-of-particles-rectilinear",
+    "prerequisiteTopicKey": "mct115-w2-force-vectors-scalars-and-vectors-v",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "Particle kinematics requires vector operations"
+  },
+  {
+    "topicKey": "mct125-w8-kinetics-of-particles-newton-s-seco",
+    "prerequisiteTopicKey": "mct115-w4-equilibrium-of-a-particle-condition",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "Particle kinetics extends equilibrium force concepts"
+  },
+  {
+    "topicKey": "mct125-w14-principle-of-work-and-energy-for-a-",
+    "prerequisiteTopicKey": "mct125-w12-energy-and-momentum-methods-work-of",
+    "status": "CONFIRMED",
+    "evidenceScope": "EXACT_COURSE",
+    "notes": "Work-energy principle builds directly on work of a force"
+  },
+  {
+    "topicKey": "mct324-state-space-representation",
+    "prerequisiteTopicKey": "mct314-transfer-function-modeling",
+    "status": "CANDIDATE",
+    "evidenceScope": "SAME_UNIVERSITY_RELATED_COURSE",
+    "notes": "State-space control formulation extends transfer function models"
+  },
+  {
+    "topicKey": "mct324-state-feedback-pole-placement",
+    "prerequisiteTopicKey": "mct324-controllability-and-observability",
+    "status": "CANDIDATE",
+    "evidenceScope": "SAME_UNIVERSITY_RELATED_COURSE",
+    "notes": "Pole placement via state feedback mathematically requires controllability"
+  }
+]

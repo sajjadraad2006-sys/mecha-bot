@@ -1,0 +1,439 @@
+[
+  {
+    "topicKey": "mct312-single-dof-free-vibration",
+    "courseCode": "MCT312",
+    "titleEn": "Single Degree of Freedom Free Undamped and Damped Vibration",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Advanced Vibration Archive (Dr. Jaafar Khalaf)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical engineering vibration archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct312-harmonically-excited-vibration",
+    "courseCode": "MCT312",
+    "titleEn": "Harmonically Excited Vibration and Resonance",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Advanced Vibration Archive (Dr. Jaafar Khalaf)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical engineering vibration archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct312-two-dof-systems",
+    "courseCode": "MCT312",
+    "titleEn": "Two Degrees of Freedom Systems and Vibration Absorbers",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Advanced Vibration Archive (Dr. Jaafar Khalaf)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical engineering vibration archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct313-fluid-properties-statics",
+    "courseCode": "MCT313",
+    "titleEn": "Fluid Properties and Hydrostatic Pressure Distribution",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Fluid Mechanics I Archive (Dr. Khalid B. Saleem)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Fluid mechanics course notes 2017-2018"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct313-bernoulli-energy-equation",
+    "courseCode": "MCT313",
+    "titleEn": "Bernoulli Equation and Control Volume Energy Conservation",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Fluid Mechanics I Archive (Dr. Khalid B. Saleem)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Fluid mechanics course notes 2017-2018"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct313-pipe-flow-losses",
+    "courseCode": "MCT313",
+    "titleEn": "Viscous Flow in Pipes and Friction Losses",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Fluid Mechanics I Archive (Dr. Khalid B. Saleem)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Fluid mechanics course notes 2017-2018"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct314-transfer-function-modeling",
+    "courseCode": "MCT314",
+    "titleEn": "Mathematical Modeling and Transfer Functions of Physical Systems",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Control Systems Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Control engineering archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct314-time-domain-transient-response",
+    "courseCode": "MCT314",
+    "titleEn": "Time-Domain Transient Response of First and Second Order Systems",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Control Systems Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Control engineering archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct314-stability-and-routh-hurwitz",
+    "courseCode": "MCT314",
+    "titleEn": "System Stability and Routh-Hurwitz Criterion",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Control Systems Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Control engineering archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct314-root-locus-analysis",
+    "courseCode": "MCT314",
+    "titleEn": "Root Locus Method for Control Design",
+    "orderIndex": 4,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Control Systems Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Control engineering archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct316-power-switching-devices",
+    "courseCode": "MCT316",
+    "titleEn": "Power Semiconductor Switches: MOSFET, IGBT, and Thyristors",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Electrical Engineering Power Electronics Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Electrical power electronics material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct316-uncontrolled-and-controlled-rectifiers",
+    "courseCode": "MCT316",
+    "titleEn": "Phase-Controlled Rectifiers and Converter Circuits",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Electrical Engineering Power Electronics Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Electrical power electronics material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct316-dc-dc-converters",
+    "courseCode": "MCT316",
+    "titleEn": "DC-DC Switch-Mode Converters (Buck, Boost, Buck-Boost)",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Electrical Engineering Power Electronics Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Electrical power electronics material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct317-conduction-heat-transfer",
+    "courseCode": "MCT317",
+    "titleEn": "Steady One-Dimensional Heat Conduction and Thermal Resistance",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Heat Transfer Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical heat transfer lecture material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct317-convection-heat-transfer",
+    "courseCode": "MCT317",
+    "titleEn": "Forced and Natural Convection Heat Transfer Principles",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Mechanical Engineering Heat Transfer Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Mechanical heat transfer lecture material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct324-state-space-representation",
+    "courseCode": "MCT324",
+    "titleEn": "State-Space Representation and Canonical Forms",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Advanced Control Systems Candidate Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Candidate advanced control material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct324-controllability-and-observability",
+    "courseCode": "MCT324",
+    "titleEn": "Controllability and Observability Criteria",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Advanced Control Systems Candidate Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Candidate advanced control material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct324-state-feedback-pole-placement",
+    "courseCode": "MCT324",
+    "titleEn": "State Feedback Controller Design and Pole Placement",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Advanced Control Systems Candidate Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Candidate advanced control material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct325-plc-hardware-and-architecture",
+    "courseCode": "MCT325",
+    "titleEn": "Programmable Logic Controllers (PLC) Architecture and Hardware",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Industrial Automation Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "PLC and automation course candidate"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct325-ladder-logic-programming",
+    "courseCode": "MCT325",
+    "titleEn": "Ladder Logic Programming and Timers/Counters",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Industrial Automation Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "PLC and automation course candidate"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct326-discrete-time-signals",
+    "courseCode": "MCT326",
+    "titleEn": "Discrete-Time Signals and LTI Systems",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Computer/Electrical Engineering DSP Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Introductory DSP course material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct326-z-transform-and-dtft",
+    "courseCode": "MCT326",
+    "titleEn": "Z-Transform and Discrete-Time Fourier Transform (DTFT)",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Computer/Electrical Engineering DSP Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Introductory DSP course material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct326-fft-algorithms",
+    "courseCode": "MCT326",
+    "titleEn": "Discrete Fourier Transform (DFT) and Fast Fourier Transform (FFT)",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Computer/Electrical Engineering DSP Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Introductory DSP course material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  }
+]
