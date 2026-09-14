@@ -7,7 +7,9 @@ import {
   SqliteDatabaseConnection,
   MigrationRunner,
   IdempotencyRepository,
+  AcademicRepository,
 } from '@mecha-bot/database';
+import { AcademicCalendarService } from '@mecha-bot/academic';
 import { createMechaBot } from '@mecha-bot/telegram';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -55,6 +57,10 @@ async function main() {
   }
 
   const idempotencyStore = new IdempotencyRepository(db);
+  const academicRepo = new AcademicRepository(db);
+  const currentYear = academicRepo.getCurrentAcademicYear();
+  const periods = currentYear ? academicRepo.getCalendarPeriods(currentYear.id) : [];
+  const calendarService = new AcademicCalendarService(periods);
 
   // Initialize grammY bot
   const bot = createMechaBot(config.TELEGRAM_BOT_TOKEN, {
@@ -64,6 +70,7 @@ async function main() {
     idempotencyStore,
     env: config.NODE_ENV,
     uptimeStartMs,
+    calendarService,
   });
 
   // Handle graceful shutdown

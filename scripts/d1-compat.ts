@@ -19,19 +19,23 @@ if (fs.existsSync(wranglerDir)) {
 }
 
 try {
-  const migrationPath = path.join(rootDir, 'migrations', '0001_initial_schema.sql');
-  console.log(`[d1-compat] Executing schema migration on local D1: ${migrationPath}`);
+  const migrationsDir = path.join(rootDir, 'migrations');
+  const migrationFiles = fs
+    .readdirSync(migrationsDir)
+    .filter((f) => f.endsWith('.sql'))
+    .sort();
 
-  // 1. Execute initial migration against local D1
-  const migrateCmd = `npx wrangler d1 execute DB --local --file="${migrationPath}" --yes`;
-  console.log(`[d1-compat] Running: ${migrateCmd}`);
-  const migrateOutput = execSync(migrateCmd, {
-    cwd: rootDir,
-    stdio: 'pipe',
-    encoding: 'utf8',
-  });
-  console.log('[d1-compat] Migration applied cleanly.');
-  console.log(migrateOutput);
+  for (const file of migrationFiles) {
+    const migrationPath = path.join(migrationsDir, file);
+    console.log(`[d1-compat] Executing schema migration on local D1: ${file}`);
+    const migrateCmd = `npx wrangler d1 execute DB --local --file="${migrationPath}" --yes`;
+    execSync(migrateCmd, {
+      cwd: rootDir,
+      stdio: 'pipe',
+      encoding: 'utf8',
+    });
+    console.log(`[d1-compat] Migration ${file} applied cleanly.`);
+  }
 
   // 2. Perform minimal schema smoke query via file to avoid shell quotation issues
   fs.writeFileSync(
