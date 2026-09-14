@@ -1,0 +1,325 @@
+[
+  {
+    "topicKey": "mct411-microcontroller-architecture",
+    "courseCode": "MCT411",
+    "titleEn": "ARM Cortex-M Architecture and Register Organization",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "Current MCT Faculty Embedded Systems Archive",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Department faculty embedded systems archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct411-gpio-and-interrupts",
+    "courseCode": "MCT411",
+    "titleEn": "General Purpose I/O and Hardware Interrupt Handling",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "Current MCT Faculty Embedded Systems Archive",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Department faculty embedded systems archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct411-timers-pwm-and-adc",
+    "courseCode": "MCT411",
+    "titleEn": "Hardware Timers, PWM Generation, and ADC Sampling",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "Current MCT Faculty Embedded Systems Archive",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Department faculty embedded systems archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct412-shigley-failure-theories",
+    "courseCode": "MCT412",
+    "titleEn": "Static Failure Theories and Safety Factors (Von Mises, Tresca)",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Machine Design Archive (Shigley-based)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "UoB Mechanical machine design material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct412-fatigue-failure-analysis",
+    "courseCode": "MCT412",
+    "titleEn": "Fatigue Failure and S-N Diagram Analysis",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Machine Design Archive (Shigley-based)",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "UoB Mechanical machine design material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct413-heuristic-search",
+    "courseCode": "MCT413",
+    "titleEn": "Uninformed and Heuristic Search Strategies (A*, Minimax)",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "Current MCT Faculty AI Teaching Archive",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Current department faculty teaching material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct413-machine-learning-basics",
+    "courseCode": "MCT413",
+    "titleEn": "Supervised Learning Fundamentals (Linear Regression, Classification)",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "Current MCT Faculty AI Teaching Archive",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Current department faculty teaching material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct415-quadrotor-flight-dynamics",
+    "courseCode": "MCT415",
+    "titleEn": "Quadrotor Kinematics, Dynamics, and Attitude Representation",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "MCT Faculty Quadrotor Research and Teaching Material",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Department quadrotor expertise archive; syllabus unconfirmed"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct415-flight-controller-pid",
+    "courseCode": "MCT415",
+    "titleEn": "Flight Controller Architecture and PID Attitude Stabilization",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "MCT Faculty Quadrotor Research and Teaching Material",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Department quadrotor expertise archive; syllabus unconfirmed"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct416-fieldbus-and-modbus",
+    "courseCode": "MCT416",
+    "titleEn": "Industrial Fieldbus Protocols and Modbus RTU/TCP",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Industrial Communications Candidate Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Candidate material; exact MCT syllabus unverified"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct416-industrial-ethernet",
+    "courseCode": "MCT416",
+    "titleEn": "Industrial Ethernet and Profinet Fundamentals",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Industrial Communications Candidate Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "Candidate material; exact MCT syllabus unverified"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct421-biomechanical-principles",
+    "courseCode": "MCT421",
+    "titleEn": "Biomechanical Modeling of Human Movement and Musculoskeletal Systems",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "MCT Department Workshop and Seminar Material",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Workshop activity evidence; full course syllabus unconfirmed"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct424-dh-parameters-kinematics",
+    "courseCode": "MCT424",
+    "titleEn": "Forward Kinematics and Denavit-Hartenberg (DH) Convention",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Robotics Systems Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "UoB Robotics lecture material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct424-inverse-kinematics-and-jacobian",
+    "courseCode": "MCT424",
+    "titleEn": "Inverse Kinematics and Manipulator Jacobian",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Robotics Systems Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "UoB Robotics lecture material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct424-trajectory-planning",
+    "courseCode": "MCT424",
+    "titleEn": "Joint Space and Cartesian Space Trajectory Planning",
+    "orderIndex": 3,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "UoB Robotics Systems Archive",
+        "authorityClass": "OFFICIAL_UOB",
+        "isVerified": false,
+        "notes": "UoB Robotics lecture material"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct426-spatial-filtering-edges",
+    "courseCode": "MCT426",
+    "titleEn": "Spatial Filtering, Convolution, and Edge Detection (Sobel, Canny)",
+    "orderIndex": 1,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "Current MCT Faculty Computer Vision Archive",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Faculty CV teaching archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  },
+  {
+    "topicKey": "mct426-image-morphology-features",
+    "courseCode": "MCT426",
+    "titleEn": "Morphological Operations and Feature Extraction (Hough Transform)",
+    "orderIndex": 2,
+    "status": "CANDIDATE",
+    "evidenceRefs": [
+      {
+        "scope": "SAME_DEPARTMENT_ARCHIVE",
+        "sourceTitle": "Current MCT Faculty Computer Vision Archive",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "isVerified": false,
+        "notes": "Faculty CV teaching archive"
+      }
+    ],
+    "notes": [
+      "Candidate topic derived from related University of Basrah archive; not yet verified as exact Mechatronics syllabus."
+    ]
+  }
+]

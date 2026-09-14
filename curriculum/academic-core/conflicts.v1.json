@@ -1,0 +1,24 @@
+[
+  {
+    "id": "conf-mct124-content",
+    "courseCode": "MCT124",
+    "fact": "course_content_description",
+    "status": "CONFLICTING",
+    "resolutionStatus": "UNRESOLVED",
+    "sideA": {
+      "claim": "General Physics Course",
+      "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+      "sourceAuthority": "OFFICIAL_DEPARTMENT",
+      "evidenceScope": "EXACT_COURSE",
+      "provenance": "Official Curriculum Table (Page 15) lists MCT124 as 'physics / فيزياء' (75 hrs / 3 ECTS) in Stage 1, Semester 2."
+    },
+    "sideB": {
+      "claim": "Semiconductor Physics and Electronic Devices Course",
+      "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+      "sourceAuthority": "OFFICIAL_DEPARTMENT",
+      "evidenceScope": "EXACT_COURSE",
+      "provenance": "Official Detailed Course Description Form (Pages 42-44) for MCT124 describes syllabus on semiconductor physics, charge carriers, diodes, and BJT, citing D.A. Neamen (Semiconductor Physics and Devices, Microelectronics)."
+    },
+    "notes": "Both sides originate from the same official 2025 departmental program document. Do not silently resolve this contradiction; preserve both evidence sides."
+  }
+]

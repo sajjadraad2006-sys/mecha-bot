@@ -1,0 +1,1378 @@
+[
+  {
+    "courseCode": "MCT111",
+    "stage": 1,
+    "programSemester": 1,
+    "displayNames": {
+      "en": "Mathematics I",
+      "ar": "الرياضيات I"
+    },
+    "aliases": ["ماث 1", "math 1", "رياضيات 1", "mathematics 1"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT112",
+    "stage": 1,
+    "programSemester": 1,
+    "displayNames": {
+      "en": "Electrical Circuits 1",
+      "ar": "الدوائر الكهربائية 1"
+    },
+    "aliases": ["دوائر 1", "دوائر كهربائية 1", "circuits 1", "electrical circuits 1"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT113",
+    "stage": 1,
+    "programSemester": 1,
+    "displayNames": {
+      "en": "Computer Principles",
+      "ar": "مبادئ الحاسوب"
+    },
+    "aliases": ["مبادئ حاسوب", "computer principles"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT114",
+    "stage": 1,
+    "programSemester": 1,
+    "displayNames": {
+      "en": "Chemistry",
+      "ar": "الكيمياء"
+    },
+    "aliases": ["كيمياء", "chemistry"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT115",
+    "stage": 1,
+    "programSemester": 1,
+    "displayNames": {
+      "en": "Engineering Mechanics (Statics)",
+      "ar": "ميكانيك هندسي (ستاتيك)"
+    },
+    "aliases": ["ستاتك", "ستاتيك", "statics", "ميكانيك سكوني"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT116",
+    "stage": 1,
+    "programSemester": 1,
+    "displayNames": {
+      "en": "Arabic Language 1",
+      "ar": "اللغة العربية 1"
+    },
+    "aliases": ["عربي 1", "arabic 1"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT117",
+    "stage": 1,
+    "programSemester": 1,
+    "displayNames": {
+      "en": "Engineering Drawing by Computer",
+      "ar": "الرسم الهندسي بالحاسوب"
+    },
+    "aliases": ["رسم هندسي بالحاسوب", "engineering drawing", "كاد", "cad"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT121",
+    "stage": 1,
+    "programSemester": 2,
+    "displayNames": {
+      "en": "Mathematics II",
+      "ar": "الرياضيات II"
+    },
+    "aliases": ["ماث 2", "math 2", "رياضيات 2", "mathematics 2"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT122",
+    "stage": 1,
+    "programSemester": 2,
+    "displayNames": {
+      "en": "Electrical Circuits 2",
+      "ar": "الدوائر الكهربائية 2"
+    },
+    "aliases": ["دوائر 2", "circuits 2", "دوائر كهربائية 2"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT123",
+    "stage": 1,
+    "programSemester": 2,
+    "displayNames": {
+      "en": "Digital Systems Design",
+      "ar": "تصميم النظم الرقمية"
+    },
+    "aliases": ["لوجك", "تصميم رقمي", "نظم رقمية", "digital", "digital systems"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT124",
+    "stage": 1,
+    "programSemester": 2,
+    "displayNames": {
+      "en": "Physics",
+      "ar": "الفيزياء"
+    },
+    "aliases": ["فيزياء", "physics"],
+    "topicMapStatus": "CONFLICTING",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": [
+      "Explicit contradiction: listed as Physics in curriculum schedule, but syllabus details Semiconductor Physics & Electronic Devices."
+    ]
+  },
+  {
+    "courseCode": "MCT125",
+    "stage": 1,
+    "programSemester": 2,
+    "displayNames": {
+      "en": "Engineering Mechanics (Dynamics)",
+      "ar": "ميكانيك هندسي (داينمك)"
+    },
+    "aliases": ["داينمك", "داينمكس", "dynamics", "ميكانيك حركي"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT126",
+    "stage": 1,
+    "programSemester": 2,
+    "displayNames": {
+      "en": "English Language 1",
+      "ar": "اللغة الإنكليزية 1"
+    },
+    "aliases": ["انكليزي 1", "english 1"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT127",
+    "stage": 1,
+    "programSemester": 2,
+    "displayNames": {
+      "en": "Human Rights, Democracy and Freedom",
+      "ar": "حقوق الإنسان والديمقراطية والحرية"
+    },
+    "aliases": ["حقوق الانسان", "ديمقراطية", "human rights"],
+    "topicMapStatus": "COMPLETE",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "EXACT_COURSE",
+        "sourceTitle": "University of Basrah Mechatronics Engineering Academic Program (2025)",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2025-2026",
+        "isVerified": true,
+        "notes": "Official Mechatronics Department course specification PDF (Pages 19-52)"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT211",
+    "stage": 2,
+    "programSemester": 3,
+    "displayNames": {
+      "en": "Mathematics III",
+      "ar": "الرياضيات III"
+    },
+    "aliases": ["ماث 3", "math 3", "رياضيات 3"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT212",
+    "stage": 2,
+    "programSemester": 3,
+    "displayNames": {
+      "en": "Strength of Materials",
+      "ar": "مقاومة المواد"
+    },
+    "aliases": ["مقاومة", "مقاومة مواد", "strength of materials"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT212)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT213",
+    "stage": 2,
+    "programSemester": 3,
+    "displayNames": {
+      "en": "Metals Engineering",
+      "ar": "هندسة المعادن"
+    },
+    "aliases": ["معادن", "هندسة معادن", "metallurgy", "metals engineering"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT213)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT214",
+    "stage": 2,
+    "programSemester": 3,
+    "displayNames": {
+      "en": "Computing and Artificial Intelligence",
+      "ar": "الحوسبة والذكاء الاصطناعي"
+    },
+    "aliases": ["حوسبة وذكاء اصطناعي", "computing and ai"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT215",
+    "stage": 2,
+    "programSemester": 3,
+    "displayNames": {
+      "en": "Electrical Machines (DC)",
+      "ar": "مكائن كهربائية (تيار مستمر)"
+    },
+    "aliases": ["مكائن دي سي", "مكائن تيار مستمر", "dc machines", "electrical machines dc"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT215)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT216",
+    "stage": 2,
+    "programSemester": 3,
+    "displayNames": {
+      "en": "English Language 2",
+      "ar": "اللغة الإنكليزية 2"
+    },
+    "aliases": ["انكليزي 2", "english 2"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT217",
+    "stage": 2,
+    "programSemester": 3,
+    "displayNames": {
+      "en": "Thermodynamics",
+      "ar": "ديناميك الحرارة"
+    },
+    "aliases": [
+      "ثرمو",
+      "ترمو",
+      "ثرموداينمك",
+      "ترموداينمك",
+      "ديناميك حرارة",
+      "thermo",
+      "thermodynamics"
+    ],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT217)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT221",
+    "stage": 2,
+    "programSemester": 4,
+    "displayNames": {
+      "en": "Differential Equations",
+      "ar": "المعادلات التفاضلية"
+    },
+    "aliases": ["معادلات تفاضلية", "تفاضلية", "differential equations", "de"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT222",
+    "stage": 2,
+    "programSemester": 4,
+    "displayNames": {
+      "en": "Electrical Machines (AC)",
+      "ar": "مكائن كهربائية (تيار متناوب)"
+    },
+    "aliases": ["مكائن اي سي", "مكائن تيار متناوب", "ac machines", "electrical machines ac"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT222)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT223",
+    "stage": 2,
+    "programSemester": 4,
+    "displayNames": {
+      "en": "Object-Oriented Programming",
+      "ar": "البرمجة الكيانية"
+    },
+    "aliases": ["اوب", "برمجة كيانية", "oop", "object oriented programming"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT224",
+    "stage": 2,
+    "programSemester": 4,
+    "displayNames": {
+      "en": "Theory of Machines",
+      "ar": "نظرية الآلات"
+    },
+    "aliases": ["مكائن", "نظرية الات", "نظرية المكائن", "theory of machines"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT224)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT225",
+    "stage": 2,
+    "programSemester": 4,
+    "displayNames": {
+      "en": "Electronics",
+      "ar": "الإلكترونيات"
+    },
+    "aliases": ["الكترونيك", "الكترونيات", "electronics"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT225)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT226",
+    "stage": 2,
+    "programSemester": 4,
+    "displayNames": {
+      "en": "Ba'ath Party Crimes",
+      "ar": "جرائم حزب البعث"
+    },
+    "aliases": ["جرائم حزب البعث", "جرائم البعث"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT227",
+    "stage": 2,
+    "programSemester": 4,
+    "displayNames": {
+      "en": "Arabic Language 2",
+      "ar": "اللغة العربية 2"
+    },
+    "aliases": ["عربي 2", "arabic 2"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT311",
+    "stage": 3,
+    "programSemester": 5,
+    "displayNames": {
+      "en": "Linear Algebra",
+      "ar": "الجبر الخطي"
+    },
+    "aliases": ["جبر خطي", "linear algebra"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT312",
+    "stage": 3,
+    "programSemester": 5,
+    "displayNames": {
+      "en": "Mechanical Vibrations",
+      "ar": "الاهتزازات الميكانيكية"
+    },
+    "aliases": [
+      "اهتزازات",
+      "اهتزازات ميكانيكية",
+      "vibration",
+      "vibrations",
+      "mechanical vibrations"
+    ],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT312)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT313",
+    "stage": 3,
+    "programSemester": 5,
+    "displayNames": {
+      "en": "Fluid Mechanics and Systems",
+      "ar": "ميكانيك ومنظومات الموائع"
+    },
+    "aliases": ["موائع", "فلويد", "ميكانيك موائع", "fluid", "fluids", "fluid mechanics"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT313)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT314",
+    "stage": 3,
+    "programSemester": 5,
+    "displayNames": {
+      "en": "Control Systems 1",
+      "ar": "أنظمة السيطرة 1"
+    },
+    "aliases": [
+      "سيطرة",
+      "سيطرة 1",
+      "كنترول",
+      "كنترول 1",
+      "control",
+      "control 1",
+      "control systems 1"
+    ],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT314)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT315",
+    "stage": 3,
+    "programSemester": 5,
+    "displayNames": {
+      "en": "Computer Organization",
+      "ar": "تنظيم الحاسبة"
+    },
+    "aliases": [
+      "معمارية الحاسوب",
+      "تنظيم الحاسبة",
+      "computer organization",
+      "computer architecture"
+    ],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT316",
+    "stage": 3,
+    "programSemester": 5,
+    "displayNames": {
+      "en": "Power Electronics",
+      "ar": "إلكترونيات القدرة"
+    },
+    "aliases": ["باور", "الكترونيات قدرة", "إلكترونيات قدرة", "power electronics"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT316)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT317",
+    "stage": 3,
+    "programSemester": 5,
+    "displayNames": {
+      "en": "Heat Transfer",
+      "ar": "انتقال الحرارة"
+    },
+    "aliases": ["انتقال حرارة", "هيت", "heat transfer"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT317)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT321",
+    "stage": 3,
+    "programSemester": 6,
+    "displayNames": {
+      "en": "Numerical Analysis and Statistics",
+      "ar": "التحليلات العددية والإحصاء"
+    },
+    "aliases": [
+      "تحليلات عددية",
+      "احصاء",
+      "numerical analysis",
+      "numerical analysis and statistics"
+    ],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT322",
+    "stage": 3,
+    "programSemester": 6,
+    "displayNames": {
+      "en": "Engineering Economy",
+      "ar": "الاقتصاد الهندسي"
+    },
+    "aliases": ["اقتصاد هندسي", "engineering economy"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT323",
+    "stage": 3,
+    "programSemester": 6,
+    "displayNames": {
+      "en": "Sensors and Instrumentation",
+      "ar": "المتحسسات والآلات الدقيقة"
+    },
+    "aliases": [
+      "سنسورات",
+      "حساسات",
+      "متحسسات",
+      "sensors",
+      "instrumentation",
+      "sensors and instrumentation"
+    ],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT324",
+    "stage": 3,
+    "programSemester": 6,
+    "displayNames": {
+      "en": "Control Systems 2",
+      "ar": "أنظمة السيطرة 2"
+    },
+    "aliases": [
+      "سيطرة",
+      "سيطرة 2",
+      "كنترول",
+      "كنترول 2",
+      "control",
+      "control 2",
+      "control systems 2"
+    ],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT324)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT325",
+    "stage": 3,
+    "programSemester": 6,
+    "displayNames": {
+      "en": "Automation Systems",
+      "ar": "منظومات الأتمتة"
+    },
+    "aliases": ["اتمتة", "منظومات الاتمتة", "automation", "automation systems", "plc"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT325)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT326",
+    "stage": 3,
+    "programSemester": 6,
+    "displayNames": {
+      "en": "Digital Signal Processing",
+      "ar": "معالجة الإشارة الرقمية"
+    },
+    "aliases": [
+      "DSP",
+      "dsp",
+      "معالجة اشارة",
+      "معالجة الإشارة",
+      "معالجة الاشارة الرقمية",
+      "digital signal processing"
+    ],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT326)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT327",
+    "stage": 3,
+    "programSemester": 6,
+    "displayNames": {
+      "en": "Renewable Energy",
+      "ar": "الطاقة المتجددة"
+    },
+    "aliases": ["طاقة متجددة", "renewable energy"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT411",
+    "stage": 4,
+    "programSemester": 7,
+    "displayNames": {
+      "en": "Embedded Systems",
+      "ar": "الأنظمة المضمنة"
+    },
+    "aliases": ["امبدد", "انظمة مضمنة", "embedded", "embedded systems"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT411)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT412",
+    "stage": 4,
+    "programSemester": 7,
+    "displayNames": {
+      "en": "Mechanical Design 1",
+      "ar": "التصميم الميكانيكي 1"
+    },
+    "aliases": ["تصميم 1", "تصميم ميكانيكي 1", "machine design 1", "mechanical design 1"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT412)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT413",
+    "stage": 4,
+    "programSemester": 7,
+    "displayNames": {
+      "en": "Artificial Intelligence",
+      "ar": "الذكاء الاصطناعي"
+    },
+    "aliases": ["ذكاء اصطناعي", "artificial intelligence", "ai"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT413)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "P4MCT",
+    "stage": 4,
+    "programSemester": 7,
+    "displayNames": {
+      "en": "Engineering Project",
+      "ar": "المشروع الهندسي"
+    },
+    "aliases": [
+      "مشروع",
+      "مشروع التخرج",
+      "المشروع الهندسي",
+      "project",
+      "graduation project",
+      "engineering project"
+    ],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "Engineering Project spans two semesters (Semester 7 & Semester 8). Modeled as single canonical profile."
+    ],
+    "programSemesters": [7, 8]
+  },
+  {
+    "courseCode": "MCT414",
+    "stage": 4,
+    "programSemester": 7,
+    "displayNames": {
+      "en": "Project Management",
+      "ar": "إدارة المشاريع"
+    },
+    "aliases": ["ادارة مشاريع", "project management"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT415",
+    "stage": 4,
+    "programSemester": 7,
+    "displayNames": {
+      "en": "Mechatronics Systems Design – Drones",
+      "ar": "تصميم أنظمة ميكاترونكس – الطائرات بدون طيار"
+    },
+    "aliases": ["درونز", "طائرات مسيرة", "drones"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT415)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT416",
+    "stage": 4,
+    "programSemester": 7,
+    "displayNames": {
+      "en": "Industrial Communication Networks",
+      "ar": "شبكات الاتصالات الصناعية"
+    },
+    "aliases": [
+      "شبكات صناعية",
+      "اتصالات صناعية",
+      "industrial communication networks",
+      "industrial networks"
+    ],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT416)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT421",
+    "stage": 4,
+    "programSemester": 8,
+    "displayNames": {
+      "en": "Biomechatronics",
+      "ar": "الميكاترونكس الأحيائي"
+    },
+    "aliases": ["بايو", "ميكاترونكس احيائي", "biomechatronics"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT421)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT422",
+    "stage": 4,
+    "programSemester": 8,
+    "displayNames": {
+      "en": "Mechanical Design 2",
+      "ar": "التصميم الميكانيكي 2"
+    },
+    "aliases": ["تصميم 2", "تصميم ميكانيكي 2", "machine design 2", "mechanical design 2"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT423",
+    "stage": 4,
+    "programSemester": 8,
+    "displayNames": {
+      "en": "Industrial Engineering",
+      "ar": "الهندسة الصناعية"
+    },
+    "aliases": ["هندسة صناعية", "industrial engineering"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT424",
+    "stage": 4,
+    "programSemester": 8,
+    "displayNames": {
+      "en": "Robotic Systems",
+      "ar": "الأنظمة الروبوتية"
+    },
+    "aliases": ["روبوتات", "انظمة روبوتية", "robotics", "robotic systems"],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT424)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "courseCode": "MCT425",
+    "stage": 4,
+    "programSemester": 8,
+    "displayNames": {
+      "en": "Professional Ethics",
+      "ar": "أخلاقيات المهنة"
+    },
+    "aliases": ["اخلاقيات المهنة", "ethics", "professional ethics"],
+    "topicMapStatus": "IDENTITY_ONLY",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "BIBLIOGRAPHIC_ONLY",
+        "sourceTitle": "Official University of Basrah Mechatronics Curriculum Baseline 2025",
+        "authorityClass": "OFFICIAL_DEPARTMENT",
+        "academicYear": "2026-2027",
+        "isVerified": true,
+        "notes": "Identity confirmed via official program table; detailed topic map not yet available"
+      }
+    ],
+    "notes": [
+      "No trustworthy syllabus evidence currently available. Kept as IDENTITY_ONLY rather than fabricating content."
+    ]
+  },
+  {
+    "courseCode": "MCT426",
+    "stage": 4,
+    "programSemester": 8,
+    "displayNames": {
+      "en": "Image Processing and Computer Vision",
+      "ar": "معالجة الصور والرؤية الحاسوبية"
+    },
+    "aliases": [
+      "رؤية حاسوبية",
+      "معالجة صور",
+      "computer vision",
+      "image processing",
+      "image processing and computer vision"
+    ],
+    "topicMapStatus": "PARTIAL",
+    "topics": [],
+    "evidenceRefs": [
+      {
+        "scope": "SAME_UNIVERSITY_RELATED_COURSE",
+        "sourceTitle": "University of Basrah Related Academic Archives (MCT426)",
+        "authorityClass": "OFFICIAL_UOB",
+        "academicYear": "2024-2025",
+        "isVerified": false,
+        "notes": "Candidate topics from related department curriculum/archives; exact MCT syllabus pending"
+      }
+    ],
+    "notes": []
+  }
+]
