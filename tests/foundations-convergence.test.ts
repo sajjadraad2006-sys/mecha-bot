@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { SystemClock } from '@mecha-bot/shared';
 
 // 1. Cross-package imports using monorepo path aliases
 import { loadAcademicCoreDataset } from '@mecha-bot/academic';
@@ -42,37 +43,39 @@ describe('Foundations Convergence - Cross-Package Integration Contracts', () => 
 
     const existing: TimetableSlot = {
       id: 'slot-1',
-      academicYear: '2026-2027',
+      stage: 1,
       programSemester: 1,
       courseCode: 'MCT111',
-      dayOfWeek: 1,
+      weekday: 'MONDAY',
       startTime: '08:30',
       endTime: '10:30',
       section: 'A',
-      location: 'Hall 1',
-      slotType: 'LECTURE',
+      room: 'Hall 1',
+      type: 'LECTURE',
+      sourceStatus: 'VERIFIED',
     };
 
     const conflicting: TimetableSlot = {
       id: 'slot-2',
-      academicYear: '2026-2027',
+      stage: 1,
       programSemester: 1,
       courseCode: 'MCT112',
-      dayOfWeek: 1,
+      weekday: 'MONDAY',
       startTime: '09:30',
       endTime: '11:30',
       section: 'A',
-      location: 'Hall 2',
-      slotType: 'LECTURE',
+      room: 'Hall 2',
+      type: 'LECTURE',
+      sourceStatus: 'VERIFIED',
     };
 
     const conflicts = detectConflicts([existing, conflicting], { ignoreOutdated: false });
     expect(conflicts.length).toBeGreaterThan(0);
-    expect(conflicts[0].type).toBe('STUDENT_SCHEDULE_OVERLAP');
+    expect(conflicts[0]?.type).toBe('STUDENT_SCHEDULE_OVERLAP');
   });
 
   it('3. Scheduler service and academic offset triggers compute correctly', () => {
-    const scheduler = new ReminderSchedulerService({});
+    const scheduler = new ReminderSchedulerService({ clock: new SystemClock() });
     expect(scheduler).toBeDefined();
 
     const targetTime = '2026-10-15T09:00:00.000Z';
@@ -107,7 +110,6 @@ describe('Foundations Convergence - Cross-Package Integration Contracts', () => 
     const q = examService.createPastQuestion({
       courseCode: 'ME301',
       academicYear: '2025-2026',
-      semester: 1,
       examType: 'FINAL_EXAM',
       questionNumber: '1',
       questionText: 'Sketch the root locus of the given open-loop transfer function.',
@@ -126,8 +128,7 @@ describe('Foundations Convergence - Cross-Package Integration Contracts', () => 
           id: 'q_1',
           prompt: 'Is the root locus symmetric with respect to the real axis?',
           type: 'TRUE_FALSE',
-          options: ['True', 'False'],
-          correctAnswer: 'True',
+          correctAnswer: true,
           points: 1,
         },
       ],
@@ -166,7 +167,7 @@ describe('Foundations Convergence - Cross-Package Integration Contracts', () => 
       intent: 'CONCEPT_EXPLANATION',
     });
     expect(response.results.length).toBeGreaterThan(0);
-    expect(response.results[0].id).toBe('doc_1');
+    expect(response.results[0]?.id).toBe('doc_1');
   });
 
   it('7. Study Navigator preserves 3 truths and produces deterministic diagnosis', async () => {
@@ -182,7 +183,7 @@ describe('Foundations Convergence - Cross-Package Integration Contracts', () => 
         status: 'EXPECTED',
       },
     });
-    expect(snapshot.calendarPosition.status).toBe('EXPECTED');
+    expect(snapshot.calendarPosition?.status).toBe('EXPECTED');
     expect(snapshot.courseCode).toBe('MCT111');
   });
 
@@ -216,7 +217,7 @@ describe('Foundations Convergence - Cross-Package Integration Contracts', () => 
 
   it('9. Distribution service strictly prohibits solution manuals and validates policies', async () => {
     const repo = new InMemoryFileCatalogRepository();
-    const distribution = new FileDistributionService(repo);
+    const distribution = new FileDistributionService({ repository: repo });
 
     const record: AcademicFileRecord = {
       id: 'file-sol-1',
