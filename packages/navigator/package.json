@@ -1,0 +1,13 @@
+{
+  "name": "@mecha-bot/navigator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@mecha-bot/academic": "workspace:*",
+    "@mecha-bot/shared": "workspace:*",
+    "zod": "3.23.8"
+  }
+}

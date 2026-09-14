@@ -9,7 +9,8 @@
       "@mecha-bot/ai": ["packages/ai/src/index.ts"],
       "@mecha-bot/retrieval": ["packages/retrieval/src/index.ts"],
       "@mecha-bot/scheduler": ["packages/scheduler/src/index.ts"],
-      "@mecha-bot/telegram": ["packages/telegram/src/index.ts"]
+      "@mecha-bot/telegram": ["packages/telegram/src/index.ts"],
+      "@mecha-bot/navigator": ["packages/navigator/src/index.ts"]
     },
     "noEmit": true
   },
