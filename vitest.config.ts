@@ -22,6 +22,7 @@ export default defineConfig({
       '@mecha-bot/retrieval': path.resolve(__dirname, 'packages/retrieval/src/index.ts'),
       '@mecha-bot/scheduler': path.resolve(__dirname, 'packages/scheduler/src/index.ts'),
       '@mecha-bot/telegram': path.resolve(__dirname, 'packages/telegram/src/index.ts'),
+      '@mecha-bot/search': path.resolve(__dirname, 'packages/search/src/index.ts'),
     },
   },
 });
