@@ -1,0 +1,4 @@
+# Mecha Bot M6A Local Ingestion Dependencies
+# Lightweight, mature, pure-Python dependencies
+pypdf>=5.0.0
+pytest>=8.0.0
