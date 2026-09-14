@@ -1,0 +1,18 @@
+[project]
+name = "mecha-bot-ingestion"
+version = "0.1.0"
+description = "Local academic source ingestion tooling for Mecha Bot"
+requires-python = ">=3.10"
+dependencies = [
+    "pypdf>=5.0.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+ignore = ["BLE001"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/ingestion"]

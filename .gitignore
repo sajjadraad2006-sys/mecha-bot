@@ -28,6 +28,11 @@ data/*.sqlite-wal
 # Testing & Coverage
 coverage/
 .vitest/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+*$py.class
 
 # OS & IDE
 .DS_Store
@@ -44,6 +49,7 @@ pnpm-debug.log*
 # Academic research & raw materials (PDFs, scans, textbooks, exams, lecture notes)
 /مصادر/
 /data/raw/
+/data/processed/
 /tools/ingestion/workspace/
 /tools/ingestion/temp/
 
