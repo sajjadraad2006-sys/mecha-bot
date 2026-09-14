@@ -308,6 +308,12 @@ importers:
         specifier: workspace:*
         version: link:../shared
 
+  packages/exams:
+    dependencies:
+      '@mecha-bot/shared':
+        specifier: workspace:*
+        version: link:../shared
+
   packages/retrieval:
     dependencies:
       '@mecha-bot/academic':
