@@ -63,9 +63,21 @@ describe('Search Index, Normalization & Query Determinism', () => {
   });
 
   it('indexes multiple documents and maintains accurate counts', () => {
-    const doc1 = createSampleDoc({ id: 'd1_c1', documentId: 'd1', textOriginal: 'Root locus analysis' });
-    const doc2 = createSampleDoc({ id: 'd2_c1', documentId: 'd2', textOriginal: 'Bode plot frequency response' });
-    const doc3 = createSampleDoc({ id: 'd3_c1', documentId: 'd3', textOriginal: 'State space representation' });
+    const doc1 = createSampleDoc({
+      id: 'd1_c1',
+      documentId: 'd1',
+      textOriginal: 'Root locus analysis',
+    });
+    const doc2 = createSampleDoc({
+      id: 'd2_c1',
+      documentId: 'd2',
+      textOriginal: 'Bode plot frequency response',
+    });
+    const doc3 = createSampleDoc({
+      id: 'd3_c1',
+      documentId: 'd3',
+      textOriginal: 'State space representation',
+    });
 
     engine.indexDocuments([doc1, doc2, doc3]);
     expect(engine.getDocumentCount()).toBe(3);
@@ -76,8 +88,16 @@ describe('Search Index, Normalization & Query Determinism', () => {
   });
 
   it('guarantees deterministic repeated search results', () => {
-    const doc1 = createSampleDoc({ id: 'd1_c1', documentId: 'd1', textOriginal: 'Stability margins and Gain margin' });
-    const doc2 = createSampleDoc({ id: 'd2_c1', documentId: 'd2', textOriginal: 'Phase margin stability analysis' });
+    const doc1 = createSampleDoc({
+      id: 'd1_c1',
+      documentId: 'd1',
+      textOriginal: 'Stability margins and Gain margin',
+    });
+    const doc2 = createSampleDoc({
+      id: 'd2_c1',
+      documentId: 'd2',
+      textOriginal: 'Phase margin stability analysis',
+    });
     engine.indexDocuments([doc1, doc2]);
 
     const res1 = engine.search({ text: 'stability margin' });
@@ -120,9 +140,21 @@ describe('Search Index, Normalization & Query Determinism', () => {
   });
 
   it('removes documents by parent documentId', () => {
-    const docA1 = createSampleDoc({ id: 'docA_p1_c1', documentId: 'docA', textOriginal: 'PID Controller tuning' });
-    const docA2 = createSampleDoc({ id: 'docA_p2_c1', documentId: 'docA', textOriginal: 'Ziegler-Nichols method' });
-    const docB1 = createSampleDoc({ id: 'docB_p1_c1', documentId: 'docB', textOriginal: 'Nyquist stability criterion' });
+    const docA1 = createSampleDoc({
+      id: 'docA_p1_c1',
+      documentId: 'docA',
+      textOriginal: 'PID Controller tuning',
+    });
+    const docA2 = createSampleDoc({
+      id: 'docA_p2_c1',
+      documentId: 'docA',
+      textOriginal: 'Ziegler-Nichols method',
+    });
+    const docB1 = createSampleDoc({
+      id: 'docB_p1_c1',
+      documentId: 'docB',
+      textOriginal: 'Nyquist stability criterion',
+    });
 
     engine.indexDocuments([docA1, docA2, docB1]);
     expect(engine.getDocumentCount()).toBe(3);
@@ -136,10 +168,18 @@ describe('Search Index, Normalization & Query Determinism', () => {
   });
 
   it('replaces documents for an existing documentId', () => {
-    const docOld = createSampleDoc({ id: 'd_v1', documentId: 'd', textOriginal: 'Old outdated notes' });
+    const docOld = createSampleDoc({
+      id: 'd_v1',
+      documentId: 'd',
+      textOriginal: 'Old outdated notes',
+    });
     engine.indexDocument(docOld);
 
-    const docNew = createSampleDoc({ id: 'd_v2', documentId: 'd', textOriginal: 'New updated revised notes' });
+    const docNew = createSampleDoc({
+      id: 'd_v2',
+      documentId: 'd',
+      textOriginal: 'New updated revised notes',
+    });
     engine.replaceDocument('d', [docNew]);
 
     expect(engine.getDocumentCount()).toBe(1);
@@ -171,7 +211,9 @@ describe('Search Index, Normalization & Query Determinism', () => {
   });
 
   it('returns structured diagnostic reason when no results match', () => {
-    engine.indexDocuments([createSampleDoc({ id: '1', textOriginal: 'Modern control engineering' })]);
+    engine.indexDocuments([
+      createSampleDoc({ id: '1', textOriginal: 'Modern control engineering' }),
+    ]);
     const res = engine.search({ text: 'aerodynamics spacecraft propulsion' });
     expect(res.results.length).toBe(0);
     expect(res.diagnosticReason).toBe('NO_LEXICAL_MATCH');

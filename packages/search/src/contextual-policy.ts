@@ -19,7 +19,11 @@ export class ContextualPolicyEngine {
    * Evaluate whether a document is eligible for retrieval under the given query filters
    * and compute its contextual relevance multiplier.
    */
-  public evaluate(doc: SearchDocument, query: SearchQuery, hasLexicalMatch: boolean): PolicyEvaluation {
+  public evaluate(
+    doc: SearchDocument,
+    query: SearchQuery,
+    hasLexicalMatch: boolean,
+  ): PolicyEvaluation {
     const matchReasons: MatchReason[] = [];
 
     if (hasLexicalMatch) {
@@ -28,20 +32,35 @@ export class ContextualPolicyEngine {
 
     // 1. Permission Check
     if (!doc.canSearch) {
-      return { isEligible: false, exclusionReason: 'CANNOT_SEARCH', contextualMultiplier: 0, matchReasons };
+      return {
+        isEligible: false,
+        exclusionReason: 'CANNOT_SEARCH',
+        contextualMultiplier: 0,
+        matchReasons,
+      };
     }
 
     // 2. Verification Filtering
     // Rule: REJECTED content is NEVER returned under any circumstances
     if (doc.verificationStatus === 'REJECTED') {
-      return { isEligible: false, exclusionReason: 'VERIFICATION_REJECTED', contextualMultiplier: 0, matchReasons };
+      return {
+        isEligible: false,
+        exclusionReason: 'VERIFICATION_REJECTED',
+        contextualMultiplier: 0,
+        matchReasons,
+      };
     }
 
     // Rule: RAW content is excluded by default unless explicitly requested in verificationStatuses
     if (doc.verificationStatus === 'RAW') {
       const allowsRaw = query.verificationStatuses?.includes('RAW');
       if (!allowsRaw) {
-        return { isEligible: false, exclusionReason: 'RAW_EXCLUDED_BY_DEFAULT', contextualMultiplier: 0, matchReasons };
+        return {
+          isEligible: false,
+          exclusionReason: 'RAW_EXCLUDED_BY_DEFAULT',
+          contextualMultiplier: 0,
+          matchReasons,
+        };
       }
     }
 
@@ -50,7 +69,12 @@ export class ContextualPolicyEngine {
       if (query.allowUnverifiedCataloged === false) {
         const explicitlyAllowsCataloged = query.verificationStatuses?.includes('CATALOGED');
         if (!explicitlyAllowsCataloged) {
-          return { isEligible: false, exclusionReason: 'CATALOGED_EXCLUDED_BY_POLICY', contextualMultiplier: 0, matchReasons };
+          return {
+            isEligible: false,
+            exclusionReason: 'CATALOGED_EXCLUDED_BY_POLICY',
+            contextualMultiplier: 0,
+            matchReasons,
+          };
         }
       }
     }
@@ -58,7 +82,12 @@ export class ContextualPolicyEngine {
     // Explicit verificationStatuses whitelist check if provided
     if (query.verificationStatuses && query.verificationStatuses.length > 0) {
       if (!query.verificationStatuses.includes(doc.verificationStatus)) {
-        return { isEligible: false, exclusionReason: 'FILTERED_BY_VERIFICATION_STATUS', contextualMultiplier: 0, matchReasons };
+        return {
+          isEligible: false,
+          exclusionReason: 'FILTERED_BY_VERIFICATION_STATUS',
+          contextualMultiplier: 0,
+          matchReasons,
+        };
       }
       matchReasons.push('VERIFICATION_FILTER_MATCH');
     }
@@ -74,7 +103,12 @@ export class ContextualPolicyEngine {
         // Different or absent course code
         const allowRelated = query.allowRelatedCourses ?? false;
         if (!allowRelated) {
-          return { isEligible: false, exclusionReason: 'COURSE_MISMATCH_EXCLUDED', contextualMultiplier: 0, matchReasons };
+          return {
+            isEligible: false,
+            exclusionReason: 'COURSE_MISMATCH_EXCLUDED',
+            contextualMultiplier: 0,
+            matchReasons,
+          };
         }
       }
     }
@@ -84,7 +118,12 @@ export class ContextualPolicyEngine {
       const targetTopic = query.topicKey.trim().toLowerCase();
       const hasTopic = doc.topicKeys.some((k) => k.trim().toLowerCase() === targetTopic);
       if (!hasTopic) {
-        return { isEligible: false, exclusionReason: 'TOPIC_KEY_MISMATCH', contextualMultiplier: 0, matchReasons };
+        return {
+          isEligible: false,
+          exclusionReason: 'TOPIC_KEY_MISMATCH',
+          contextualMultiplier: 0,
+          matchReasons,
+        };
       }
       matchReasons.push('TOPIC_MATCH');
     }
@@ -93,28 +132,48 @@ export class ContextualPolicyEngine {
     if (query.documentTypes && query.documentTypes.length > 0) {
       const normalizedTypes = query.documentTypes.map((t) => t.toUpperCase());
       if (!normalizedTypes.includes(doc.documentType.toUpperCase())) {
-        return { isEligible: false, exclusionReason: 'DOCUMENT_TYPE_FILTERED', contextualMultiplier: 0, matchReasons };
+        return {
+          isEligible: false,
+          exclusionReason: 'DOCUMENT_TYPE_FILTERED',
+          contextualMultiplier: 0,
+          matchReasons,
+        };
       }
     }
 
     // 6. Academic Year Filter
     if (query.academicYear && doc.academicYear) {
       if (query.academicYear.trim() !== doc.academicYear.trim()) {
-        return { isEligible: false, exclusionReason: 'ACADEMIC_YEAR_MISMATCH', contextualMultiplier: 0, matchReasons };
+        return {
+          isEligible: false,
+          exclusionReason: 'ACADEMIC_YEAR_MISMATCH',
+          contextualMultiplier: 0,
+          matchReasons,
+        };
       }
     }
 
     // 7. Source Authority Whitelist Filter
     if (query.sourceAuthorities && query.sourceAuthorities.length > 0) {
       if (!query.sourceAuthorities.includes(doc.sourceAuthority)) {
-        return { isEligible: false, exclusionReason: 'AUTHORITY_FILTERED', contextualMultiplier: 0, matchReasons };
+        return {
+          isEligible: false,
+          exclusionReason: 'AUTHORITY_FILTERED',
+          contextualMultiplier: 0,
+          matchReasons,
+        };
       }
     }
 
     // 8. Evidence Scope Whitelist Filter
     if (query.evidenceScopes && query.evidenceScopes.length > 0) {
       if (!query.evidenceScopes.includes(doc.evidenceScope)) {
-        return { isEligible: false, exclusionReason: 'EVIDENCE_SCOPE_FILTERED', contextualMultiplier: 0, matchReasons };
+        return {
+          isEligible: false,
+          exclusionReason: 'EVIDENCE_SCOPE_FILTERED',
+          contextualMultiplier: 0,
+          matchReasons,
+        };
       }
     }
 
@@ -135,7 +194,7 @@ export class ContextualPolicyEngine {
   private computeContextualMultiplier(
     doc: SearchDocument,
     query: SearchQuery,
-    matchReasons: MatchReason[]
+    matchReasons: MatchReason[],
   ): number {
     const intent: RetrievalIntent = query.intent ?? 'GENERAL_SEARCH';
     let multiplier = 1.0;
@@ -189,10 +248,7 @@ export class ContextualPolicyEngine {
           multiplier *= 1.6;
         }
 
-        if (
-          doc.documentType === 'OFFICIAL_PROGRAM' ||
-          doc.documentType === 'OFFICIAL_SYLLABUS'
-        ) {
+        if (doc.documentType === 'OFFICIAL_PROGRAM' || doc.documentType === 'OFFICIAL_SYLLABUS') {
           multiplier *= 1.5;
         }
         break;

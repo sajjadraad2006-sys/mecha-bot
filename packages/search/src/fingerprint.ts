@@ -12,7 +12,10 @@ export function computeQueryFingerprint(query: SearchQuery, indexVersion: string
   const course = query.courseCode?.trim().toUpperCase() ?? '';
   const topic = query.topicKey?.trim().toLowerCase() ?? '';
   const intent = query.intent ?? 'GENERAL_SEARCH';
-  const docTypes = (query.documentTypes ?? []).map((t) => t.toUpperCase()).sort().join(',');
+  const docTypes = (query.documentTypes ?? [])
+    .map((t) => t.toUpperCase())
+    .sort()
+    .join(',');
   const year = query.academicYear?.trim() ?? '';
   const authorities = (query.sourceAuthorities ?? []).sort().join(',');
   const scopes = (query.evidenceScopes ?? []).sort().join(',');

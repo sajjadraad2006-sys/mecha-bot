@@ -6,8 +6,7 @@
 
 // Arabic diacritics (tashkeel): Fathatan, Dammatan, Kasratan, Fatha, Damma, Kasra, Shadda, Sukun
 // and Quranic / extended marks: Maddah, Hamza above/below, Tatweel/Kashida, Superscript Alef
-const TASHKEEL_REGEX =
-  /[\u0617-\u061A\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E8\u06EA-\u06ED]/g;
+const TASHKEEL_REGEX = /[\u0617-\u061A\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E8\u06EA-\u06ED]/g;
 const TATWEEL_REGEX = /\u0640/g;
 
 // Arabic letter normalizations

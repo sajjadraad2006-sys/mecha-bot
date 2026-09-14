@@ -35,8 +35,16 @@ describe('Search Policy Engine & Contextual Intent Ranking', () => {
   });
 
   it('enforces exact course filtering and blocks cross-course leakage by default', () => {
-    const docMCT314 = makeDoc({ id: 'doc_314', courseCode: 'MCT314', textOriginal: 'Control stability in MCT314' });
-    const docMCT217 = makeDoc({ id: 'doc_217', courseCode: 'MCT217', textOriginal: 'Thermal stability in MCT217' });
+    const docMCT314 = makeDoc({
+      id: 'doc_314',
+      courseCode: 'MCT314',
+      textOriginal: 'Control stability in MCT314',
+    });
+    const docMCT217 = makeDoc({
+      id: 'doc_217',
+      courseCode: 'MCT217',
+      textOriginal: 'Thermal stability in MCT217',
+    });
 
     engine.indexDocuments([docMCT314, docMCT217]);
 

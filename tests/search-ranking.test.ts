@@ -7,7 +7,7 @@ describe('Search Ranking & Lexical BM25 Scoring', () => {
   const makeDoc = (
     id: string,
     text: string,
-    overrides: Partial<SearchDocument> = {}
+    overrides: Partial<SearchDocument> = {},
   ): SearchDocument => ({
     id,
     documentId: `parent_${id}`,
@@ -32,15 +32,15 @@ describe('Search Ranking & Lexical BM25 Scoring', () => {
   it('ranks heavily relevant document above weakly relevant and unrelated documents', () => {
     const docRelevant = makeDoc(
       'd_rel',
-      'Root locus analysis is fundamental for understanding control system poles and stability.'
+      'Root locus analysis is fundamental for understanding control system poles and stability.',
     );
     const docWeak = makeDoc(
       'd_weak',
-      'The control system incorporates sensors, actuators, and an occasional locus plot.'
+      'The control system incorporates sensors, actuators, and an occasional locus plot.',
     );
     const docUnrelated = makeDoc(
       'd_none',
-      'Thermodynamic steam tables show properties of water and steam under pressure.'
+      'Thermodynamic steam tables show properties of water and steam under pressure.',
     );
 
     engine.indexDocuments([docUnrelated, docWeak, docRelevant]);
@@ -96,7 +96,7 @@ describe('Search Ranking & Lexical BM25 Scoring', () => {
 
   it('respects limit and pagination', () => {
     const docs = Array.from({ length: 15 }, (_, i) =>
-      makeDoc(`doc_${i}`, `Control system frequency response iteration number ${i}`)
+      makeDoc(`doc_${i}`, `Control system frequency response iteration number ${i}`),
     );
     engine.indexDocuments(docs);
 

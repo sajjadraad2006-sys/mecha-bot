@@ -8,7 +8,11 @@
  *   pnpm exec tsx tools/search/demo.ts --query "final exam" --intent EXAM_LOOKUP --course MCT314
  */
 
-import { SearchEngine, type SearchDocument, type RetrievalIntent } from '../../packages/search/src/index.js';
+import {
+  SearchEngine,
+  type SearchDocument,
+  type RetrievalIntent,
+} from '../../packages/search/src/index.js';
 import { SourceAuthority, EvidenceScope } from '../../packages/academic/src/index.js';
 
 // Synthetic project-owned academic fixtures
@@ -155,7 +159,9 @@ function main(): void {
   }
 
   response.results.forEach((res, idx) => {
-    console.log(`[Result #${idx + 1}] Score: ${res.score} (Lexical: ${res.lexicalScore}, Multiplier: ${res.contextualMultiplier}x)`);
+    console.log(
+      `[Result #${idx + 1}] Score: ${res.score} (Lexical: ${res.lexicalScore}, Multiplier: ${res.contextualMultiplier}x)`,
+    );
     console.log(`  Document:   ${res.title ?? res.documentId} (Page ${res.page ?? 'N/A'})`);
     console.log(`  Course:     ${res.courseCode ?? 'N/A'}`);
     console.log(`  Type:       ${res.documentType}`);

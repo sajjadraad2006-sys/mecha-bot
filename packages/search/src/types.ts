@@ -19,10 +19,7 @@ export type MatchReason =
   | 'VERIFICATION_FILTER_MATCH';
 
 export type NoResultReason =
-  | 'NO_INDEXED_CONTENT'
-  | 'NO_COURSE_MATCH'
-  | 'FILTERED_BY_VERIFICATION'
-  | 'NO_LEXICAL_MATCH';
+  'NO_INDEXED_CONTENT' | 'NO_COURSE_MATCH' | 'FILTERED_BY_VERIFICATION' | 'NO_LEXICAL_MATCH';
 
 export interface DocumentProvenance {
   sourceId?: string | undefined;
@@ -109,11 +106,13 @@ export interface SearchResponse {
   queryFingerprint: string;
   indexVersion: string;
   diagnosticReason?: NoResultReason | undefined;
-  debug?: {
-    normalizedQuery: string;
-    tokens: string[];
-    candidateCount: number;
-    returnedCount: number;
-    durationMs: number;
-  } | undefined;
+  debug?:
+    | {
+        normalizedQuery: string;
+        tokens: string[];
+        candidateCount: number;
+        returnedCount: number;
+        durationMs: number;
+      }
+    | undefined;
 }

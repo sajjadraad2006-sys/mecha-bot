@@ -74,7 +74,7 @@ function splitIntoSemanticBlocks(text: string): string[] {
  */
 export function chunkDocumentPages(
   input: DocumentChunkingInput,
-  options: ChunkerOptions = {}
+  options: ChunkerOptions = {},
 ): SearchDocument[] {
   if (!input.canSearch) {
     // If the document is marked non-searchable, produce zero searchable chunks

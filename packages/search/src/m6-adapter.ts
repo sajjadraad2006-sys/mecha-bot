@@ -64,7 +64,7 @@ export interface M6ExtractedDocument {
 export function adaptM6ToSearchDocuments(
   manifest: M6Manifest,
   extracted: M6ExtractedDocument,
-  options: ChunkerOptions = {}
+  options: ChunkerOptions = {},
 ): SearchDocument[] {
   // CRITICAL RULE: If canSearch is false, never emit searchable chunks
   if (!manifest.permissions || manifest.permissions.canSearch === false) {
@@ -107,6 +107,6 @@ export function adaptM6ToSearchDocuments(
         textNormalized: p.textNormalized,
       })),
     },
-    options
+    options,
   );
 }
