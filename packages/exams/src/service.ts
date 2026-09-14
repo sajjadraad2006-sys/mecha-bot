@@ -75,6 +75,14 @@ export class ExamsService {
     return event;
   }
 
+  listEvents(courseCode?: string): AcademicEvent[] {
+    return this.repository.listEvents(courseCode);
+  }
+
+  getEvent(id: string): AcademicEvent | null {
+    return this.repository.listEvents().find((e) => e.id === id) ?? null;
+  }
+
   createPastQuestion(input: CreatePastExamQuestionInput): PastExamQuestion {
     validatePastExamQuestionInput(input);
     const fingerprint = createPastQuestionFingerprint(input);

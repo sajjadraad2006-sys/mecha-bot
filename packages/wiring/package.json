@@ -1,0 +1,20 @@
+{
+  "name": "@mecha-bot/wiring",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@mecha-bot/academic": "workspace:*",
+    "@mecha-bot/admin": "workspace:*",
+    "@mecha-bot/companion": "workspace:*",
+    "@mecha-bot/distribution": "workspace:*",
+    "@mecha-bot/exams": "workspace:*",
+    "@mecha-bot/navigator": "workspace:*",
+    "@mecha-bot/scheduler": "workspace:*",
+    "@mecha-bot/search": "workspace:*",
+    "@mecha-bot/shared": "workspace:*",
+    "@mecha-bot/timetable": "workspace:*"
+  }
+}

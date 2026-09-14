@@ -391,6 +391,9 @@ importers:
       '@mecha-bot/shared':
         specifier: workspace:*
         version: link:../shared
+      '@mecha-bot/wiring':
+        specifier: workspace:*
+        version: link:../wiring
       grammy:
         specifier: ^1.35.0
         version: 1.46.0(supports-color@7.2.0)
@@ -403,6 +406,39 @@ importers:
       zod:
         specifier: 3.23.8
         version: 3.23.8
+
+  packages/wiring:
+    dependencies:
+      '@mecha-bot/academic':
+        specifier: workspace:*
+        version: link:../academic
+      '@mecha-bot/admin':
+        specifier: workspace:*
+        version: link:../admin
+      '@mecha-bot/companion':
+        specifier: workspace:*
+        version: link:../companion
+      '@mecha-bot/distribution':
+        specifier: workspace:*
+        version: link:../distribution
+      '@mecha-bot/exams':
+        specifier: workspace:*
+        version: link:../exams
+      '@mecha-bot/navigator':
+        specifier: workspace:*
+        version: link:../navigator
+      '@mecha-bot/scheduler':
+        specifier: workspace:*
+        version: link:../scheduler
+      '@mecha-bot/search':
+        specifier: workspace:*
+        version: link:../search
+      '@mecha-bot/shared':
+        specifier: workspace:*
+        version: link:../shared
+      '@mecha-bot/timetable':
+        specifier: workspace:*
+        version: link:../timetable
 
 packages:
 
