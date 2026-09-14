@@ -1,0 +1,460 @@
+{
+  "curriculumVersion": "cv_uob_mct_2025",
+  "versionName": "University of Basrah Mechatronics Curriculum Baseline 2025",
+  "department": "Mechatronics Engineering",
+  "college": "College of Engineering",
+  "university": "University of Basrah",
+  "academicYear": "2026-2027",
+  "provenance": {
+    "evidenceScope": "EXACT_COURSE",
+    "sourceDescription": "Official Mechatronics Engineering Department Curriculum Specification v0.1",
+    "verified": true
+  },
+  "courses": [
+    {
+      "code": "MCT111",
+      "nameEn": "Mathematics I",
+      "nameAr": "الرياضيات I",
+      "stage": 1,
+      "semester": 1
+    },
+    {
+      "code": "MCT112",
+      "nameEn": "Electrical Circuits 1",
+      "nameAr": "الدوائر الكهربائية 1",
+      "stage": 1,
+      "semester": 1
+    },
+    {
+      "code": "MCT113",
+      "nameEn": "Computer Principles",
+      "nameAr": "مبادئ الحاسوب",
+      "stage": 1,
+      "semester": 1
+    },
+    { "code": "MCT114", "nameEn": "Chemistry", "nameAr": "الكيمياء", "stage": 1, "semester": 1 },
+    {
+      "code": "MCT115",
+      "nameEn": "Engineering Mechanics (Statics)",
+      "nameAr": "ميكانيك هندسي (ستاتيك)",
+      "stage": 1,
+      "semester": 1
+    },
+    {
+      "code": "MCT116",
+      "nameEn": "Arabic Language 1",
+      "nameAr": "اللغة العربية 1",
+      "stage": 1,
+      "semester": 1
+    },
+    {
+      "code": "MCT117",
+      "nameEn": "Engineering Drawing by Computer",
+      "nameAr": "الرسم الهندسي بالحاسوب",
+      "stage": 1,
+      "semester": 1
+    },
+
+    {
+      "code": "MCT121",
+      "nameEn": "Mathematics II",
+      "nameAr": "الرياضيات II",
+      "stage": 1,
+      "semester": 2
+    },
+    {
+      "code": "MCT122",
+      "nameEn": "Electrical Circuits 2",
+      "nameAr": "الدوائر الكهربائية 2",
+      "stage": 1,
+      "semester": 2
+    },
+    {
+      "code": "MCT123",
+      "nameEn": "Digital Systems Design",
+      "nameAr": "تصميم النظم الرقمية",
+      "stage": 1,
+      "semester": 2
+    },
+    { "code": "MCT124", "nameEn": "Physics", "nameAr": "الفيزياء", "stage": 1, "semester": 2 },
+    {
+      "code": "MCT125",
+      "nameEn": "Engineering Mechanics (Dynamics)",
+      "nameAr": "ميكانيك هندسي (داينمك)",
+      "stage": 1,
+      "semester": 2
+    },
+    {
+      "code": "MCT126",
+      "nameEn": "English Language 1",
+      "nameAr": "اللغة الإنكليزية 1",
+      "stage": 1,
+      "semester": 2
+    },
+    {
+      "code": "MCT127",
+      "nameEn": "Human Rights, Democracy and Freedom",
+      "nameAr": "حقوق الإنسان والديمقراطية والحرية",
+      "stage": 1,
+      "semester": 2
+    },
+
+    {
+      "code": "MCT211",
+      "nameEn": "Mathematics III",
+      "nameAr": "الرياضيات III",
+      "stage": 2,
+      "semester": 3
+    },
+    {
+      "code": "MCT212",
+      "nameEn": "Strength of Materials",
+      "nameAr": "مقاومة المواد",
+      "stage": 2,
+      "semester": 3
+    },
+    {
+      "code": "MCT213",
+      "nameEn": "Metals Engineering",
+      "nameAr": "هندسة المعادن",
+      "stage": 2,
+      "semester": 3
+    },
+    {
+      "code": "MCT214",
+      "nameEn": "Computing and Artificial Intelligence",
+      "nameAr": "الحوسبة والذكاء الاصطناعي",
+      "stage": 2,
+      "semester": 3
+    },
+    {
+      "code": "MCT215",
+      "nameEn": "Electrical Machines (DC)",
+      "nameAr": "مكائن كهربائية (تيار مستمر)",
+      "stage": 2,
+      "semester": 3
+    },
+    {
+      "code": "MCT216",
+      "nameEn": "English Language 2",
+      "nameAr": "اللغة الإنكليزية 2",
+      "stage": 2,
+      "semester": 3
+    },
+    {
+      "code": "MCT217",
+      "nameEn": "Thermodynamics",
+      "nameAr": "ديناميك الحرارة",
+      "stage": 2,
+      "semester": 3
+    },
+
+    {
+      "code": "MCT221",
+      "nameEn": "Differential Equations",
+      "nameAr": "المعادلات التفاضلية",
+      "stage": 2,
+      "semester": 4
+    },
+    {
+      "code": "MCT222",
+      "nameEn": "Electrical Machines (AC)",
+      "nameAr": "مكائن كهربائية (تيار متناوب)",
+      "stage": 2,
+      "semester": 4
+    },
+    {
+      "code": "MCT223",
+      "nameEn": "Object-Oriented Programming",
+      "nameAr": "البرمجة الكيانية",
+      "stage": 2,
+      "semester": 4
+    },
+    {
+      "code": "MCT224",
+      "nameEn": "Theory of Machines",
+      "nameAr": "نظرية الآلات",
+      "stage": 2,
+      "semester": 4
+    },
+    {
+      "code": "MCT225",
+      "nameEn": "Electronics",
+      "nameAr": "الإلكترونيات",
+      "stage": 2,
+      "semester": 4
+    },
+    {
+      "code": "MCT226",
+      "nameEn": "Ba'ath Party Crimes",
+      "nameAr": "جرائم حزب البعث",
+      "stage": 2,
+      "semester": 4
+    },
+    {
+      "code": "MCT227",
+      "nameEn": "Arabic Language 2",
+      "nameAr": "اللغة العربية 2",
+      "stage": 2,
+      "semester": 4
+    },
+
+    {
+      "code": "MCT311",
+      "nameEn": "Linear Algebra",
+      "nameAr": "الجبر الخطي",
+      "stage": 3,
+      "semester": 5
+    },
+    {
+      "code": "MCT312",
+      "nameEn": "Mechanical Vibrations",
+      "nameAr": "الاهتزازات الميكانيكية",
+      "stage": 3,
+      "semester": 5
+    },
+    {
+      "code": "MCT313",
+      "nameEn": "Fluid Mechanics and Systems",
+      "nameAr": "ميكانيك ومنظومات الموائع",
+      "stage": 3,
+      "semester": 5
+    },
+    {
+      "code": "MCT314",
+      "nameEn": "Control Systems 1",
+      "nameAr": "أنظمة السيطرة 1",
+      "stage": 3,
+      "semester": 5
+    },
+    {
+      "code": "MCT315",
+      "nameEn": "Computer Organization",
+      "nameAr": "تنظيم الحاسبة",
+      "stage": 3,
+      "semester": 5
+    },
+    {
+      "code": "MCT316",
+      "nameEn": "Power Electronics",
+      "nameAr": "إلكترونيات القدرة",
+      "stage": 3,
+      "semester": 5
+    },
+    {
+      "code": "MCT317",
+      "nameEn": "Heat Transfer",
+      "nameAr": "انتقال الحرارة",
+      "stage": 3,
+      "semester": 5
+    },
+
+    {
+      "code": "MCT321",
+      "nameEn": "Numerical Analysis and Statistics",
+      "nameAr": "التحليلات العددية والإحصاء",
+      "stage": 3,
+      "semester": 6
+    },
+    {
+      "code": "MCT322",
+      "nameEn": "Engineering Economy",
+      "nameAr": "الاقتصاد الهندسي",
+      "stage": 3,
+      "semester": 6
+    },
+    {
+      "code": "MCT323",
+      "nameEn": "Sensors and Instrumentation",
+      "nameAr": "المتحسسات والآلات الدقيقة",
+      "stage": 3,
+      "semester": 6
+    },
+    {
+      "code": "MCT324",
+      "nameEn": "Control Systems 2",
+      "nameAr": "أنظمة السيطرة 2",
+      "stage": 3,
+      "semester": 6
+    },
+    {
+      "code": "MCT325",
+      "nameEn": "Automation Systems",
+      "nameAr": "منظومات الأتمتة",
+      "stage": 3,
+      "semester": 6
+    },
+    {
+      "code": "MCT326",
+      "nameEn": "Digital Signal Processing",
+      "nameAr": "معالجة الإشارة الرقمية",
+      "stage": 3,
+      "semester": 6
+    },
+    {
+      "code": "MCT327",
+      "nameEn": "Renewable Energy",
+      "nameAr": "الطاقة المتجددة",
+      "stage": 3,
+      "semester": 6
+    },
+
+    {
+      "code": "MCT411",
+      "nameEn": "Embedded Systems",
+      "nameAr": "الأنظمة المضمنة",
+      "stage": 4,
+      "semester": 7
+    },
+    {
+      "code": "MCT412",
+      "nameEn": "Mechanical Design 1",
+      "nameAr": "التصميم الميكانيكي 1",
+      "stage": 4,
+      "semester": 7
+    },
+    {
+      "code": "MCT413",
+      "nameEn": "Artificial Intelligence",
+      "nameAr": "الذكاء الاصطناعي",
+      "stage": 4,
+      "semester": 7
+    },
+    {
+      "code": "P4MCT",
+      "nameEn": "Engineering Project",
+      "nameAr": "المشروع الهندسي",
+      "stage": 4,
+      "semester": 7
+    },
+    {
+      "code": "MCT414",
+      "nameEn": "Project Management",
+      "nameAr": "إدارة المشاريع",
+      "stage": 4,
+      "semester": 7
+    },
+    {
+      "code": "MCT415",
+      "nameEn": "Mechatronics Systems Design – Drones",
+      "nameAr": "تصميم أنظمة ميكاترونكس – الطائرات بدون طيار",
+      "stage": 4,
+      "semester": 7
+    },
+    {
+      "code": "MCT416",
+      "nameEn": "Industrial Communication Networks",
+      "nameAr": "شبكات الاتصالات الصناعية",
+      "stage": 4,
+      "semester": 7
+    },
+
+    {
+      "code": "MCT421",
+      "nameEn": "Biomechatronics",
+      "nameAr": "الميكاترونكس الأحيائي",
+      "stage": 4,
+      "semester": 8
+    },
+    {
+      "code": "MCT422",
+      "nameEn": "Mechanical Design 2",
+      "nameAr": "التصميم الميكانيكي 2",
+      "stage": 4,
+      "semester": 8
+    },
+    {
+      "code": "MCT423",
+      "nameEn": "Industrial Engineering",
+      "nameAr": "الهندسة الصناعية",
+      "stage": 4,
+      "semester": 8
+    },
+    {
+      "code": "MCT424",
+      "nameEn": "Robotic Systems",
+      "nameAr": "الأنظمة الروبوتية",
+      "stage": 4,
+      "semester": 8
+    },
+    {
+      "code": "MCT425",
+      "nameEn": "Professional Ethics",
+      "nameAr": "أخلاقيات المهنة",
+      "stage": 4,
+      "semester": 8
+    },
+    {
+      "code": "MCT426",
+      "nameEn": "Image Processing and Computer Vision",
+      "nameAr": "معالجة الصور والرؤية الحاسوبية",
+      "stage": 4,
+      "semester": 8
+    }
+  ],
+  "offerings": [
+    { "courseCode": "MCT111", "stage": 1, "programSemester": 1 },
+    { "courseCode": "MCT112", "stage": 1, "programSemester": 1 },
+    { "courseCode": "MCT113", "stage": 1, "programSemester": 1 },
+    { "courseCode": "MCT114", "stage": 1, "programSemester": 1 },
+    { "courseCode": "MCT115", "stage": 1, "programSemester": 1 },
+    { "courseCode": "MCT116", "stage": 1, "programSemester": 1 },
+    { "courseCode": "MCT117", "stage": 1, "programSemester": 1 },
+
+    { "courseCode": "MCT121", "stage": 1, "programSemester": 2 },
+    { "courseCode": "MCT122", "stage": 1, "programSemester": 2 },
+    { "courseCode": "MCT123", "stage": 1, "programSemester": 2 },
+    { "courseCode": "MCT124", "stage": 1, "programSemester": 2 },
+    { "courseCode": "MCT125", "stage": 1, "programSemester": 2 },
+    { "courseCode": "MCT126", "stage": 1, "programSemester": 2 },
+    { "courseCode": "MCT127", "stage": 1, "programSemester": 2 },
+
+    { "courseCode": "MCT211", "stage": 2, "programSemester": 3 },
+    { "courseCode": "MCT212", "stage": 2, "programSemester": 3 },
+    { "courseCode": "MCT213", "stage": 2, "programSemester": 3 },
+    { "courseCode": "MCT214", "stage": 2, "programSemester": 3 },
+    { "courseCode": "MCT215", "stage": 2, "programSemester": 3 },
+    { "courseCode": "MCT216", "stage": 2, "programSemester": 3 },
+    { "courseCode": "MCT217", "stage": 2, "programSemester": 3 },
+
+    { "courseCode": "MCT221", "stage": 2, "programSemester": 4 },
+    { "courseCode": "MCT222", "stage": 2, "programSemester": 4 },
+    { "courseCode": "MCT223", "stage": 2, "programSemester": 4 },
+    { "courseCode": "MCT224", "stage": 2, "programSemester": 4 },
+    { "courseCode": "MCT225", "stage": 2, "programSemester": 4 },
+    { "courseCode": "MCT226", "stage": 2, "programSemester": 4 },
+    { "courseCode": "MCT227", "stage": 2, "programSemester": 4 },
+
+    { "courseCode": "MCT311", "stage": 3, "programSemester": 5 },
+    { "courseCode": "MCT312", "stage": 3, "programSemester": 5 },
+    { "courseCode": "MCT313", "stage": 3, "programSemester": 5 },
+    { "courseCode": "MCT314", "stage": 3, "programSemester": 5 },
+    { "courseCode": "MCT315", "stage": 3, "programSemester": 5 },
+    { "courseCode": "MCT316", "stage": 3, "programSemester": 5 },
+    { "courseCode": "MCT317", "stage": 3, "programSemester": 5 },
+
+    { "courseCode": "MCT321", "stage": 3, "programSemester": 6 },
+    { "courseCode": "MCT322", "stage": 3, "programSemester": 6 },
+    { "courseCode": "MCT323", "stage": 3, "programSemester": 6 },
+    { "courseCode": "MCT324", "stage": 3, "programSemester": 6 },
+    { "courseCode": "MCT325", "stage": 3, "programSemester": 6 },
+    { "courseCode": "MCT326", "stage": 3, "programSemester": 6 },
+    { "courseCode": "MCT327", "stage": 3, "programSemester": 6 },
+
+    { "courseCode": "MCT411", "stage": 4, "programSemester": 7 },
+    { "courseCode": "MCT412", "stage": 4, "programSemester": 7 },
+    { "courseCode": "MCT413", "stage": 4, "programSemester": 7 },
+    { "courseCode": "P4MCT", "stage": 4, "programSemester": 7 },
+    { "courseCode": "MCT414", "stage": 4, "programSemester": 7 },
+    { "courseCode": "MCT415", "stage": 4, "programSemester": 7 },
+    { "courseCode": "MCT416", "stage": 4, "programSemester": 7 },
+
+    { "courseCode": "MCT421", "stage": 4, "programSemester": 8 },
+    { "courseCode": "MCT422", "stage": 4, "programSemester": 8 },
+    { "courseCode": "MCT423", "stage": 4, "programSemester": 8 },
+    { "courseCode": "MCT424", "stage": 4, "programSemester": 8 },
+    { "courseCode": "P4MCT", "stage": 4, "programSemester": 8 },
+    { "courseCode": "MCT425", "stage": 4, "programSemester": 8 },
+    { "courseCode": "MCT426", "stage": 4, "programSemester": 8 }
+  ]
+}

@@ -131,6 +131,25 @@ export class AcademicRepository {
     };
   }
 
+  findCourseById(id: string): Course | null {
+    const row = this.db.queryOne<Record<string, unknown>>('SELECT * FROM courses WHERE id = ?;', [
+      id,
+    ]);
+    if (!row) return null;
+    return {
+      id: row['id'] as string,
+      code: row['code'] as string,
+      nameAr: row['name_ar'] as string,
+      nameEn: row['name_en'] as string,
+      defaultStage: row['default_stage'] as Stage,
+      defaultProgramSemester: row['default_program_semester'] as ProgramSemester,
+      isActive: Boolean(row['is_active']),
+      curriculumVersionId: row['curriculum_version_id'] as string,
+      createdAt: row['created_at'] as string,
+      updatedAt: row['updated_at'] as string,
+    };
+  }
+
   // --- Course Offerings ---
   createCourseOffering(offering: CourseOffering): void {
     this.db.run(
@@ -149,6 +168,23 @@ export class AcademicRepository {
     );
   }
 
+  findOfferingById(id: string): CourseOffering | null {
+    const row = this.db.queryOne<Record<string, unknown>>(
+      'SELECT * FROM course_offerings WHERE id = ?;',
+      [id],
+    );
+    if (!row) return null;
+    return {
+      id: row['id'] as string,
+      courseId: row['course_id'] as string,
+      academicYearId: row['academic_year_id'] as string,
+      stage: row['stage'] as Stage,
+      programSemester: row['program_semester'] as ProgramSemester,
+      isActive: Boolean(row['is_active']),
+      createdAt: row['created_at'] as string,
+    };
+  }
+
   listOfferingsByCourse(courseId: string): CourseOffering[] {
     const rows = this.db.query<Record<string, unknown>>(
       'SELECT * FROM course_offerings WHERE course_id = ? ORDER BY program_semester ASC;',
@@ -163,6 +199,83 @@ export class AcademicRepository {
       isActive: Boolean(r['is_active']),
       createdAt: r['created_at'] as string,
     }));
+  }
+
+  /**
+   * Lists all offerings for a given semester joined with their canonical course details.
+   */
+  listOfferingsBySemester(
+    academicYearId: string,
+    programSemester: ProgramSemester,
+  ): Array<CourseOffering & { code: string; nameAr: string; nameEn: string }> {
+    const rows = this.db.query<Record<string, unknown>>(
+      `SELECT
+        co.id, co.course_id, co.academic_year_id, co.stage, co.program_semester, co.is_active, co.created_at,
+        c.code, c.name_ar, c.name_en
+      FROM course_offerings co
+      JOIN courses c ON co.course_id = c.id
+      WHERE co.academic_year_id = ? AND co.program_semester = ? AND co.is_active = 1
+      ORDER BY c.code ASC;`,
+      [academicYearId, programSemester],
+    );
+
+    return rows.map((r) => ({
+      id: r['id'] as string,
+      courseId: r['course_id'] as string,
+      academicYearId: r['academic_year_id'] as string,
+      stage: r['stage'] as Stage,
+      programSemester: r['program_semester'] as ProgramSemester,
+      isActive: Boolean(r['is_active']),
+      createdAt: r['created_at'] as string,
+      code: r['code'] as string,
+      nameAr: r['name_ar'] as string,
+      nameEn: r['name_en'] as string,
+    }));
+  }
+
+  /**
+   * Resolves a CourseOffering given a course code and the student's program semester.
+   * Enables compact callback data (e.g. m1:c:MCT314) disambiguating multi-semester courses (P4MCT).
+   */
+  findOfferingByCourseCodeAndSemester(
+    courseCode: string,
+    programSemester: ProgramSemester,
+    academicYearId?: string,
+  ): (CourseOffering & { code: string; nameAr: string; nameEn: string }) | null {
+    const query = academicYearId
+      ? `SELECT
+          co.id, co.course_id, co.academic_year_id, co.stage, co.program_semester, co.is_active, co.created_at,
+          c.code, c.name_ar, c.name_en
+        FROM course_offerings co
+        JOIN courses c ON co.course_id = c.id
+        WHERE c.code = ? AND co.program_semester = ? AND co.academic_year_id = ? AND co.is_active = 1
+        LIMIT 1;`
+      : `SELECT
+          co.id, co.course_id, co.academic_year_id, co.stage, co.program_semester, co.is_active, co.created_at,
+          c.code, c.name_ar, c.name_en
+        FROM course_offerings co
+        JOIN courses c ON co.course_id = c.id
+        WHERE c.code = ? AND co.program_semester = ? AND co.is_active = 1
+        LIMIT 1;`;
+
+    const params = academicYearId
+      ? [courseCode, programSemester, academicYearId]
+      : [courseCode, programSemester];
+    const r = this.db.queryOne<Record<string, unknown>>(query, params);
+    if (!r) return null;
+
+    return {
+      id: r['id'] as string,
+      courseId: r['course_id'] as string,
+      academicYearId: r['academic_year_id'] as string,
+      stage: r['stage'] as Stage,
+      programSemester: r['program_semester'] as ProgramSemester,
+      isActive: Boolean(r['is_active']),
+      createdAt: r['created_at'] as string,
+      code: r['code'] as string,
+      nameAr: r['name_ar'] as string,
+      nameEn: r['name_en'] as string,
+    };
   }
 
   // --- Course Pulses ---
