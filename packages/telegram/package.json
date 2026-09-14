@@ -9,6 +9,7 @@
     "@mecha-bot/shared": "workspace:*",
     "@mecha-bot/academic": "workspace:*",
     "@mecha-bot/database": "workspace:*",
+    "@mecha-bot/wiring": "workspace:*",
     "grammy": "^1.35.0"
   }
 }
