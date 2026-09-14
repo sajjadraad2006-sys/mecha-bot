@@ -222,18 +222,19 @@ graph LR
     M0["M0 Academic Calendar"] -.->|Future DTO| M9
     M5["M5 Companion Signals<br/>(Repeated questions, quiz scores)"] -.->|Future Signal DTO| M9
 
-    M9 --> M8["M8 Response Generator<br/>(Converts diagnosis to Arabic NL)"]
+    M9 --> TG["Telegram UI<br/>(Interactive inline buttons)"]
     M9 --> M7["M7 Retrieval Engine<br/>(Fetches slides/exams for catch-up steps)"]
-    M8 --> TG["Telegram UI<br/>(Interactive inline buttons)"]
+    M9 -.-> M8["M8 AI Brain<br/>(Zero-cost Arabic explanations)"]
+    M8 -.-> TG
 ```
 
-1. **Future M5 (Companion / Learning Signals)**:
+1. **M5 (Companion / Learning Signals)**:
    - M9 defines `StudentLearningSignal` (e.g., `REPEATED_QUESTION`, `SELF_REPORTED_DIFFICULTY`).
-   - M5 can pass these signals to M9 to influence suggested review topics without violating the rule against automatic mastery assumptions.
-2. **Future M7 (Source Retrieval)**:
+   - M5 passes these signals to M9 to influence suggested review topics without violating the rule against automatic mastery assumptions.
+2. **M7 (Source Retrieval)**:
    - When a `CatchUpPlan` produces steps $T_1 \to T_2 \to T_3$, M7 can retrieve lecture PDFs, past exams, and formula sheets specifically keyed to those topic keys.
-3. **Future M8 (Language Generation & Arabic Persona)**:
+3. **Future M8 (AI Brain)**:
    - M9 outputs structured diagnostics (`StudyDiagnosis`, `CatchUpPlan`).
-   - M8 translates these structured objects into natural, encouraging Basrah-dialect Arabic explanations.
-4. **Future Telegram UI**:
-   - Inline keyboard confirmation buttons (_"نعم"_, _"قبلها"_, _"بعدها"_) will trigger navigator confirmation handlers to transition state from `EXPECTED`/`INFERRED` to `CONFIRMED_BY_STUDENT`.
+   - M8 (AI Brain) translates these structured objects into natural, encouraging Basrah-dialect Arabic explanations within strict zero-cost budget constraints.
+4. **Telegram UI Layer**:
+   - Inline keyboard confirmation buttons (_"نعم"_, _"قبلها"_, _"بعدها"_) trigger navigator confirmation handlers to transition state from `EXPECTED`/`INFERRED` to `CONFIRMED_BY_STUDENT`.
