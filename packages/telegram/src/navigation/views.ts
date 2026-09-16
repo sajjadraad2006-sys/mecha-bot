@@ -740,3 +740,72 @@ export function renderStudentDashboardView(
 
   return lines.join('\n');
 }
+
+/**
+ * Renders the Admin Control Panel Overview.
+ */
+export function renderAdminMenuView(): string {
+  return [
+    '🛠️ *لوحة إدارة المواد والمصادر الأكاديمية*',
+    'قسم هندسة الميكاترونكس — جامعة البصرة',
+    '',
+    'أهلاً بك يا أستاذ/مشرف المادة! من هنا يمكنك:',
+    '• 📤 *إضافة ملزمة أستاذ*: رفع ملازم المحاضرات الرسمية بصيغة PDF أو روابط Drive.',
+    '• 📝 *إضافة ملخص مادة*: نشر ملخصات دراسية معتمدة لمساعدة الطلبة.',
+    '',
+    'اختر الإجراء المطلوب من الأزرار أدناه:',
+  ].join('\n');
+}
+
+/**
+ * Renders prompt to choose course code for uploading material.
+ */
+export function renderAdminSelectCourseView(
+  materialType: 'LECTURER_NOTE' | 'STUDENT_NOTE',
+): string {
+  const typeName = materialType === 'LECTURER_NOTE' ? 'ملزمة أستاذ' : 'ملخص مادة';
+  return [
+    `📤 *إضافة ${typeName} جديدة*`,
+    '',
+    'يرجى اختيار المقرر الدراسي الذي تتبع له هذه المادة من القائمة أدناه:',
+  ].join('\n');
+}
+
+/**
+ * Renders prompt awaiting file upload from admin.
+ */
+export function renderAdminAwaitingUploadView(
+  materialType: 'LECTURER_NOTE' | 'STUDENT_NOTE',
+  courseCode: string,
+): string {
+  const typeName = materialType === 'LECTURER_NOTE' ? 'ملزمة أستاذ' : 'ملخص مادة';
+  return [
+    `📥 *بانتظار إرسال (${typeName}) لمادة (${courseCode})*`,
+    '',
+    'الآن يمكنك:',
+    '1. إرسال ملف الـ PDF مباشرة إلى البوت مع كتابة اسم الملزمة في الـ Caption.',
+    '2. أو إرسال رابط Google Drive المباشر في رسالة نصية مع العنوان.',
+    '',
+    '⚠️ *ملاحظة:* سيتم نشر الملف فوراً ليصبح متاحاً للطلبة في قائمة ملفات المادة ومحرك البحث.',
+  ].join('\n');
+}
+
+/**
+ * Renders success confirmation when admin adds material.
+ */
+export function renderAdminMaterialSuccessView(
+  materialType: 'LECTURER_NOTE' | 'STUDENT_NOTE',
+  courseCode: string,
+  title: string,
+): string {
+  const typeName = materialType === 'LECTURER_NOTE' ? 'الملزمة' : 'الملخص';
+  return [
+    `✅ *تم نشر ${typeName} بنجاح!*`,
+    '',
+    `• *المقرر:* ${courseCode}`,
+    `• *العنوان:* ${title}`,
+    `• *حالة التوزيع:* متاح للتحميل الفوري للطلبة عبر تيليجرام 📁`,
+    '',
+    'شكراً لجهودكم في دعم المسيرة التعليمية لطلبة هندسة الميكاترونكس!',
+  ].join('\n');
+}

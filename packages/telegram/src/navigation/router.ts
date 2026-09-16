@@ -25,6 +25,8 @@ import {
   createFilesKeyboard,
   createAiExplanationKeyboard,
   createMiniAppLaunchKeyboard,
+  createAdminMenuKeyboard,
+  createAdminCourseSelectKeyboard,
 } from './keyboards.js';
 import {
   renderStageSelectionView,
@@ -40,6 +42,10 @@ import {
   renderDeclineConfirmationView,
   renderImLostView,
   renderQuizQuestionView,
+  renderAdminMenuView,
+  renderAdminSelectCourseView,
+  renderAdminAwaitingUploadView,
+  renderAdminMaterialSuccessView,
 } from './views.js';
 import { safeEditMenu } from './helper.js';
 
@@ -52,6 +58,12 @@ export interface TelegramUserSession {
   activeQuizId?: string | undefined;
   activeQuizQuestionIndex?: number | undefined;
   quizAnswers?: Record<string, string | boolean> | undefined;
+  awaitingAdminUpload?:
+    | {
+        materialType: 'LECTURER_NOTE' | 'STUDENT_NOTE';
+        courseCode: string;
+      }
+    | undefined;
 }
 
 export interface OnboardingRouterDeps {
@@ -416,6 +428,75 @@ export class OnboardingRouter {
   }
 
   /**
+   * Handles the /admin command for course editors and administrators.
+   */
+  async handleAdminCommand(ctx: Context): Promise<void> {
+    await ctx.reply(renderAdminMenuView(), {
+      parse_mode: 'Markdown',
+      reply_markup: createAdminMenuKeyboard(),
+    });
+  }
+
+  /**
+   * Handles incoming documents (e.g. lecture notes and summaries uploaded by admin).
+   */
+  async handleDocumentMessage(ctx: Context): Promise<void> {
+    const telegramUserId = ctx.from?.id;
+    const doc = ctx.message?.document;
+    if (!telegramUserId || !doc) return;
+
+    const session = this.getOrCreateSession(telegramUserId);
+    if (session.awaitingAdminUpload) {
+      const { materialType, courseCode } = session.awaitingAdminUpload;
+      session.awaitingAdminUpload = undefined;
+
+      const title =
+        ctx.message?.caption?.trim() ||
+        doc.file_name ||
+        (materialType === 'LECTURER_NOTE' ? 'ملزمة أستاذ' : 'ملخص دراسي');
+      const fileId = doc.file_id;
+
+      const app = this.bridge?.getApp();
+      if (app) {
+        const nowIso = new Date().toISOString();
+        await app.distribution.registerFile({
+          id: `tg_${doc.file_unique_id || Date.now()}`,
+          title,
+          courseCode,
+          originalFilename: doc.file_name,
+          documentType: materialType,
+          sourceAuthority: materialType === 'LECTURER_NOTE' ? 'FACULTY' : 'STUDENT',
+          verificationStatus: 'VERIFIED',
+          archiveStatus: 'CURRENT',
+          distributionPolicy: {
+            canSearch: true,
+            canQuote: true,
+            canDistribute: true,
+            policyState: 'ALLOWED',
+          },
+          storageReference: {
+            kind: 'TELEGRAM_FILE_ID',
+            value: fileId,
+            metadata: {
+              telegramFileUniqueId: doc.file_unique_id,
+              fileSizeBytes: doc.file_size,
+              mimeType: doc.mime_type,
+            },
+          },
+          visibility: 'COURSE_SHARED',
+          createdAt: nowIso,
+          updatedAt: nowIso,
+        });
+      }
+
+      await ctx.reply(renderAdminMaterialSuccessView(materialType, courseCode, title), {
+        parse_mode: 'Markdown',
+        reply_markup: createAdminMenuKeyboard(),
+      });
+    }
+  }
+
+  /**
    * Handles incoming text messages (e.g. search queries or user input).
    */
   async handleTextMessage(ctx: Context): Promise<void> {
@@ -424,6 +505,54 @@ export class OnboardingRouter {
     if (!telegramUserId || !text) return;
 
     const session = this.getOrCreateSession(telegramUserId);
+
+    // Admin uploading material via text/link
+    if (session.awaitingAdminUpload) {
+      const { materialType, courseCode } = session.awaitingAdminUpload;
+      session.awaitingAdminUpload = undefined;
+
+      const urlMatch = text.match(/https?:\/\/[^\s]+/);
+      const isUrl = Boolean(urlMatch);
+      const storageValue = urlMatch ? urlMatch[0] : text;
+      const title =
+        text.replace(/https?:\/\/[^\s]+/, '').trim() ||
+        (materialType === 'LECTURER_NOTE' ? 'ملزمة أستاذ' : 'ملخص دراسي');
+      const fileId = `ext_${Date.now()}`;
+
+      const app = this.bridge?.getApp();
+      if (app) {
+        const nowIso = new Date().toISOString();
+        await app.distribution.registerFile({
+          id: fileId,
+          title,
+          courseCode,
+          documentType: materialType,
+          sourceAuthority: materialType === 'LECTURER_NOTE' ? 'FACULTY' : 'STUDENT',
+          verificationStatus: 'VERIFIED',
+          archiveStatus: 'CURRENT',
+          distributionPolicy: {
+            canSearch: true,
+            canQuote: true,
+            canDistribute: true,
+            policyState: 'ALLOWED',
+          },
+          storageReference: {
+            kind: isUrl ? 'EXTERNAL_URL' : 'TELEGRAM_FILE_ID',
+            value: storageValue,
+          },
+          visibility: 'COURSE_SHARED',
+          createdAt: nowIso,
+          updatedAt: nowIso,
+        });
+      }
+
+      await ctx.reply(renderAdminMaterialSuccessView(materialType, courseCode, title), {
+        parse_mode: 'Markdown',
+        reply_markup: createAdminMenuKeyboard(),
+      });
+      return;
+    }
+
     if (session.awaitingSearchQuery) {
       session.awaitingSearchQuery = false;
       await this.handleSearchQuery(ctx, text, session.searchCourseCode);
@@ -1037,6 +1166,45 @@ export class OnboardingRouter {
         // Idempotency: repeated submit safely handled
         await ctx.answerCallbackQuery({ text: 'تم تسليم الكويز مسبقاً!', show_alert: true });
       }
+      return;
+    }
+
+    // --- 25. Admin Menu: m:admin:menu ---
+    if (data === 'm:admin:menu') {
+      await safeEditMenu(ctx, {
+        text: renderAdminMenuView(),
+        replyMarkup: createAdminMenuKeyboard(),
+        logger: this.logger,
+      });
+      return;
+    }
+
+    // --- 26. Admin Add Material: m:admin:add:(LECTURER_NOTE|STUDENT_NOTE) ---
+    const adminAddMatch = data.match(/^m:admin:add:(LECTURER_NOTE|STUDENT_NOTE)$/);
+    if (adminAddMatch) {
+      const materialType = adminAddMatch[1] as 'LECTURER_NOTE' | 'STUDENT_NOTE';
+      const courses = this.academicRepo.listAllActiveCourses();
+      await safeEditMenu(ctx, {
+        text: renderAdminSelectCourseView(materialType),
+        replyMarkup: createAdminCourseSelectKeyboard(materialType, courses),
+        logger: this.logger,
+      });
+      return;
+    }
+
+    // --- 27. Admin Select Course: m:admin:sel:(LECTURER_NOTE|STUDENT_NOTE):([A-Za-z0-9_]+) ---
+    const adminSelMatch = data.match(/^m:admin:sel:(LECTURER_NOTE|STUDENT_NOTE):([A-Za-z0-9_]+)$/);
+    if (adminSelMatch) {
+      const materialType = adminSelMatch[1] as 'LECTURER_NOTE' | 'STUDENT_NOTE';
+      const courseCode = adminSelMatch[2]!;
+      const session = this.getOrCreateSession(telegramUserId);
+      session.awaitingAdminUpload = { materialType, courseCode };
+
+      await safeEditMenu(ctx, {
+        text: renderAdminAwaitingUploadView(materialType, courseCode),
+        replyMarkup: createAdminMenuKeyboard(),
+        logger: this.logger,
+      });
       return;
     }
 

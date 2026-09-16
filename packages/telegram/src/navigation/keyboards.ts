@@ -315,3 +315,36 @@ export function createAiExplanationKeyboard(
   kb.text('🏠 القائمة الرئيسية', 'm:menu');
   return kb;
 }
+
+/**
+ * Creates the Admin Management keyboard
+ */
+export function createAdminMenuKeyboard(): InlineKeyboard {
+  return new InlineKeyboard()
+    .text('📤 إضافة ملزمة أستاذ', 'm:admin:add:LECTURER_NOTE')
+    .row()
+    .text('📝 إضافة ملخص مادة', 'm:admin:add:STUDENT_NOTE')
+    .row()
+    .text('🏠 القائمة الرئيسية', 'm:menu');
+}
+
+/**
+ * Creates course selection keyboard for uploading admin materials
+ */
+export function createAdminCourseSelectKeyboard(
+  materialType: 'LECTURER_NOTE' | 'STUDENT_NOTE',
+  courses: Array<{ code: string; nameAr: string }>,
+): InlineKeyboard {
+  const kb = new InlineKeyboard();
+  for (let i = 0; i < courses.length; i += 2) {
+    const c1 = courses[i]!;
+    kb.text(`${c1.code} - ${c1.nameAr.slice(0, 14)}`, `m:admin:sel:${materialType}:${c1.code}`);
+    if (i + 1 < courses.length) {
+      const c2 = courses[i + 1]!;
+      kb.text(`${c2.code} - ${c2.nameAr.slice(0, 14)}`, `m:admin:sel:${materialType}:${c2.code}`);
+    }
+    kb.row();
+  }
+  kb.text('↩️ إلغاء ورجوع', 'm:admin:menu');
+  return kb;
+}

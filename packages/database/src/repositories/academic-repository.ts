@@ -150,6 +150,18 @@ export class AcademicRepository {
     };
   }
 
+  listAllActiveCourses(): Array<{ code: string; nameAr: string; stage: Stage }> {
+    const rows = this.db.query<Record<string, unknown>>(
+      'SELECT code, name_ar, default_stage FROM courses WHERE is_active = 1 ORDER BY code ASC;',
+      [],
+    );
+    return rows.map((r) => ({
+      code: r['code'] as string,
+      nameAr: r['name_ar'] as string,
+      stage: r['default_stage'] as Stage,
+    }));
+  }
+
   // --- Course Offerings ---
   createCourseOffering(offering: CourseOffering): void {
     this.db.run(

@@ -13,6 +13,7 @@
     "@mecha-bot/ai": "workspace:*",
     "@mecha-bot/dashboard": "workspace:*",
     "@mecha-bot/database": "workspace:*",
+    "@mecha-bot/search": "workspace:*",
     "@mecha-bot/shared": "workspace:*",
     "@mecha-bot/telegram": "workspace:*",
     "@mecha-bot/wiring": "workspace:*",

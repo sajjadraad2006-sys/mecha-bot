@@ -72,6 +72,48 @@ importers:
         specifier: ^16.4.7
         version: 16.6.1
 
+  apps/mini-app:
+    dependencies:
+      '@mecha-bot/academic':
+        specifier: workspace:*
+        version: link:../../packages/academic
+      '@mecha-bot/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
+      '@mecha-bot/timetable':
+        specifier: workspace:*
+        version: link:../../packages/timetable
+
+  apps/worker:
+    dependencies:
+      '@mecha-bot/academic':
+        specifier: workspace:*
+        version: link:../../packages/academic
+      '@mecha-bot/ai':
+        specifier: workspace:*
+        version: link:../../packages/ai
+      '@mecha-bot/dashboard':
+        specifier: workspace:*
+        version: link:../../packages/dashboard
+      '@mecha-bot/database':
+        specifier: workspace:*
+        version: link:../../packages/database
+      '@mecha-bot/search':
+        specifier: workspace:*
+        version: link:../../packages/search
+      '@mecha-bot/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
+      '@mecha-bot/telegram':
+        specifier: workspace:*
+        version: link:../../packages/telegram
+      '@mecha-bot/wiring':
+        specifier: workspace:*
+        version: link:../../packages/wiring
+      grammy:
+        specifier: ^1.35.0
+        version: 1.46.0
+
   packages/academic:
     dependencies:
       '@mecha-bot/shared':
@@ -95,6 +137,9 @@ importers:
       '@mecha-bot/academic':
         specifier: workspace:*
         version: link:../academic
+      '@mecha-bot/search':
+        specifier: workspace:*
+        version: link:../search
       '@mecha-bot/shared':
         specifier: workspace:*
         version: link:../shared

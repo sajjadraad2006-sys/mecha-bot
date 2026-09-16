@@ -79,9 +79,13 @@ export function createMechaBot(token: string, deps: BotDependencies): Bot<Contex
       uptimeStartMs: deps.uptimeStartMs,
     }),
   );
+  bot.command('admin', (ctx) => onboardingRouter.handleAdminCommand(ctx));
 
-  // Register text messages for interactive queries (e.g. search)
+  // Register text messages for interactive queries (e.g. search, admin upload)
   bot.on('message:text', (ctx) => onboardingRouter.handleTextMessage(ctx));
+
+  // Register document uploads (e.g. lecture notes and summaries uploaded by admin)
+  bot.on('message:document', (ctx) => onboardingRouter.handleDocumentMessage(ctx));
 
   // Register callback queries for navigation
   bot.on('callback_query:data', (ctx) => onboardingRouter.handleCallback(ctx));
