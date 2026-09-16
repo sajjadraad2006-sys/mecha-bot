@@ -17,8 +17,10 @@
       "@mecha-bot/exams": ["packages/exams/src/index.ts"],
       "@mecha-bot/admin": ["packages/admin/src/index.ts"],
       "@mecha-bot/distribution": ["packages/distribution/src/index.ts"],
+      "@mecha-bot/dashboard": ["packages/dashboard/src/index.ts"],
       "@mecha-bot/wiring": ["packages/wiring/src/index.ts"]
     },
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "noEmit": true
   },
   "include": ["packages/*/src/**/*", "apps/*/src/**/*", "tests/**/*", "scripts/**/*"]

@@ -23,4 +23,5 @@ export interface ExamsRepository {
   saveAttempt(attempt: QuizAttempt): void;
   getAttempt(id: string): QuizAttempt | null;
   listAttempts(quizId: string, studentKey?: string): QuizAttempt[];
+  listStudentAttempts(studentKey: string): QuizAttempt[];
 }

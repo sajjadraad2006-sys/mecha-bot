@@ -12,12 +12,17 @@
  * - MCT124 conflict and P4MCT identity-only states are explicitly surfaced.
  */
 
-import type { AcademicCoreDataset } from '@mecha-bot/academic';
+import { AcademicCalendarService, type AcademicCoreDataset } from '@mecha-bot/academic';
+import { DashboardService, type StudentDashboardSummary } from '@mecha-bot/dashboard';
 import type { TimetableService, TimetableSlot } from '@mecha-bot/timetable';
 import type { ReminderSchedulerService } from '@mecha-bot/scheduler';
 import type { CompanionService } from '@mecha-bot/companion';
 import type { SearchEngine, SearchQuery } from '@mecha-bot/search';
-import type { StudentCoursePosition, StudyNavigatorService } from '@mecha-bot/navigator';
+import type {
+  CoursePulsePosition,
+  StudentCoursePosition,
+  StudyNavigatorService,
+} from '@mecha-bot/navigator';
 import type { ExamsService } from '@mecha-bot/exams';
 import type {
   AdminService,
@@ -46,6 +51,8 @@ import {
   type AcademicEvidenceMetadata,
   executeAdminReviewDecisionSafely,
 } from './bridges/admin-to-academic.js';
+import type { AiBrainService, AiBrainResponse } from '@mecha-bot/ai';
+import type { AskAiInput, StudentDashboardRequest } from './types.js';
 
 export interface MechaBotAppDependencies {
   academicDataset: AcademicCoreDataset;
@@ -57,6 +64,9 @@ export interface MechaBotAppDependencies {
   distributionService: FileDistributionService;
   examsService: ExamsService;
   adminService: AdminService;
+  aiBrainService?: AiBrainService | undefined;
+  calendarService?: AcademicCalendarService | undefined;
+  dashboardService?: DashboardService | undefined;
 }
 
 export class MechaBotApp {
@@ -69,6 +79,9 @@ export class MechaBotApp {
   public readonly distribution: FileDistributionService;
   public readonly exams: ExamsService;
   public readonly admin: AdminService;
+  public readonly aiBrain?: AiBrainService | undefined;
+  public readonly calendar?: AcademicCalendarService | undefined;
+  public readonly dashboard: DashboardService;
 
   constructor(deps: MechaBotAppDependencies) {
     this.dataset = deps.academicDataset;
@@ -80,6 +93,19 @@ export class MechaBotApp {
     this.distribution = deps.distributionService;
     this.exams = deps.examsService;
     this.admin = deps.adminService;
+    this.aiBrain = deps.aiBrainService;
+    this.calendar = deps.calendarService;
+    this.dashboard =
+      deps.dashboardService ??
+      new DashboardService({
+        academicDataset: this.dataset,
+        calendarService: this.calendar ?? new AcademicCalendarService([]),
+        navigatorService: this.navigator,
+        companionService: this.companion,
+        examsService: this.exams,
+        timetableService: this.timetable,
+        schedulerService: this.scheduler,
+      });
   }
 
   /**
@@ -90,6 +116,7 @@ export class MechaBotApp {
     studentKey: string,
     courseCode: string,
     referenceDate?: string,
+    coursePulseInput?: CoursePulsePosition,
   ): Promise<WhereAreWeAppResponse> {
     const code = courseCode.trim().toUpperCase();
 
@@ -130,6 +157,37 @@ export class MechaBotApp {
       };
     }
 
+    // Check course pulse from input or companion signals
+    let coursePulse = coursePulseInput;
+    if (!coursePulse) {
+      try {
+        const repo = (
+          this.companion as unknown as { repository?: { progressSignals?: Map<string, unknown> } }
+        ).repository;
+        if (repo?.progressSignals) {
+          const signals = [...repo.progressSignals.values()] as Array<{
+            courseCode: string;
+            topicKey?: string;
+            occurredAt: string;
+            selfReportedConfidence?: number;
+          }>;
+          const matching = signals.filter((s) => s.courseCode === code && s.topicKey);
+          if (matching.length > 0) {
+            const latest = matching.sort((a, b) => b.occurredAt.localeCompare(a.occurredAt))[0]!;
+            coursePulse = {
+              courseCode: code,
+              topicKey: latest.topicKey,
+              status: 'INFERRED',
+              source: 'COURSE_PULSE',
+              updatedAt: latest.occurredAt,
+            };
+          }
+        }
+      } catch {
+        // Fallback
+      }
+    }
+
     // 3. Multi-truth snapshot from navigator
     const localDate = referenceDate || new Date().toISOString().slice(0, 10);
     const snapshot = await this.navigator.getCourseSnapshot({
@@ -139,6 +197,7 @@ export class MechaBotApp {
         localDate,
         status: 'EXPECTED',
       },
+      coursePulse,
     });
 
     // 4. Progress evaluation
@@ -148,6 +207,17 @@ export class MechaBotApp {
       coursePulse: snapshot.coursePulse,
     });
 
+    let suggestedTopicKey = progressResult.suggestedTopicKey;
+    let suggestedTopicTitleEn = progressResult.suggestedTopicTitleEn;
+    let suggestedTopicTitleAr = progressResult.suggestedTopicTitleAr;
+
+    if (!suggestedTopicKey && profile?.topics && profile.topics.length > 0) {
+      const firstTopic = profile.topics[0]!;
+      suggestedTopicKey = firstTopic.topicKey;
+      suggestedTopicTitleEn = firstTopic.titleEn;
+      suggestedTopicTitleAr = firstTopic.titleAr;
+    }
+
     return {
       courseCode: code,
       hasConflict: false,
@@ -156,9 +226,9 @@ export class MechaBotApp {
       calendarPosition: snapshot.calendarPosition,
       coursePulse: snapshot.coursePulse,
       studentPosition: snapshot.studentPosition,
-      suggestedTopicKey: progressResult.suggestedTopicKey,
-      suggestedTopicTitleEn: progressResult.suggestedTopicTitleEn,
-      suggestedTopicTitleAr: progressResult.suggestedTopicTitleAr,
+      suggestedTopicKey,
+      suggestedTopicTitleEn,
+      suggestedTopicTitleAr,
       needsStudentConfirmation: true, // Always requires student confirmation
       confirmationPromptKey: progressResult.confirmationPromptKey,
       notes: progressResult.notes,
@@ -349,5 +419,46 @@ export class MechaBotApp {
     },
   ): Promise<AdminReviewDecisionResult> {
     return executeAdminReviewDecisionSafely(this.admin, callerKey, params, academicEvidence);
+  }
+
+  /**
+   * "اسأل المخ الذكي" (Ask AI Brain)
+   * Orchestrates academic synthesis without mutating domain truth or violating invariants.
+   * Student progress is NEVER confirmed or updated by AI answers.
+   */
+  public async askAi(input: AskAiInput): Promise<AiBrainResponse> {
+    if (!this.aiBrain) {
+      return {
+        intent: 'GENERAL',
+        courseCode: input.activeCourseCode ?? null,
+        topic: input.activeTopicKey ?? null,
+        answer: 'خدمة المساعد الذكي غير مفعلة حالياً في النظام.',
+        equations: [],
+        citations: [],
+        confidence: 'LOW',
+        assumptions: [],
+        needsClarification: false,
+        usedFallback: true,
+      };
+    }
+
+    return this.aiBrain.answerQuestion({
+      studentKey: input.studentKey,
+      question: input.question,
+      activeCourseCode: input.activeCourseCode,
+      activeTopicKey: input.activeTopicKey,
+      stage: input.stage,
+      programSemester: input.programSemester,
+    });
+  }
+
+  /**
+   * "لوحة تحكم الطالب" (Student Dashboard)
+   * Aggregates academic progress, timetable, exams, reminders, and streaks deterministically.
+   */
+  public async getStudentDashboard(
+    request: StudentDashboardRequest,
+  ): Promise<StudentDashboardSummary> {
+    return this.dashboard.getDashboard(request);
   }
 }

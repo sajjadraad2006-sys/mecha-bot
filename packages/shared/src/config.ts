@@ -32,9 +32,19 @@ export const ConfigSchema = z.object({
       message: 'ALLOW_BILLING_FALLBACK must remain false under the Zero-Cost project rule',
     }),
 
-  // Optional future free-tier provider keys
+  // Optional AI Provider Configuration
+  AI_PROVIDER: z.enum(['gemini', 'groq', 'openrouter', 'workers-ai']).optional(),
   GEMINI_API_KEY: z.string().optional(),
+  GEMINI_MODEL: z.string().optional(),
   GROQ_API_KEY: z.string().optional(),
+  GROQ_MODEL: z.string().optional(),
+  OPENROUTER_API_KEY: z.string().optional(),
+  OPENROUTER_MODEL: z.string().optional(),
+  CLOUDFLARE_ACCOUNT_ID: z.string().optional(),
+  CLOUDFLARE_API_TOKEN: z.string().optional(),
+
+  // Optional Telegram Mini App (Web App) URL
+  MINI_APP_URL: z.string().optional(),
 });
 
 export type AppConfig = z.infer<typeof ConfigSchema>;

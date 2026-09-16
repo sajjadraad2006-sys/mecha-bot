@@ -91,4 +91,11 @@ export class InMemoryExamsRepository implements ExamsRepository {
       .sort((left, right) => left.startedAt.localeCompare(right.startedAt))
       .map(copy);
   }
+
+  listStudentAttempts(studentKey: string): QuizAttempt[] {
+    return [...this.attempts.values()]
+      .filter((attempt) => attempt.studentKey === studentKey)
+      .sort((left, right) => left.startedAt.localeCompare(right.startedAt))
+      .map(copy);
+  }
 }

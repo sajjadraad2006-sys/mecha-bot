@@ -20,7 +20,8 @@
     "db:seed:test": "tsx scripts/seed-test.ts",
     "curriculum:import": "tsx scripts/import-curriculum.ts",
     "db:compat:d1": "tsx scripts/d1-compat.ts",
-    "bot:dev": "tsx apps/bot/src/index.ts"
+    "bot:dev": "tsx apps/bot/src/index.ts",
+    "mini-app:dev": "tsx apps/mini-app/src/server.ts"
   },
   "devDependencies": {
     "@types/node": "^22.13.9",

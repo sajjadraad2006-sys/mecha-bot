@@ -29,6 +29,7 @@ export default defineConfig({
       '@mecha-bot/exams': path.resolve(__dirname, 'packages/exams/src/index.ts'),
       '@mecha-bot/admin': path.resolve(__dirname, 'packages/admin/src/index.ts'),
       '@mecha-bot/distribution': path.resolve(__dirname, 'packages/distribution/src/index.ts'),
+      '@mecha-bot/dashboard': path.resolve(__dirname, 'packages/dashboard/src/index.ts'),
       '@mecha-bot/wiring': path.resolve(__dirname, 'packages/wiring/src/index.ts'),
     },
   },

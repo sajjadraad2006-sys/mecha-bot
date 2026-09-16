@@ -196,6 +196,10 @@ export class ExamsService {
     return attempt;
   }
 
+  listStudentAttempts(studentKey: string): QuizAttempt[] {
+    return this.repository.listStudentAttempts(studentKey);
+  }
+
   private getQuizQuestions(quiz: PracticeQuiz): QuizQuestion[] {
     return quiz.questionIds.map((questionId) => {
       const question = this.repository.getQuestion(questionId);

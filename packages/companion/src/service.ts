@@ -82,6 +82,10 @@ export class CompanionService {
     return session;
   }
 
+  getActiveSession(studentKey: string): StudySession | null {
+    return this.repository.findActiveSession(studentKey);
+  }
+
   completeSession(id: string, input: EndStudySessionInput = {}): StudySession {
     return this.endSession(id, 'COMPLETED', input);
   }

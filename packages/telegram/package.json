@@ -6,10 +6,15 @@
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "dependencies": {
+    "@mecha-bot/ai": "workspace:*",
     "@mecha-bot/shared": "workspace:*",
     "@mecha-bot/academic": "workspace:*",
     "@mecha-bot/database": "workspace:*",
     "@mecha-bot/wiring": "workspace:*",
+    "@mecha-bot/timetable": "workspace:*",
+    "@mecha-bot/scheduler": "workspace:*",
+    "@mecha-bot/exams": "workspace:*",
+    "@mecha-bot/distribution": "workspace:*",
     "grammy": "^1.35.0"
   }
 }

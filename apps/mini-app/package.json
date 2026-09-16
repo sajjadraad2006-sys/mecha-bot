@@ -1,0 +1,15 @@
+{
+  "name": "@mecha-bot/mini-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mecha-bot/academic": "workspace:*",
+    "@mecha-bot/shared": "workspace:*",
+    "@mecha-bot/timetable": "workspace:*"
+  }
+}

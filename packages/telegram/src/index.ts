@@ -7,3 +7,4 @@ export * from './middleware/logging.js';
 export * from './middleware/idempotency.js';
 export * from './navigation/index.js';
 export * from './application-bridge.js';
+export { MechaBotApp } from '@mecha-bot/wiring';

@@ -21,8 +21,31 @@
  */
 
 import type { Context } from 'grammy';
-import type { StudentRepository } from '@mecha-bot/database';
-import type { MechaBotApp, WhereAreWeAppResponse, ImLostAppResponse } from '@mecha-bot/wiring';
+import type { StudentProfile, StudentRepository } from '@mecha-bot/database';
+import type {
+  MechaBotApp,
+  WhereAreWeAppResponse,
+  ImLostAppResponse,
+  SearchAndDeliverResponse,
+  StudentDashboardSummary,
+} from '@mecha-bot/wiring';
+import type { Stage, ProgramSemester } from '@mecha-bot/academic';
+import type { TimetableSlot } from '@mecha-bot/timetable';
+import type { AcademicEvent, PracticeQuiz, QuizAttempt, QuizAnswers } from '@mecha-bot/exams';
+import type { DeliveryDecision } from '@mecha-bot/distribution';
+import {
+  renderWhereAreWeView,
+  renderImLostView,
+  renderSearchResultsView,
+  renderDeliveryResultView,
+  renderTimetableView,
+  renderRemindersView,
+  renderExamsView,
+  renderQuizResultView,
+  renderAiExplanationView,
+  renderStudentDashboardView,
+} from './navigation/views.js';
+import type { AiBrainResponse } from '@mecha-bot/wiring';
 
 export interface TelegramAppBridgeDeps {
   app: MechaBotApp;
@@ -36,6 +59,20 @@ export class TelegramAppBridge {
   constructor(deps: TelegramAppBridgeDeps) {
     this.app = deps.app;
     this.studentRepo = deps.studentRepo;
+  }
+
+  /**
+   * Access the underlying MechaBotApp instance.
+   */
+  public getApp(): MechaBotApp {
+    return this.app;
+  }
+
+  /**
+   * Access the student repository instance.
+   */
+  public getStudentRepo(): StudentRepository {
+    return this.studentRepo;
   }
 
   /**
@@ -53,98 +90,67 @@ export class TelegramAppBridge {
   }
 
   /**
-   * Handles "وين وصلنا؟" command.
+   * Resolves the student profile from the database.
    */
-  public async handleWhereAreWe(ctx: Context, courseCode: string): Promise<string> {
-    const studentKey = this.resolveStudentKey(ctx);
-    const response: WhereAreWeAppResponse = await this.app.whereAreWe(studentKey, courseCode);
-
-    if (response.hasConflict) {
-      return (
-        `⚠️ *تنبيه أكاديمي: تضارب منهجي في المادة (${response.courseCode})*\n\n` +
-        `الحالة: ${response.conflictDetails?.status} (${response.conflictDetails?.resolutionStatus})\n` +
-        `التفاصيل: ${response.conflictDetails?.description}\n\n` +
-        `يرجى مراجعة رئاسة القسم أو ممثل المرحلة لتأكيد المنهج المعتمد.`
-      );
-    }
-
-    if (!response.hasTopics && response.topicMapStatus === 'IDENTITY_ONLY') {
-      return (
-        `ℹ️ *المادة (${response.courseCode}) معرفة بالهوية فقط*\n\n` +
-        `هذه المادة مسجلة في الدليل كمعرف هوية دون شجرة مواضيع تفصيلية.\n` +
-        `لا يمكن تقديم اقتراح زمني آلي دون تأكيد مفردات المحاضر.`
-      );
-    }
-
-    const weekText = response.calendarPosition?.academicWeek
-      ? `الأسبوع الأكاديمي المتوقع: ${response.calendarPosition.academicWeek}\n`
-      : '';
-
-    const suggestedTopic =
-      response.suggestedTopicTitleAr ||
-      response.suggestedTopicTitleEn ||
-      response.suggestedTopicKey;
-
-    const notesText = response.notes?.length ? `\n\nملاحظة: ${response.notes.join('\n')}` : '';
-
-    return (
-      `📍 *متابعة مادة (${response.courseCode})*\n\n` +
-      `${weekText}` +
-      `الموضوع المقترح: *${suggestedTopic ?? 'غير محدد'}*\n\n` +
-      `💡 *بوت ميكا يقترح ويسألك للتأكيد:*\n` +
-      `هل وصلتم لهذا الموضوع فعلياً في محاضراتكم؟` +
-      notesText
-    );
+  public getStudentProfile(ctx: Context): StudentProfile | null {
+    const telegramUserId = ctx.from?.id;
+    if (!telegramUserId) return null;
+    return this.studentRepo.findByTelegramId(telegramUserId);
   }
 
   /**
-   * Handles "أني ضايع" diagnosis command.
+   * Retrieves raw WhereAreWe DTO from application wiring.
+   */
+  public async getWhereAreWeData(
+    ctx: Context,
+    courseCode: string,
+    referenceDate?: string,
+  ): Promise<WhereAreWeAppResponse> {
+    const studentKey = this.resolveStudentKey(ctx);
+    return this.app.whereAreWe(studentKey, courseCode, referenceDate);
+  }
+
+  /**
+   * Handles "وين وصلنا؟" command and returns localized Iraqi Arabic view text.
+   */
+  public async handleWhereAreWe(
+    ctx: Context,
+    courseCode: string,
+    referenceDate?: string,
+  ): Promise<string> {
+    const response = await this.getWhereAreWeData(ctx, courseCode, referenceDate);
+    const profile = this.app.dataset.profilesByCode.get(courseCode.trim().toUpperCase());
+    return renderWhereAreWeView(response, profile?.displayNames?.ar);
+  }
+
+  /**
+   * Retrieves raw ImLost diagnosis DTO from application wiring.
+   */
+  public async getImLostData(
+    ctx: Context,
+    courseCode: string,
+    targetTopicKey?: string,
+  ): Promise<ImLostAppResponse> {
+    const studentKey = this.resolveStudentKey(ctx);
+    return this.app.imLost(studentKey, courseCode, targetTopicKey);
+  }
+
+  /**
+   * Handles "أني ضايع" diagnosis command and returns localized view text.
    */
   public async handleImLost(
     ctx: Context,
     courseCode: string,
     targetTopicKey?: string,
   ): Promise<string> {
-    const studentKey = this.resolveStudentKey(ctx);
-    const diagnosis: ImLostAppResponse = await this.app.imLost(
-      studentKey,
-      courseCode,
-      targetTopicKey,
-    );
-
-    if (diagnosis.status === 'ACADEMIC_DATA_CONFLICT') {
-      return `⚠️ تعذر إعداد خطة الاستدراك: ${diagnosis.explanationNote}`;
-    }
-
-    if (diagnosis.status === 'INSUFFICIENT_ACADEMIC_MAP') {
-      return `ℹ️ ${diagnosis.explanationNote}`;
-    }
-
-    let planText = '';
-    if (diagnosis.catchUpPlan && diagnosis.catchUpPlan.steps.length > 0) {
-      planText =
-        `\n\n📌 *خطوات خطة الاستدراك المقترحة:*\n` +
-        diagnosis.catchUpPlan.steps
-          .map((step, idx) => `${idx + 1}. ${step.titleAr || step.titleEn} (${step.reason})`)
-          .join('\n');
-
-      if (diagnosis.catchUpPlan.studyBudgetPlan) {
-        planText +=
-          `\n\n⏱️ ميزانية الدراسة المقترحة: ` +
-          `${diagnosis.catchUpPlan.studyBudgetPlan.totalBudgetMinutes} دقيقة.`;
-      }
-    }
-
-    return (
-      `🧭 *تشخيص الاستدراك الدراسي (${diagnosis.courseCode})*\n\n` +
-      `الحالة: ${diagnosis.status}\n` +
-      `التوضيح: ${diagnosis.explanationNote}` +
-      planText
-    );
+    const diagnosis = await this.getImLostData(ctx, courseCode, targetTopicKey);
+    const profile = this.app.dataset.profilesByCode.get(courseCode.trim().toUpperCase());
+    return renderImLostView(diagnosis, profile?.displayNames?.ar);
   }
 
   /**
    * Confirms the student's study position explicitly.
+   * Enforces the invariant: only explicit student interaction sets CONFIRMED_BY_STUDENT.
    */
   public async handleConfirmPosition(
     ctx: Context,
@@ -164,28 +170,224 @@ export class TelegramAppBridge {
   }
 
   /**
-   * Handles search and delivery query.
+   * Retrieves raw search & delivery DTO from application wiring.
    */
-  public async handleSearch(ctx: Context, queryText: string, courseCode?: string): Promise<string> {
+  public async getSearchData(
+    ctx: Context,
+    queryText: string,
+    courseCode?: string,
+  ): Promise<SearchAndDeliverResponse> {
     const studentKey = this.resolveStudentKey(ctx);
-    const searchResult = await this.app.search(
+    return this.app.search(
       studentKey,
       { text: queryText, courseCode },
       true, // auto-resolve delivery policy
     );
+  }
 
-    if (searchResult.totalMatches === 0) {
-      return `🔍 لم يتم العثور على نتائج مطابقة للبحث: "${queryText}".`;
+  /**
+   * Handles search and delivery query and returns localized view text.
+   */
+  public async handleSearch(ctx: Context, queryText: string, courseCode?: string): Promise<string> {
+    const searchResult = await this.getSearchData(ctx, queryText, courseCode);
+    return renderSearchResultsView(searchResult, queryText);
+  }
+
+  /**
+   * Requests file delivery from distribution service adhering to M12 policy.
+   */
+  public async handleRequestDelivery(
+    ctx: Context,
+    fileRecordId: string,
+  ): Promise<{ text: string; decision: DeliveryDecision }> {
+    const studentKey = this.resolveStudentKey(ctx);
+    const decision = await this.app.requestDelivery(studentKey, fileRecordId);
+    const text = renderDeliveryResultView(decision);
+    return { text, decision };
+  }
+
+  /**
+   * Retrieves student schedule for day/date via M3 timetable service.
+   */
+  public handleTimetable(
+    ctx: Context,
+    stage: Stage,
+    programSemester: ProgramSemester,
+    dateStr?: string,
+  ): { text: string; slots: TimetableSlot[] } {
+    const studentKey = this.resolveStudentKey(ctx);
+    const slots = this.app.getSchedule({
+      studentKey,
+      stage,
+      programSemester,
+      date: dateStr,
+    });
+    const text = renderTimetableView(slots, stage, programSemester, dateStr);
+    return { text, slots };
+  }
+
+  /**
+   * Schedules reminders for student's lectures via timetable-to-scheduler bridge.
+   */
+  public async handleScheduleLectureReminders(
+    ctx: Context,
+    stage: Stage,
+    programSemester: ProgramSemester,
+    dateStr?: string,
+  ): Promise<string> {
+    const studentKey = this.resolveStudentKey(ctx);
+    const result = await this.app.scheduleLectureReminders({
+      studentKey,
+      stage,
+      programSemester,
+      date: dateStr,
+    });
+    if (result.scheduledCount > 0) {
+      return `✅ تم جدولة (${result.scheduledCount}) تذكير للمحاضرات القادمة بنجاح!`;
+    }
+    return 'ℹ️ لم يتم العثور على محاضرات جديدة بحاجة لجدولة تذكير.';
+  }
+
+  /**
+   * Retrieves upcoming reminders from M4 scheduler in Baghdad timezone.
+   */
+  public handleRemindersView(ctx: Context, windowMinutes = 1440): string {
+    const studentKey = this.resolveStudentKey(ctx);
+    const reminders = this.app.scheduler.getUpcomingReminders(studentKey, windowMinutes);
+    return renderRemindersView(reminders);
+  }
+
+  /**
+   * Retrieves upcoming exams and overview for a course via M10 exams service.
+   */
+  public handleExamsView(
+    ctx: Context,
+    courseCode: string,
+  ): {
+    text: string;
+    events: AcademicEvent[];
+  } {
+    this.resolveStudentKey(ctx);
+    const code = courseCode.trim().toUpperCase();
+    const events = this.app.exams.listEvents(code);
+    const profile = this.app.dataset.profilesByCode.get(code);
+    const nameAr = profile?.displayNames?.ar || code;
+    const text = renderExamsView(code, nameAr, events, 0);
+    return { text, events };
+  }
+
+  /**
+   * Schedules academic event reminder for an exam or assessment.
+   */
+  public async handleScheduleExamReminder(ctx: Context, eventId: string): Promise<string> {
+    const studentKey = this.resolveStudentKey(ctx);
+    const result = await this.app.scheduleAcademicEventReminders(studentKey, eventId);
+    if (result.scheduledCount > 0) {
+      return '✅ تم تفعيل التذكير بالامتحان بنجاح!';
+    }
+    return result.reason || 'تعذر جدولة التذكير.';
+  }
+
+  /**
+   * Starts a practice quiz attempt via M10 exams service.
+   */
+  public handleStartQuiz(
+    ctx: Context,
+    quizId: string,
+  ): { attempt: QuizAttempt; quiz: PracticeQuiz } {
+    const studentKey = this.resolveStudentKey(ctx);
+    const quiz = this.app.exams.getQuiz(quizId);
+    const attempt = this.app.exams.startAttempt(quizId, studentKey);
+    return { attempt, quiz };
+  }
+
+  /**
+   * Submits a practice quiz attempt and renders deterministic score.
+   */
+  public handleSubmitQuiz(
+    ctx: Context,
+    attemptId: string,
+    answers: QuizAnswers,
+  ): { text: string; attempt: QuizAttempt } {
+    this.resolveStudentKey(ctx);
+    const attempt = this.app.exams.submitAttempt(attemptId, answers);
+    const quiz = this.app.exams.getQuiz(attempt.quizId);
+    const text = renderQuizResultView(attempt, quiz.title);
+    return { text, attempt };
+  }
+
+  /**
+   * Handles student natural language academic queries via AI Brain.
+   * Isolates Telegram user identity; maps ctx.from.id to opaque studentKey.
+   */
+  public async handleAiQuery(
+    ctx: Context,
+    queryText: string,
+    activeCourseCode?: string,
+  ): Promise<{ text: string; response: AiBrainResponse }> {
+    const studentKey = this.resolveStudentKey(ctx);
+    const profile = this.getStudentProfile(ctx);
+
+    let courseCode = activeCourseCode;
+    if (!courseCode && profile?.activeCourseId) {
+      const course =
+        this.app.dataset.profilesByCode.get(profile.activeCourseId) ||
+        this.app.dataset.profiles.find((p) => p.courseCode === profile.activeCourseId);
+      if (course) {
+        courseCode = course.courseCode;
+      }
     }
 
-    const lines = searchResult.hits.map((hit, idx) => {
-      const doc = hit.searchResult;
-      const deliveryStatus = hit.deliveryDecision ? `[تسليم: ${hit.deliveryDecision.status}]` : '';
-      return `${idx + 1}. *${doc.courseCode ?? 'عام'}*: ${doc.textExcerpt} ${deliveryStatus}`;
+    const response = await this.app.askAi({
+      studentKey,
+      question: queryText,
+      activeCourseCode: courseCode,
+      stage: profile?.stage ?? undefined,
+      programSemester: profile?.programSemester ?? undefined,
     });
 
-    return (
-      `🔍 *نتائج البحث الأكاديمي (${searchResult.totalMatches} نتيجة):*\n\n` + lines.join('\n\n')
+    const courseProfile = response.courseCode
+      ? this.app.dataset.profilesByCode.get(response.courseCode)
+      : undefined;
+
+    const text = renderAiExplanationView(response, courseProfile?.displayNames?.ar);
+
+    return { text, response };
+  }
+
+  /**
+   * Retrieves raw StudentDashboardSummary DTO from application wiring.
+   */
+  public async getDashboardData(
+    ctx: Context,
+    referenceDate?: string | Date,
+  ): Promise<StudentDashboardSummary> {
+    const studentKey = this.resolveStudentKey(ctx);
+    const profile = this.getStudentProfile(ctx);
+    const stage = (profile?.stage ?? 1) as Stage;
+    const programSemester = (profile?.programSemester ?? 1) as ProgramSemester;
+
+    return this.app.getStudentDashboard({
+      studentKey,
+      stage,
+      programSemester,
+      referenceDate,
+    });
+  }
+
+  /**
+   * Handles /dashboard command and returns rendered view + DTO.
+   */
+  public async handleDashboardView(
+    ctx: Context,
+    referenceDate?: string | Date,
+  ): Promise<{ text: string; summary: StudentDashboardSummary }> {
+    const summary = await this.getDashboardData(ctx, referenceDate);
+    const studentName = ctx.from?.first_name;
+    const text = renderStudentDashboardView(
+      summary,
+      studentName !== undefined ? { studentName } : undefined,
     );
+    return { text, summary };
   }
 }

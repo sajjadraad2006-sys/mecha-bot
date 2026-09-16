@@ -1,7 +1,9 @@
 import { Bot, Context } from 'grammy';
-import { DatabaseConnection } from '@mecha-bot/database';
+import { DatabaseConnection, StudentRepository } from '@mecha-bot/database';
 import { Clock, Logger, IdempotencyStore } from '@mecha-bot/shared';
 import { AcademicCalendarService } from '@mecha-bot/academic';
+import { MechaBotApp } from '@mecha-bot/wiring';
+import { TelegramAppBridge } from './application-bridge.js';
 import { handleHelp } from './handlers/help.js';
 import { createHealthHandler } from './handlers/health.js';
 import { createErrorBoundaryMiddleware } from './middleware/error-boundary.js';
@@ -17,6 +19,9 @@ export interface BotDependencies {
   env: string;
   uptimeStartMs: number;
   calendarService?: AcademicCalendarService;
+  app?: MechaBotApp;
+  bridge?: TelegramAppBridge;
+  miniAppUrl?: string | undefined;
 }
 
 export function createMechaBot(token: string, deps: BotDependencies): Bot<Context> {
@@ -27,16 +32,38 @@ export function createMechaBot(token: string, deps: BotDependencies): Bot<Contex
   bot.use(createLoggingMiddleware(deps.logger));
   bot.use(createIdempotencyMiddleware(deps.idempotencyStore, deps.logger));
 
+  const studentRepo = new StudentRepository(deps.db);
+  const bridge =
+    deps.bridge ?? (deps.app ? new TelegramAppBridge({ app: deps.app, studentRepo }) : undefined);
+
   const onboardingRouter = new OnboardingRouter({
     db: deps.db,
     clock: deps.clock,
     logger: deps.logger,
     calendarService: deps.calendarService,
+    app: deps.app,
+    bridge,
+    miniAppUrl: deps.miniAppUrl,
   });
 
   // Register command handlers
   bot.command('start', (ctx) => onboardingRouter.handleStartOrMenu(ctx));
   bot.command('menu', (ctx) => onboardingRouter.handleStartOrMenu(ctx));
+  bot.command('app', (ctx) => onboardingRouter.handleAppCommand(ctx));
+  bot.command('dashboard', (ctx) => onboardingRouter.handleDashboardCommand(ctx));
+  bot.command('courses', (ctx) => onboardingRouter.handleCourses(ctx));
+  bot.command('where', (ctx) => onboardingRouter.handleWhereAreWeCommand(ctx));
+  bot.command('lost', (ctx) => onboardingRouter.handleImLostCommand(ctx));
+  bot.command('timetable', (ctx) => onboardingRouter.handleTimetableCommand(ctx));
+  bot.command('reminders', (ctx) => onboardingRouter.handleRemindersCommand(ctx));
+  bot.command('search', async (ctx) => {
+    const text = ctx.message?.text?.replace(/^\/search\s*/, '').trim();
+    if (text) {
+      await onboardingRouter.handleSearchQuery(ctx, text);
+    } else {
+      await onboardingRouter.handleSearchPrompt(ctx);
+    }
+  });
   bot.command('help', handleHelp);
   bot.command(
     'health',
@@ -47,6 +74,9 @@ export function createMechaBot(token: string, deps: BotDependencies): Bot<Contex
       uptimeStartMs: deps.uptimeStartMs,
     }),
   );
+
+  // Register text messages for interactive queries (e.g. search)
+  bot.on('message:text', (ctx) => onboardingRouter.handleTextMessage(ctx));
 
   // Register callback queries for navigation
   bot.on('callback_query:data', (ctx) => onboardingRouter.handleCallback(ctx));

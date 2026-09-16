@@ -71,6 +71,7 @@ async function main() {
     env: config.NODE_ENV,
     uptimeStartMs,
     calendarService,
+    miniAppUrl: config.MINI_APP_URL,
   });
 
   // Handle graceful shutdown

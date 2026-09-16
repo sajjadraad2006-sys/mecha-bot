@@ -6,6 +6,10 @@ export const AcademicResponseSchema = z.object({
     'LECTURER_REQUIREMENTS',
     'COURSE_IDENTITY',
     'CONCEPT_EXPLANATION',
+    'COMPARISON',
+    'REASONING_FOLLOWUP',
+    'SUMMARY',
+    'CLARIFICATION_NEEDED',
     'GENERAL',
   ]),
   courseCode: z.string().nullable(),
@@ -18,21 +22,32 @@ export const AcademicResponseSchema = z.object({
         sourceId: z.string(),
         page: z.number().optional(),
         title: z.string(),
+        chunkId: z.string().optional(),
+        authority: z.string().optional(),
       }),
     )
     .default([]),
   confidence: z.enum(['HIGH', 'MEDIUM', 'LOW']),
   assumptions: z.array(z.string()).default([]),
   needsClarification: z.boolean().default(false),
+  clarificationPrompt: z.string().optional(),
+  suggestedClarifications: z.array(z.string()).default([]),
+  disclaimer: z.string().optional(),
 });
 
 export type AcademicResponse = z.infer<typeof AcademicResponseSchema>;
 
 export const AcademicSourceExcerptSchema = z.object({
   sourceId: z.string().min(1),
+  sourceVersion: z.string().optional(),
+  chunkId: z.string().optional(),
   title: z.string().min(1),
   excerpt: z.string().min(1),
   page: z.number().int().positive().optional(),
+  pageRange: z.tuple([z.number().int(), z.number().int()]).optional(),
+  authority: z.string().optional(),
+  evidenceScope: z.string().optional(),
+  canDistribute: z.boolean().optional(),
 });
 
 export const AcademicAiContextSchema = z
@@ -53,3 +68,15 @@ export const AcademicAiContextSchema = z
   .strict();
 
 export type AcademicAiContext = z.infer<typeof AcademicAiContextSchema>;
+
+export const BudgetStatsSchema = z.object({
+  date: z.string(),
+  requestsToday: z.number().int().nonnegative(),
+  estimatedNeuronsToday: z.number().nonnegative(),
+  isExhausted: z.boolean(),
+  allowPaidAi: z.literal(false),
+  allowPaidStorage: z.literal(false),
+  allowBillingFallback: z.literal(false),
+});
+
+export type BudgetStats = z.infer<typeof BudgetStatsSchema>;

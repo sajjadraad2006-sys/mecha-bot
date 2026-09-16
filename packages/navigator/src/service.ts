@@ -46,6 +46,13 @@ export class StudyNavigatorService {
   }
 
   /**
+   * Retrieves all recorded positions for a student across courses.
+   */
+  async getAllStudentPositions(studentKey: string): Promise<StudentCoursePosition[]> {
+    return this.repository.findAllByStudent(studentKey);
+  }
+
+  /**
    * Records or updates student-confirmed position in a course.
    */
   async recordStudentPosition(input: UpdateStudentPositionInput): Promise<StudentCoursePosition> {

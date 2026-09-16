@@ -122,3 +122,40 @@ export interface TimetableReminderOptions {
   offsetMinutes?: number | undefined;
   quietHoursConfig?: QuietHoursConfig | undefined;
 }
+
+/**
+ * Input for student questions to AI Brain orchestration layer.
+ */
+export interface AskAiInput {
+  studentKey: string;
+  question: string;
+  activeCourseCode?: string | undefined;
+  activeTopicKey?: string | undefined;
+  stage?: Stage | undefined;
+  programSemester?: ProgramSemester | undefined;
+}
+
+export type { AiBrainResponse, AiBrainCitation } from '@mecha-bot/ai';
+
+export type {
+  CourseMasteryStatus,
+  AcademicProgressMetrics,
+  StudyActivityMetrics,
+  UpcomingEventSummary,
+  QuizPerformanceSummary,
+  TimetableSummary,
+  RemindersSummary,
+  StudentDashboardSummary,
+  StudentDashboardCriteria,
+  CatchUpStatus,
+} from '@mecha-bot/dashboard';
+
+export interface StudentDashboardRequest {
+  studentKey: string;
+  stage: Stage;
+  programSemester: ProgramSemester;
+  referenceDate?: Date | string | undefined;
+  timeZone?: string | undefined;
+  section?: string | undefined;
+  subgroup?: string | undefined;
+}
