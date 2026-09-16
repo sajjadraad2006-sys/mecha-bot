@@ -1,0 +1,448 @@
+{
+  "version": "v1.0",
+  "department": "Mechatronics Engineering Department",
+  "institution": "University of Basrah",
+  "textbooks": [
+    {
+      "courseCode": "MCT111",
+      "courseNameEn": "Mathematics I",
+      "courseNameAr": "الرياضيات 1",
+      "stage": 1,
+      "semester": 1,
+      "primary": "Thomas' Calculus (14th/15th Ed.) — George B. Thomas, Maurice D. Weir, Joel Hass",
+      "secondary": "Calculus: Early Transcendentals (9th Ed.) — James Stewart"
+    },
+    {
+      "courseCode": "MCT112",
+      "courseNameEn": "Electrical Circuits 1",
+      "courseNameAr": "الدوائر الكهربائية 1",
+      "stage": 1,
+      "semester": 1,
+      "primary": "Engineering Circuit Analysis (9th Ed.) — William H. Hayt, Jack Kemmerly, Steven Durbin",
+      "secondary": "Electric Circuits (11th Ed.) — James W. Nilsson, Susan A. Riedel"
+    },
+    {
+      "courseCode": "MCT113",
+      "courseNameEn": "Computer Principles",
+      "courseNameAr": "مبادئ الحاسوب",
+      "stage": 1,
+      "semester": 1,
+      "primary": "Computer Science: An Overview (13th Ed.) — J. Glenn Brookshear, Dennis Brylow",
+      "secondary": "Introduction to Computers — Peter Norton"
+    },
+    {
+      "courseCode": "MCT114",
+      "courseNameEn": "Chemistry",
+      "courseNameAr": "الكيمياء",
+      "stage": 1,
+      "semester": 1,
+      "primary": "Chemistry for Engineering Students (4th Ed.) — Lawrence S. Brown, Thomas A. Holme",
+      "secondary": "General Chemistry: Principles and Modern Applications — Ralph H. Petrucci"
+    },
+    {
+      "courseCode": "MCT115",
+      "courseNameEn": "Engineering Mechanics (Statics)",
+      "courseNameAr": "ميكانيك هندسي (ستاتيك)",
+      "stage": 1,
+      "semester": 1,
+      "primary": "Engineering Mechanics: Statics (14th/15th Ed.) — R. C. Hibbeler",
+      "secondary": "Vector Mechanics for Engineers: Statics (12th Ed.) — Ferdinand Beer, E. Russell Johnston"
+    },
+    {
+      "courseCode": "MCT117",
+      "courseNameEn": "Engineering Drawing by Computer",
+      "courseNameAr": "الرسم الهندسي بالحاسوب",
+      "stage": 1,
+      "semester": 1,
+      "primary": "Technical Drawing with Engineering Graphics (15th Ed.) — Frederick E. Giesecke et al.",
+      "secondary": "Engineering Drawing and Design (6th Ed.) — David A. Madsen, David P. Madsen"
+    },
+    {
+      "courseCode": "MCT121",
+      "courseNameEn": "Mathematics II",
+      "courseNameAr": "الرياضيات 2",
+      "stage": 1,
+      "semester": 2,
+      "primary": "Thomas' Calculus (14th/15th Ed.) — George B. Thomas, Maurice D. Weir, Joel Hass",
+      "secondary": "Calculus: Early Transcendentals (9th Ed.) — James Stewart"
+    },
+    {
+      "courseCode": "MCT122",
+      "courseNameEn": "Electrical Circuits 2",
+      "courseNameAr": "الدوائر الكهربائية 2",
+      "stage": 1,
+      "semester": 2,
+      "primary": "Electric Circuits (11th Ed.) — James W. Nilsson, Susan A. Riedel",
+      "secondary": "Engineering Circuit Analysis (9th Ed.) — William H. Hayt et al."
+    },
+    {
+      "courseCode": "MCT123",
+      "courseNameEn": "Digital Systems Design",
+      "courseNameAr": "تصميم النظم الرقمية",
+      "stage": 1,
+      "semester": 2,
+      "primary": "Digital Design: With an Introduction to the Verilog HDL (6th Ed.) — M. Morris Mano, Michael D. Ciletti",
+      "secondary": "Digital Fundamentals (11th Ed.) — Thomas L. Floyd"
+    },
+    {
+      "courseCode": "MCT124",
+      "courseNameEn": "Physics",
+      "courseNameAr": "الفيزياء",
+      "stage": 1,
+      "semester": 2,
+      "primary": "Physics for Scientists and Engineers with Modern Physics (10th Ed.) — Raymond A. Serway, John W. Jewett",
+      "secondary": "University Physics with Modern Physics (15th Ed.) — Hugh D. Young, Roger A. Freedman"
+    },
+    {
+      "courseCode": "MCT125",
+      "courseNameEn": "Engineering Mechanics (Dynamics)",
+      "courseNameAr": "ميكانيك هندسي (داينمك)",
+      "stage": 1,
+      "semester": 2,
+      "primary": "Engineering Mechanics: Dynamics (14th/15th Ed.) — R. C. Hibbeler",
+      "secondary": "Vector Mechanics for Engineers: Dynamics (12th Ed.) — Ferdinand Beer, E. Russell Johnston"
+    },
+    {
+      "courseCode": "MCT211",
+      "courseNameEn": "Mathematics III",
+      "courseNameAr": "الرياضيات 3",
+      "stage": 2,
+      "semester": 3,
+      "primary": "Advanced Engineering Mathematics (10th Ed.) — Erwin Kreyszig",
+      "secondary": "Thomas' Calculus (14th Ed.) — George B. Thomas et al."
+    },
+    {
+      "courseCode": "MCT212",
+      "courseNameEn": "Strength of Materials",
+      "courseNameAr": "مقاومة المواد",
+      "stage": 2,
+      "semester": 3,
+      "primary": "Mechanics of Materials (10th/11th Ed.) — R. C. Hibbeler",
+      "secondary": "Mechanics of Materials (8th Ed.) — Ferdinand Beer, E. Russell Johnston, John DeWolf"
+    },
+    {
+      "courseCode": "MCT213",
+      "courseNameEn": "Metals Engineering",
+      "courseNameAr": "هندسة المعادن وعلم المواد",
+      "stage": 2,
+      "semester": 3,
+      "primary": "Materials Science and Engineering: An Introduction (10th Ed.) — William D. Callister, Jr., David G. Rethwisch",
+      "secondary": "The Science and Engineering of Materials (7th Ed.) — Donald R. Askeland, Wendelin J. Wright"
+    },
+    {
+      "courseCode": "MCT214",
+      "courseNameEn": "Computing and Artificial Intelligence",
+      "courseNameAr": "الحوسبة والذكاء الاصطناعي",
+      "stage": 2,
+      "semester": 3,
+      "primary": "Python for Data Analysis (3rd Ed.) — Wes McKinney",
+      "secondary": "Artificial Intelligence: A Modern Approach (4th Ed.) — Stuart Russell, Peter Norvig"
+    },
+    {
+      "courseCode": "MCT215",
+      "courseNameEn": "Electrical Machines (DC)",
+      "courseNameAr": "مكائن كهربائية (تيار مستمر)",
+      "stage": 2,
+      "semester": 3,
+      "primary": "Electric Machinery Fundamentals (5th Ed.) — Stephen J. Chapman",
+      "secondary": "Principles of Electric Machines and Power Electronics (3rd Ed.) — P. C. Sen"
+    },
+    {
+      "courseCode": "MCT217",
+      "courseNameEn": "Thermodynamics",
+      "courseNameAr": "ديناميك الحرارة",
+      "stage": 2,
+      "semester": 3,
+      "primary": "Thermodynamics: An Engineering Approach (9th/10th Ed.) — Yunus A. Cengel, Michael A. Boles",
+      "secondary": "Fundamentals of Engineering Thermodynamics (9th Ed.) — Michael J. Moran, Howard N. Shapiro"
+    },
+    {
+      "courseCode": "MCT221",
+      "courseNameEn": "Differential Equations",
+      "courseNameAr": "المعادلات التفاضلية",
+      "stage": 2,
+      "semester": 4,
+      "primary": "Differential Equations with Boundary-Value Problems (9th Ed.) — Dennis G. Zill",
+      "secondary": "Advanced Engineering Mathematics (10th Ed.) — Erwin Kreyszig"
+    },
+    {
+      "courseCode": "MCT222",
+      "courseNameEn": "Electrical Machines (AC)",
+      "courseNameAr": "مكائن كهربائية (تيار متناوب)",
+      "stage": 2,
+      "semester": 4,
+      "primary": "Electric Machinery Fundamentals (5th Ed.) — Stephen J. Chapman",
+      "secondary": "Principles of Electric Machines and Power Electronics (3rd Ed.) — P. C. Sen"
+    },
+    {
+      "courseCode": "MCT223",
+      "courseNameEn": "Object-Oriented Programming",
+      "courseNameAr": "البرمجة الكيانية",
+      "stage": 2,
+      "semester": 4,
+      "primary": "C++ How to Program (10th Ed.) — Paul Deitel, Harvey Deitel",
+      "secondary": "Object-Oriented Programming in C++ (4th Ed.) — Robert Lafore"
+    },
+    {
+      "courseCode": "MCT224",
+      "courseNameEn": "Theory of Machines",
+      "courseNameAr": "نظرية الآلات والميكانيزمات",
+      "stage": 2,
+      "semester": 4,
+      "primary": "Theory of Machines and Mechanisms (5th Ed.) — John J. Uicker, Gordon R. Pennock, Joseph E. Shigley",
+      "secondary": "Mechanics of Machines (2nd Ed.) — William L. Cleghorn, Nikolai Dechev"
+    },
+    {
+      "courseCode": "MCT225",
+      "courseNameEn": "Electronics",
+      "courseNameAr": "الإلكترونيات",
+      "stage": 2,
+      "semester": 4,
+      "primary": "Electronic Devices and Circuit Theory (11th Ed.) — Robert L. Boylestad, Louis Nashelsky",
+      "secondary": "Microelectronic Circuits (8th Ed.) — Adel S. Sedra, Kenneth C. Smith"
+    },
+    {
+      "courseCode": "MCT311",
+      "courseNameEn": "Linear Algebra",
+      "courseNameAr": "الجبر الخطي",
+      "stage": 3,
+      "semester": 5,
+      "primary": "Linear Algebra and Its Applications (5th/6th Ed.) — David C. Lay, Steven R. Lay, Judi J. McDonald",
+      "secondary": "Introduction to Linear Algebra (5th Ed.) — Gilbert Strang"
+    },
+    {
+      "courseCode": "MCT312",
+      "courseNameEn": "Mechanical Vibrations",
+      "courseNameAr": "الاهتزازات الميكانيكية",
+      "stage": 3,
+      "semester": 5,
+      "primary": "Mechanical Vibrations (6th Ed.) — Singiresu S. Rao",
+      "secondary": "Theory of Vibration with Applications (5th Ed.) — William T. Thomson, Marie Dillon Dahleh"
+    },
+    {
+      "courseCode": "MCT313",
+      "courseNameEn": "Fluid Mechanics and Systems",
+      "courseNameAr": "ميكانيك ومنظومات الموائع",
+      "stage": 3,
+      "semester": 5,
+      "primary": "Fluid Mechanics (9th Ed.) — Frank M. White, Henry Xue",
+      "secondary": "Fluid Power with Applications (7th Ed.) — Anthony Esposito"
+    },
+    {
+      "courseCode": "MCT314",
+      "courseNameEn": "Control Systems 1",
+      "courseNameAr": "أنظمة السيطرة 1",
+      "stage": 3,
+      "semester": 5,
+      "primary": "Modern Control Engineering (5th Ed.) — Katsuhiko Ogata",
+      "secondary": "Control Systems Engineering (8th Ed.) — Norman S. Nise"
+    },
+    {
+      "courseCode": "MCT315",
+      "courseNameEn": "Computer Organization",
+      "courseNameAr": "تنظيم الحاسبة والمعمارية",
+      "stage": 3,
+      "semester": 5,
+      "primary": "Computer Organization and Architecture (11th Ed.) — William Stallings",
+      "secondary": "Computer System Architecture (3rd Ed.) — M. Morris Mano"
+    },
+    {
+      "courseCode": "MCT316",
+      "courseNameEn": "Power Electronics",
+      "courseNameAr": "إلكترونيات القدرة",
+      "stage": 3,
+      "semester": 5,
+      "primary": "Power Electronics: Circuits, Devices, and Applications (4th Ed.) — Muhammad H. Rashid",
+      "secondary": "Power Electronics: Converters, Applications, and Design (3rd Ed.) — Ned Mohan, Tore Undeland"
+    },
+    {
+      "courseCode": "MCT317",
+      "courseNameEn": "Heat Transfer",
+      "courseNameAr": "انتقال الحرارة",
+      "stage": 3,
+      "semester": 5,
+      "primary": "Fundamentals of Heat and Mass Transfer (8th Ed.) — Theodore L. Bergman, Adrienne Lavine, Frank P. Incropera",
+      "secondary": "Heat and Mass Transfer: Fundamentals and Applications (6th Ed.) — Yunus A. Cengel, Afshin J. Ghajar"
+    },
+    {
+      "courseCode": "MCT321",
+      "courseNameEn": "Numerical Analysis and Statistics",
+      "courseNameAr": "التحليلات العددية والإحصاء",
+      "stage": 3,
+      "semester": 6,
+      "primary": "Numerical Methods for Engineers (8th Ed.) — Steven C. Chapra, Raymond P. Canale",
+      "secondary": "Applied Statistics and Probability for Engineers (7th Ed.) — Douglas C. Montgomery, George C. Runger"
+    },
+    {
+      "courseCode": "MCT322",
+      "courseNameEn": "Engineering Economy",
+      "courseNameAr": "الاقتصاد الهندسي",
+      "stage": 3,
+      "semester": 6,
+      "primary": "Engineering Economy (8th Ed.) — Leland Blank, Anthony Tarquin",
+      "secondary": "Basics of Engineering Economy (2nd Ed.) — Leland Blank, Anthony Tarquin"
+    },
+    {
+      "courseCode": "MCT323",
+      "courseNameEn": "Sensors and Instrumentation",
+      "courseNameAr": "المتحسسات والآلات الدقيقة",
+      "stage": 3,
+      "semester": 6,
+      "primary": "Introduction to Mechatronics and Measurement Systems (5th Ed.) — David G. Alciatore",
+      "secondary": "Sensors and Actuators: Control System Instrumentation — Clarence W. de Silva"
+    },
+    {
+      "courseCode": "MCT324",
+      "courseNameEn": "Control Systems 2",
+      "courseNameAr": "أنظمة السيطرة 2",
+      "stage": 3,
+      "semester": 6,
+      "primary": "Modern Control Engineering (5th Ed.) — Katsuhiko Ogata",
+      "secondary": "Control Systems Engineering (8th Ed.) — Norman S. Nise"
+    },
+    {
+      "courseCode": "MCT325",
+      "courseNameEn": "Automation Systems",
+      "courseNameAr": "منظومات الأتمتة والتحكم الصناعي",
+      "stage": 3,
+      "semester": 6,
+      "primary": "Programmable Logic Controllers (5th Ed.) — Frank D. Petruzella",
+      "secondary": "Automating Manufacturing Systems with PLCs — Hugh Jack"
+    },
+    {
+      "courseCode": "MCT326",
+      "courseNameEn": "Digital Signal Processing",
+      "courseNameAr": "معالجة الإشارة الرقمية",
+      "stage": 3,
+      "semester": 6,
+      "primary": "Digital Signal Processing: Principles, Algorithms, and Applications (5th Ed.) — John G. Proakis, Dimitris G. Manolakis",
+      "secondary": "Discrete-Time Signal Processing (3rd Ed.) — Alan V. Oppenheim, Ronald W. Schafer"
+    },
+    {
+      "courseCode": "MCT327",
+      "courseNameEn": "Renewable Energy",
+      "courseNameAr": "الطاقة المتجددة",
+      "stage": 3,
+      "semester": 6,
+      "primary": "Renewable and Efficient Electric Power Systems (2nd Ed.) — Gilbert M. Masters",
+      "secondary": "Solar Engineering of Thermal Processes, Photovoltaics and Wind — John A. Duffie, William A. Beckman"
+    },
+    {
+      "courseCode": "MCT411",
+      "courseNameEn": "Embedded Systems",
+      "courseNameAr": "الأنظمة المضمنة والمعالجات الدقيقة",
+      "stage": 4,
+      "semester": 7,
+      "primary": "The Definitive Guide to ARM Cortex-M3 and Cortex-M4 Processors (3rd Ed.) — Joseph Yiu",
+      "secondary": "Embedded Systems: Real-Time Interfacing to ARM Cortex-M Microcontrollers — Jonathan W. Valvano"
+    },
+    {
+      "courseCode": "MCT412",
+      "courseNameEn": "Mechanical Design 1",
+      "courseNameAr": "التصميم الميكانيكي 1",
+      "stage": 4,
+      "semester": 7,
+      "primary": "Shigley's Mechanical Engineering Design (11th/12th Ed.) — Richard G. Budynas, J. Keith Nisbett",
+      "secondary": "Fundamentals of Machine Component Design (7th Ed.) — Robert C. Juvinall, Kurt M. Marshek"
+    },
+    {
+      "courseCode": "MCT413",
+      "courseNameEn": "Artificial Intelligence",
+      "courseNameAr": "الذكاء الاصطناعي",
+      "stage": 4,
+      "semester": 7,
+      "primary": "Artificial Intelligence: A Modern Approach (4th Ed.) — Stuart Russell, Peter Norvig",
+      "secondary": "Fuzzy Logic with Engineering Applications (4th Ed.) — Timothy J. Ross"
+    },
+    {
+      "courseCode": "P4MCT",
+      "courseNameEn": "Engineering Project",
+      "courseNameAr": "المشروع الهندسي (التخرج)",
+      "stage": 4,
+      "semester": 7,
+      "primary": "Identity Only: Capstone Mechatronics Engineering Project Guidelines (University of Basrah)",
+      "secondary": "Design of Electromechanical Systems / Senior Design Project Standards"
+    },
+    {
+      "courseCode": "MCT414",
+      "courseNameEn": "Project Management",
+      "courseNameAr": "إدارة المشاريع الهندسية",
+      "stage": 4,
+      "semester": 7,
+      "primary": "Project Management: A Systems Approach to Planning, Scheduling, and Controlling (13th Ed.) — Harold Kerzner",
+      "secondary": "A Guide to the Project Management Body of Knowledge (PMBOK Guide) (7th Ed.) — PMI"
+    },
+    {
+      "courseCode": "MCT415",
+      "courseNameEn": "Mechatronics Systems Design – Drones",
+      "courseNameAr": "تصميم أنظمة الميكاترونكس - الطائرات المسيرة",
+      "stage": 4,
+      "semester": 7,
+      "primary": "Small Unmanned Aircraft: Theory and Practice — Randal W. Beard, Timothy W. McLain",
+      "secondary": "Introduction to Multicopter Design and Control — Quan Quan"
+    },
+    {
+      "courseCode": "MCT416",
+      "courseNameEn": "Industrial Communication Networks",
+      "courseNameAr": "شبكات الاتصالات الصناعية",
+      "stage": 4,
+      "semester": 7,
+      "primary": "Industrial Communication Systems — Bogdan M. Wilamowski, J. David Irwin",
+      "secondary": "Industrial Ethernet on the Plant Floor — Robert Lounsbury"
+    },
+    {
+      "courseCode": "MCT421",
+      "courseNameEn": "Biomechatronics",
+      "courseNameAr": "الميكاترونكس الأحيائي",
+      "stage": 4,
+      "semester": 8,
+      "primary": "Biomechatronics — Marko B. Popovic",
+      "secondary": "Wearable Robots: Biomechatronic Exoskeletons — José L. Pons"
+    },
+    {
+      "courseCode": "MCT422",
+      "courseNameEn": "Mechanical Design 2",
+      "courseNameAr": "التصميم الميكانيكي 2",
+      "stage": 4,
+      "semester": 8,
+      "primary": "Shigley's Mechanical Engineering Design (11th/12th Ed.) — Richard G. Budynas, J. Keith Nisbett",
+      "secondary": "Machine Design: An Integrated Approach (6th Ed.) — Robert L. Norton"
+    },
+    {
+      "courseCode": "MCT423",
+      "courseNameEn": "Industrial Engineering",
+      "courseNameAr": "الهندسة الصناعية وإدارة الإنتاج",
+      "stage": 4,
+      "semester": 8,
+      "primary": "Operations Management (14th Ed.) — William J. Stevenson",
+      "secondary": "Work Systems: The Methods, Measurement, and Management of Work — Mikell P. Groover"
+    },
+    {
+      "courseCode": "MCT424",
+      "courseNameEn": "Robotic Systems",
+      "courseNameAr": "الأنظمة الروبوتية",
+      "stage": 4,
+      "semester": 8,
+      "primary": "Introduction to Robotics: Mechanics and Control (4th Ed.) — John J. Craig",
+      "secondary": "Robot Modeling and Control (2nd Ed.) — Mark W. Spong, Seth Hutchinson, M. Vidyasagar"
+    },
+    {
+      "courseCode": "MCT425",
+      "courseNameEn": "Professional Ethics",
+      "courseNameAr": "أخلاقيات المهنة الهندسية",
+      "stage": 4,
+      "semester": 8,
+      "primary": "Engineering Ethics: Concepts and Cases (6th Ed.) — Charles E. Harris, Jr. et al.",
+      "secondary": "Engineering Ethics (4th Ed.) — Charles B. Fleddermann"
+    },
+    {
+      "courseCode": "MCT426",
+      "courseNameEn": "Image Processing and Computer Vision",
+      "courseNameAr": "معالجة الصور والرؤية الحاسوبية",
+      "stage": 4,
+      "semester": 8,
+      "primary": "Digital Image Processing (4th Ed.) — Rafael C. Gonzalez, Richard E. Woods",
+      "secondary": "Computer Vision: Algorithms and Applications (2nd Ed.) — Richard Szeliski"
+    }
+  ]
+}
