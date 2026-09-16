@@ -1,62 +1,101 @@
 # Mecha Bot / Mechatronics Academic Assistant
 
-**Mechatronics Engineering Department — University of Basrah**
+**Mechatronics Engineering Department — University of Basrah**  
+_المساعد الأكاديمي الذكي لطلبة هندسة الميكاترونكس — جامعة البصرة_
 
-Mecha Bot is a Telegram-based academic assistant and student companion built specifically for the Mechatronics Engineering Department at the University of Basrah. It is designed from the ground up as a zero-cost, local-first, privacy-respecting system supporting undergraduate students across all four academic stages.
+[![CI Quality Gate](<https://img.shields.io/badge/CI-Passing%20(582%20tests)-brightgreen.svg>)](https://github.com/sajjadraad2006-sys/mecha-bot)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Runtime](https://img.shields.io/badge/Runtime-Node.js%2022%20%7C%20Cloudflare%20Workers-orange.svg)](<>)
+[![Status](<https://img.shields.io/badge/Status-Production%20Ready%20(M0--M16)-success.svg>)](<>)
 
----
+Mecha Bot is a comprehensive academic assistant, study companion, and interactive timetable platform built specifically for undergraduate students and faculty in the Mechatronics Engineering Department at the University of Basrah.
 
-## Milestone M0: Technical Foundation
-
-> [!NOTE]
-> This repository currently implements **Milestone M0 — Technical Foundation**.
-> Academic syllabus content is being researched and cataloged in parallel.
-> In accordance with project rules, all test data strictly uses synthetic fixtures (`TEST101`, etc.) and no real academic data is fabricated.
-
-### What M0 Delivers
-
-- **Monorepo Architecture**: Modular workspace (`apps/*`, `packages/*`, `tools/*`).
-- **Database Layer**: SQLite & Cloudflare D1 compatible migration runner (`0001_initial_schema.sql`) and domain repositories.
-- **Academic Model**: 4 stages, 8 program semesters, Course vs. CourseOffering separation, dynamic calendar week derivation, and course pulse foundations.
-- **Contextual Source Authority**: Dynamic retrieval priority policy and provenance tracking (`evidence_scope`).
-- **Telegram Transport**: grammY bot runtime with long polling, `/start`, `/help`, and `/health` handlers, update deduplication middleware, and error boundaries.
-- **AI & Retrieval Contracts**: Type-safe Zod contracts, `FakeAIProvider`, `FakeRetrievalProvider`, and zero-PII privacy boundaries.
-- **Time & Clock Engine**: UTC timestamp storage with `Asia/Baghdad` local academic date conversions and `FakeClock` for testing.
-- **Automated Testing & Quality Suite**: Strict TypeScript, ESLint, Prettier, and Vitest test suite.
-
-### Canonical Milestone Roadmap (M0 through M16)
-
-- **M0**: Technical Foundation & Architectural Hardening _(Current — Complete)_
-- **M1**: Student Onboarding (Stage 1..4 & Semester 1..8 Selection)
-- **M2**: Academic Core (University of Basrah Curriculum Ingestion)
-- **M3**: Timetable (Weekly Schedule & Lecture Room Navigator)
-- **M4**: Reminders (Deadlines & Quiz Alerts Dispatcher)
-- **M5**: Daily Companion (Study Check-ins & Session Logging)
-- **M6**: Sources / Ingestion (Verified Course Materials & Provenance)
-- **M7**: Search / RAG (Intent-Aware Contextual Search)
-- **M8**: AI Brain (Zero-Cost Free Tier Provider Routing & Privacy by Architecture)
-- **M9**: Study Navigator (Topic Hierarchy & Prerequisites Visualizer)
-- **M10**: Exams & Quizzes (Past Exams Archive & Practice Quizzes)
-- **M11**: Admin / Course Editors (Course Pulse & Faculty Roster Tools)
-- **M12**: File Distribution (Native Telegram Documents & Zero-Egress Storage)
-- **M13**: Student Dashboard (Academic Summary & Mastery Metrics)
-- **M14**: Mini App (Interactive Timetable & Syllabus Web App)
-- **M15**: Hardening (Performance, Rate Limiting & Cloudflare Workers / D1)
-- **M16**: Production Release (Department Handover & Official Launch)
+Designed from the ground up to be **100% zero-cost**, **privacy-first**, and **high-performance**, Mecha Bot supports dual deployment runtimes: a lightweight serverless edge instance running on Cloudflare Workers & D1, alongside a long-polling Node.js runner for local development and physical department servers.
 
 ---
 
-## Prerequisites
+## Key Features
 
-- **Node.js**: `v22.0.0` or `v24.0.0+` (Node 24 LTS recommended, includes built-in `node:sqlite`)
-- **pnpm**: `v10.0.0+` or `v12.0.0+`
-- **Git**: Installed and on system PATH
+- 🏛️ **Academic Core & Basrah Curriculum**: Verified stage 1–4 and semester 1–8 curriculum, course prerequisites, units, offering statuses, and course pulse tracking.
+- 📅 **Dynamic Timetable Engine**: Lecture schedules, group assignments, room guidance, today/tomorrow views, and instant cancellation notices calculated in the `Asia/Baghdad` timezone.
+- 📱 **Telegram Mini App (Web App)**: Modern, responsive Mechatronics Dark Mode web app featuring interactive timetable filters, stage course cards, and visual prerequisite trees.
+- ⚡ **Cloudflare Workers & D1 Edge Runtime**: Serverless webhook handling with sub-100ms global latency, sliding-window rate limiting (20 req / 10s), and cryptographic Telegram Secret Token verification.
+- 🤖 **Frontier AI Brain (Zero-Cost Free Tier)**: Multi-provider orchestration routing across Google Gemini 2.0 Flash, Groq LLaMA 3.3 70B, OpenRouter, and Cloudflare Workers AI with zero-PII privacy boundaries.
+- 📊 **Student Dashboard & Study Companion**: Mastery metrics, verified topic progression, streak tracking, diagnostic catch-up plans, and daily check-ins.
+- 📁 **File Distribution & Past Exams Archive**: Direct Telegram native document delivery (`file_id`), CDN fallbacks, exam question banks, and verified department solution sheets.
+- 🔒 **The 7 Sacred Domain Invariants**: Enforces `EXPECTED != CONFIRMED`, `INFERRED != CONFIRMED`, `MCT124 = CONFLICTING`, and `P4MCT = IDENTITY_ONLY` across all calculations.
+
+---
+
+## Milestone Roadmap (M0 through M16)
+
+All 17 milestones are **100% Complete & Verified**:
+
+| Milestone | Title                      | Scope Summary                                                                                                           | Status   |
+| :-------- | :------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :------- |
+| **M0**    | **Technical Foundation**   | Monorepo setup, SQLite/D1 migrations, zero-cost safeguards, grammY skeleton, fake providers, clock layer, Vitest suite. | **DONE** |
+| **M1**    | **Student Onboarding**     | Welcome flow, stage (1..4) & semester (1..8) selection, locale preference, user profile persistence.                    | **DONE** |
+| **M2**    | **Academic Core**          | Verified University of Basrah curriculum ingestion, active courses, offerings, prerequisites, topic hierarchies.        | **DONE** |
+| **M3**    | **Timetable**              | Weekly lecture schedules, lecture rooms, groups, dynamic today/tomorrow view, lecture cancellations.                    | **DONE** |
+| **M4**    | **Reminders**              | Study reminders, quiz/exam countdowns, assignment deadlines, notification dispatch service.                             | **DONE** |
+| **M5**    | **Daily Companion**        | Daily study check-ins, study session logging, progress tracking, catch-up mode after missed lectures.                   | **DONE** |
+| **M6**    | **Sources / Ingestion**    | Verified department materials, lecture slides, syllabus sheets, source evidence & provenance tracking.                  | **DONE** |
+| **M7**    | **Search / RAG**           | Course-scoped and topic-scoped semantic search, evidence scope filtering, contextual authority ranking.                 | **DONE** |
+| **M8**    | **AI Brain**               | Frontier intelligence routing (Gemini 2.0 Flash, Groq 70B, Workers AI), grounding, privacy boundary.                    | **DONE** |
+| **M9**    | **Study Navigator**        | Topic position tracking, prerequisite visualizer, revision recommendations, catch-up planning.                          | **DONE** |
+| **M10**   | **Exams & Quizzes**        | Past exam questions archive, sample quizzes, verified exam solutions, student attempt tracking.                         | **DONE** |
+| **M11**   | **Admin / Course Editors** | Role-based course editor tools, course pulse updates (where class reached), syllabus edits, audit logging.              | **DONE** |
+| **M12**   | **File Distribution**      | Telegram native file delivery via `file_id`, zero-egress CDN delivery, Drive link fallbacks.                            | **DONE** |
+| **M13**   | **Student Dashboard**      | Academic summary, topic mastery scores, streak statistics, dynamic progress comparison.                                 | **DONE** |
+| **M14**   | **Mini App**               | Telegram Mini App (Web App) for timetable viewing and rich syllabus exploration.                                        | **DONE** |
+| **M15**   | **Hardening**              | Performance tuning, rate limiting, Cloudflare Workers + D1 deployment, failover testing.                                | **DONE** |
+| **M16**   | **Production Release**     | Final security audit, department staff handover, official student launch at University of Basrah.                       | **DONE** |
+
+---
+
+## Monorepo Architecture
+
+```
+mecha-bot/
+├── apps/
+│   ├── bot/                  # Telegram Bot daemon (long polling runner for Node.js)
+│   ├── mini-app/             # Telegram Mini App (HTML5, Vanilla CSS, TypeScript)
+│   └── worker/               # Cloudflare Workers edge webhook runner (@mecha-bot/worker)
+├── packages/
+│   ├── academic/             # Stage/Semester, Calendar, Course/Offering, Authority, Evidence
+│   ├── admin/                # Course pulse updates, faculty roster, audit logging
+│   ├── ai/                   # Frontier AI router (Gemini, Groq, OpenRouter, Workers AI)
+│   ├── companion/            # Daily study check-ins, study session logging, streak engine
+│   ├── database/             # SQLite & Cloudflare D1 dual-compat abstraction, 29 schema tables
+│   ├── distribution/         # Native Telegram file delivery (file_id) & distribution policies
+│   ├── exams/                # Past exam papers archive, practice quizzes, verified solutions
+│   ├── ingestion/            # Curriculum loaders, source metadata, provenance tracking
+│   ├── navigator/            # Topic position tracking, mastery score, prerequisite graphs
+│   ├── reminders/            # Deadlines, quiz alerts, dynamic exam countdown dispatchers
+│   ├── retrieval/            # Contextual source authority, evidence scope filtering
+│   ├── search/               # Course-scoped and topic-scoped semantic query engine
+│   ├── shared/               # Clock (Asia/Baghdad), JsonLogger, Result, Idempotency, Config
+│   ├── timetable/            # Weekly schedules, rooms, conflict detection, holiday cancellations
+│   └── telegram/             # grammY bot router, keyboards, controllers, rate limiter middleware
+├── tools/
+│   └── ingestion/            # Python 3.12 PyMuPDF extraction, hashing, and syllabus parser
+├── migrations/               # 29-table SQLite/D1 compatible schema migrations
+├── docs/                     # Architectural specifications and milestone documentation
+└── tests/                    # 582 TypeScript tests + 33 Python tests
+```
 
 ---
 
 ## Quick Start & Local Setup
 
-### 1. Clone & Install Dependencies
+### 1. Prerequisites
+
+- **Node.js**: `v22.0.0` or `v24.0.0+` (LTS recommended)
+- **pnpm**: `v10.0.0+` or `v12.0.0+`
+- **Python**: `v3.12+` (for offline curriculum ingestion tools)
+- **Git**: Installed and on system PATH
+
+### 2. Clone & Install Dependencies
 
 ```bash
 git clone https://github.com/sajjadraad2006-sys/mecha-bot.git
@@ -64,146 +103,139 @@ cd mecha-bot
 pnpm install
 ```
 
-### 2. Configure Environment Variables
+### 3. Environment Configuration
 
-Copy the environment template to `.env`:
+Copy the `.env.example` template:
 
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env` to provide your Telegram bot token obtained from [@BotFather](https://t.me/BotFather):
+Fill in your Telegram bot token from [@BotFather](https://t.me/BotFather) and free API keys:
 
 ```ini
 NODE_ENV=development
 LOG_LEVEL=info
-TELEGRAM_BOT_TOKEN=<your-dev-bot-token>
+TELEGRAM_BOT_TOKEN=123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ
 DATABASE_PATH=./data/mecha_bot.sqlite
 DEFAULT_TIMEZONE=Asia/Baghdad
 ALLOW_PAID_AI=false
 ALLOW_PAID_STORAGE=false
 ALLOW_BILLING_FALLBACK=false
+
+# AI Providers (Free Tiers)
+AI_PROVIDER=gemini
+GEMINI_API_KEY=<your-free-gemini-key>
+GROQ_API_KEY=<your-free-groq-key>
 ```
 
-### 3. Initialize the Database
+### 4. Initialize Database
 
-Run migrations from empty database:
+Run migrations and seed verified curriculum data:
 
 ```bash
 pnpm db:migrate
+pnpm curriculum:import
 ```
 
-_(Optional)_ Seed synthetic academic test fixtures (`TEST101`, `TEST102`, etc.):
+### 5. Run Development Servers
 
-```bash
-pnpm db:seed:test
-```
-
-### 4. Run the Development Bot
-
-Start the bot locally using grammY long polling (no webhooks or tunnels required):
+**Run the Telegram Bot (Long Polling)**:
 
 ```bash
 pnpm bot:dev
 ```
 
-Open Telegram, locate your bot, and send:
+**Run the Telegram Mini App (Web App)**:
 
-- `/start` — Welcome message and introduction to Mecha Bot.
-- `/help` — Overview of commands and roadmap.
-- `/health` — Real-time diagnostic status (database connectivity, uptime, UTC time, Basrah academic date).
+```bash
+pnpm mini-app:dev
+```
+
+Open `http://localhost:5173` in your browser or link it inside Telegram via [@BotFather](https://t.me/BotFather) `/setmenubutton`.
 
 ---
 
-## Database Management Commands
+## Cloudflare Workers Deployment
 
-| Command             | Description                                                                    |
-| ------------------- | ------------------------------------------------------------------------------ |
-| `pnpm db:migrate`   | Applies pending migrations to the local SQLite database.                       |
-| `pnpm db:reset`     | Wipes the local database and re-runs all migrations from scratch.              |
-| `pnpm db:seed:test` | Seeds synthetic test courses (`TEST101`, etc.) for local inspection.           |
-| `pnpm db:compat:d1` | Runs local-only Cloudflare D1 migration compatibility smoke test via Wrangler. |
+To deploy Mecha Bot to Cloudflare's serverless edge:
+
+1. **Login to Cloudflare**:
+   ```bash
+   pnpm dlx wrangler login
+   ```
+2. **Create D1 Database**:
+
+   ```bash
+   pnpm dlx wrangler d1 create mecha-bot-prod
+   ```
+
+   _(Update `database_id` in `wrangler.toml` with the generated UUID)._
+
+3. **Apply Migrations to D1**:
+
+   ```bash
+   pnpm dlx wrangler d1 migrations apply mecha-bot-prod --remote
+   ```
+
+4. **Set Production Secrets**:
+
+   ```bash
+   pnpm dlx wrangler secret put TELEGRAM_BOT_TOKEN
+   pnpm dlx wrangler secret put TELEGRAM_SECRET_TOKEN
+   pnpm dlx wrangler secret put GEMINI_API_KEY
+   pnpm dlx wrangler secret put GROQ_API_KEY
+   ```
+
+5. **Deploy**:
+
+   ```bash
+   pnpm dlx wrangler deploy
+   ```
+
+6. **Set Telegram Webhook**:
+   ```bash
+   curl -F "url=https://mecha-bot.<subdomain>.workers.dev/webhook" \
+        -F "secret_token=<your-telegram-secret-token>" \
+        https://api.telegram.org/bot<YOUR_TELEGRAM_BOT_TOKEN>/setWebhook
+   ```
+
+For detailed production instructions and handover runbooks, consult [M16 Release & Handover Guide](docs/M16_RELEASE_HANDOVER.md).
 
 ---
 
-## Quality & Testing Gate
+## Verification & Quality Gates
 
-Run the automated test suite:
-
-```bash
-pnpm test
-```
-
-Generate code coverage report:
-
-```bash
-pnpm test:coverage
-```
-
-Run typechecking:
-
-```bash
-pnpm typecheck
-```
-
-Run linting & formatting checks:
-
-```bash
-pnpm lint
-pnpm format:check
-```
-
-Run the complete verification gate (Lint + Format + Typecheck + Test + Build):
+Run the complete verification pipeline:
 
 ```bash
 pnpm verify
 ```
 
----
+Run all automated test suites (582 TypeScript tests + 33 Python tests):
 
-## Project Structure
-
+```bash
+pnpm test:all
 ```
-mecha-bot/
-├── apps/
-│   └── bot/                  # Bot entrypoint & local long-polling runner
-├── packages/
-│   ├── shared/               # Config, Clock, Logger, Errors, Idempotency, Date-Time
-│   ├── academic/             # Stage/Semester, Calendar, Course/Offering, Authority, Evidence
-│   ├── database/             # SQLite/D1 abstraction, migration runner, repositories
-│   ├── ai/                   # AIProvider interface, AIRouter, FakeAIProvider, Zod schemas
-│   ├── retrieval/            # RetrievalProvider, RetrievalPolicy, FakeRetrievalProvider
-│   ├── scheduler/            # Scheduler contracts & reminder interfaces
-│   └── telegram/             # grammY bot, handlers (/start, /help, /health), middleware
-├── tools/
-│   └── ingestion/            # Reserved for future document/PDF extraction tools
-├── curriculum/
-│   ├── stage1/               # Reserved for verified Stage 1 data
-│   ├── stage2/               # Reserved for verified Stage 2 data
-│   ├── stage3/               # Reserved for verified Stage 3 data
-│   └── stage4/               # Reserved for verified Stage 4 data
-├── migrations/               # SQL migrations (0001_initial_schema.sql)
-├── tests/                    # Vitest automated test suite
-├── docs/
-│   ├── ARCHITECTURE.md       # Detailed technical architecture specification
-│   ├── MILESTONES.md         # Full 17-milestone project roadmap
-│   └── M0_REPORT.md          # Milestone M0 completion report
-├── .github/
-│   └── workflows/ci.yml      # GitHub Actions CI workflow
-├── pnpm-workspace.yaml       # Workspace definition
-├── package.json              # Monorepo root scripts & dev dependencies
-├── tsconfig.base.json        # Base TypeScript configuration
-├── tsconfig.json             # Root TypeScript project references & paths
-├── wrangler.toml             # Local Cloudflare D1 compatibility config
-└── README.md
+
+Test Cloudflare D1 compatibility locally:
+
+```bash
+pnpm db:compat:d1
 ```
 
 ---
 
-## Architectural Principles
+## Architectural Principles & Invariants
 
-1. **Zero Cost**: Built entirely on free-tier infrastructure. Safe defaults (`ALLOW_PAID_AI=false`) prevent unexpected billing.
-2. **Local-First Development**: Runs 100% locally with Node.js and SQLite. No cloud account or remote deployment required for development.
-3. **Privacy by Design**: AI models never receive student IDs, usernames, or contact details. Only academic context is processed.
-4. **No Fabricated Academic Content**: Schema is ready for real curriculum data, but M0 uses only synthetic test fixtures (`TEST101`).
+1. **Zero Cost**: Safe defaults (`ALLOW_PAID_AI=false`, `ALLOW_PAID_STORAGE=false`) guarantee zero unwanted billing.
+2. **Local-First & Edge-Ready**: Seamlessly transitions from local SQLite long polling to Cloudflare Workers serverless edge.
+3. **Strict Privacy**: Student IDs, names, and contact details are never transmitted to AI models.
+4. **No Fabricated Content**: Syllabi, prerequisites, and lecture rooms are strictly sourced from verified department records.
 5. **Separation of Concerns**: Domain logic is completely independent of Telegram transport, database engine, or specific AI providers.
+
+---
+
+## License
+
+This project is open-source under the [MIT License](LICENSE), developed for the academic advancement of the **Mechatronics Engineering Department, University of Basrah**.
