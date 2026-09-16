@@ -41,6 +41,17 @@ jobs:
       - name: Run automated test suite with coverage
         run: pnpm test:coverage
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install -r tools/ingestion/requirements.txt
+
+      - name: Run Python ingestion tests
+        run: pnpm test:python
+
       - name: Build packages
         run: pnpm build
 
