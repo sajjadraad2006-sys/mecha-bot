@@ -3,9 +3,9 @@ main = "apps/worker/src/index.ts"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
-# Local-only D1 database configuration for compatibility testing
+# Cloudflare D1 production database binding
 [[d1_databases]]
 binding = "DB"
-database_name = "mecha-bot-local"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_name = "mecha-bot-prod"
+database_id = "9936a6ff-83f6-4fc1-a7fd-b9787be31bf3"
 migrations_dir = "migrations"
