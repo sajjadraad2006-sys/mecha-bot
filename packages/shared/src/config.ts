@@ -45,6 +45,9 @@ export const ConfigSchema = z.object({
 
   // Optional Telegram Mini App (Web App) URL
   MINI_APP_URL: z.string().optional(),
+
+  // Authorized Admin Telegram User IDs (comma-separated, e.g. "1417868079")
+  ADMIN_USER_IDS: z.string().optional(),
 });
 
 export type AppConfig = z.infer<typeof ConfigSchema>;

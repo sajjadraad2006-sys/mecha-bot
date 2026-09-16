@@ -21,6 +21,7 @@ export interface WorkerEnv {
   GEMINI_API_KEY?: string | undefined;
   GROQ_API_KEY?: string | undefined;
   OPENROUTER_API_KEY?: string | undefined;
+  ADMIN_USER_IDS?: string | undefined;
 }
 
 // In-memory singletons across worker execution lifecycle
