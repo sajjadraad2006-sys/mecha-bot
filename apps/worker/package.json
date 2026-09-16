@@ -1,0 +1,21 @@
+{
+  "name": "@mecha-bot/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local",
+    "deploy": "wrangler deploy",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mecha-bot/academic": "workspace:*",
+    "@mecha-bot/ai": "workspace:*",
+    "@mecha-bot/dashboard": "workspace:*",
+    "@mecha-bot/database": "workspace:*",
+    "@mecha-bot/shared": "workspace:*",
+    "@mecha-bot/telegram": "workspace:*",
+    "@mecha-bot/wiring": "workspace:*",
+    "grammy": "^1.35.0"
+  }
+}

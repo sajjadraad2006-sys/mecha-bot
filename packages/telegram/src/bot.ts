@@ -9,6 +9,7 @@ import { createHealthHandler } from './handlers/health.js';
 import { createErrorBoundaryMiddleware } from './middleware/error-boundary.js';
 import { createLoggingMiddleware } from './middleware/logging.js';
 import { createIdempotencyMiddleware } from './middleware/idempotency.js';
+import { createRateLimitMiddleware, SlidingWindowRateLimiter } from './middleware/rate-limit.js';
 import { OnboardingRouter } from './navigation/router.js';
 
 export interface BotDependencies {
@@ -22,6 +23,7 @@ export interface BotDependencies {
   app?: MechaBotApp;
   bridge?: TelegramAppBridge;
   miniAppUrl?: string | undefined;
+  rateLimiter?: SlidingWindowRateLimiter | undefined;
 }
 
 export function createMechaBot(token: string, deps: BotDependencies): Bot<Context> {
@@ -31,6 +33,9 @@ export function createMechaBot(token: string, deps: BotDependencies): Bot<Contex
   bot.use(createErrorBoundaryMiddleware(deps.logger));
   bot.use(createLoggingMiddleware(deps.logger));
   bot.use(createIdempotencyMiddleware(deps.idempotencyStore, deps.logger));
+  if (deps.rateLimiter) {
+    bot.use(createRateLimitMiddleware(deps.rateLimiter, deps.logger));
+  }
 
   const studentRepo = new StudentRepository(deps.db);
   const bridge =
