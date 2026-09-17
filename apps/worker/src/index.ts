@@ -24,7 +24,10 @@ export interface WorkerEnv {
   ADMIN_USER_IDS?: string | undefined;
 }
 
+import { WorkerDatabaseConnection } from './database.js';
+
 // In-memory singletons across worker execution lifecycle
+const workerDb = new WorkerDatabaseConnection();
 let cachedBot: ReturnType<typeof createMechaBot> | null = null;
 let cachedHandler: ((req: Request) => Promise<Response>) | null = null;
 const rateLimiter = new SlidingWindowRateLimiter({ limit: 20, windowMs: 10_000 });
@@ -32,30 +35,26 @@ const clock = new SystemClock();
 const workerStartTimeMs = clock.nowEpochMs();
 
 /**
- * In-memory fallback database connection for stateless worker environments
+ * Worker database connection instance with in-memory store and D1 synchronization
  */
 export function createWorkerDatabaseConnection(): DatabaseConnection {
-  const dummyResult = { changes: 0, lastInsertRowid: 0 };
-  return {
-    exec: () => {},
-    query: <T>() => [] as T[],
-    queryOne: <T>() => null as T | null,
-    run: () => dummyResult,
-    transaction: <T>(fn: (tx: DatabaseConnection) => T) => fn(createWorkerDatabaseConnection()),
-    close: () => {},
-  };
+  return workerDb;
 }
 
 /**
  * Lazy-initializes the grammY bot and webhook callback handler
  */
-export function getOrCreateBotHandler(env: WorkerEnv): (req: Request) => Promise<Response> {
+export function getOrCreateBotHandler(
+  env: WorkerEnv,
+  ctx?: unknown,
+): (req: Request) => Promise<Response> {
+  workerDb.setD1(env.DB, ctx);
+
   if (cachedHandler && cachedBot) {
     return cachedHandler;
   }
 
   const logger = new JsonLogger('info', { service: 'mecha-bot-worker' });
-  const db = createWorkerDatabaseConnection();
 
   const idempotencyStore = {
     isProcessed: async () => false,
@@ -63,7 +62,7 @@ export function getOrCreateBotHandler(env: WorkerEnv): (req: Request) => Promise
   };
 
   cachedBot = createMechaBot(env.TELEGRAM_BOT_TOKEN, {
-    db,
+    db: workerDb,
     clock,
     logger,
     idempotencyStore,
@@ -132,7 +131,22 @@ export default {
         }
       }
 
-      const handler = getOrCreateBotHandler(env);
+      // Preload student profile from Cloudflare D1 if available
+      try {
+        const body = (await request.clone().json()) as {
+          message?: { from?: { id?: number } };
+          callback_query?: { from?: { id?: number } };
+        };
+        const tgUserId = body?.message?.from?.id || body?.callback_query?.from?.id;
+        if (tgUserId) {
+          workerDb.setD1(env.DB, _ctx);
+          await workerDb.preloadStudentFromD1(tgUserId);
+        }
+      } catch {
+        // Safe fallback if request body is not JSON
+      }
+
+      const handler = getOrCreateBotHandler(env, _ctx);
       return handler(request);
     }
 
