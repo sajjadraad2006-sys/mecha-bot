@@ -10,6 +10,9 @@ import { createMechaBot, SlidingWindowRateLimiter } from '@mecha-bot/telegram';
 import { JsonLogger, SystemClock } from '@mecha-bot/shared';
 import type { DatabaseConnection } from '@mecha-bot/database';
 
+import { WorkerDatabaseConnection } from './database.js';
+import { createWorkerMechaBotApp } from './worker-app-factory.js';
+
 export interface WorkerEnv {
   TELEGRAM_BOT_TOKEN: string;
   TELEGRAM_SECRET_TOKEN?: string | undefined;
@@ -23,8 +26,6 @@ export interface WorkerEnv {
   OPENROUTER_API_KEY?: string | undefined;
   ADMIN_USER_IDS?: string | undefined;
 }
-
-import { WorkerDatabaseConnection } from './database.js';
 
 // In-memory singletons across worker execution lifecycle
 const workerDb = new WorkerDatabaseConnection();
@@ -61,6 +62,8 @@ export function getOrCreateBotHandler(
     markProcessed: async () => {},
   };
 
+  const { app, calendarService } = createWorkerMechaBotApp(env, clock);
+
   cachedBot = createMechaBot(env.TELEGRAM_BOT_TOKEN, {
     db: workerDb,
     clock,
@@ -70,6 +73,8 @@ export function getOrCreateBotHandler(
     uptimeStartMs: workerStartTimeMs,
     miniAppUrl: env.MINI_APP_URL,
     rateLimiter,
+    app,
+    calendarService,
   });
 
   cachedHandler = webhookCallback(cachedBot, 'cloudflare-mod');

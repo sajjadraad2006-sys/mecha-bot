@@ -89,15 +89,36 @@ importers:
       '@mecha-bot/academic':
         specifier: workspace:*
         version: link:../../packages/academic
+      '@mecha-bot/admin':
+        specifier: workspace:*
+        version: link:../../packages/admin
       '@mecha-bot/ai':
         specifier: workspace:*
         version: link:../../packages/ai
+      '@mecha-bot/companion':
+        specifier: workspace:*
+        version: link:../../packages/companion
       '@mecha-bot/dashboard':
         specifier: workspace:*
         version: link:../../packages/dashboard
       '@mecha-bot/database':
         specifier: workspace:*
         version: link:../../packages/database
+      '@mecha-bot/distribution':
+        specifier: workspace:*
+        version: link:../../packages/distribution
+      '@mecha-bot/exams':
+        specifier: workspace:*
+        version: link:../../packages/exams
+      '@mecha-bot/navigator':
+        specifier: workspace:*
+        version: link:../../packages/navigator
+      '@mecha-bot/retrieval':
+        specifier: workspace:*
+        version: link:../../packages/retrieval
+      '@mecha-bot/scheduler':
+        specifier: workspace:*
+        version: link:../../packages/scheduler
       '@mecha-bot/search':
         specifier: workspace:*
         version: link:../../packages/search
@@ -107,6 +128,9 @@ importers:
       '@mecha-bot/telegram':
         specifier: workspace:*
         version: link:../../packages/telegram
+      '@mecha-bot/timetable':
+        specifier: workspace:*
+        version: link:../../packages/timetable
       '@mecha-bot/wiring':
         specifier: workspace:*
         version: link:../../packages/wiring

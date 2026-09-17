@@ -206,6 +206,108 @@ export class WorkerDatabaseConnection implements DatabaseConnection {
       ] as unknown as T[];
     }
 
+    // 4b. Academic calendar periods query
+    if (s.includes('FROM academic_calendar_periods')) {
+      return [
+        {
+          id: 'period_sem1_teaching',
+          academic_year_id: 'ay_2026_2027',
+          period_type: 'TEACHING',
+          program_semester: 1,
+          starts_on: '2026-09-01',
+          ends_on: '2026-12-31',
+          nominal_week_count: 16,
+          stage_scope: 1,
+          evidence_metadata_json: null,
+          created_at: '2026-09-01T00:00:00.000Z',
+        },
+        {
+          id: 'period_sem3_teaching',
+          academic_year_id: 'ay_2026_2027',
+          period_type: 'TEACHING',
+          program_semester: 3,
+          starts_on: '2026-09-01',
+          ends_on: '2026-12-31',
+          nominal_week_count: 16,
+          stage_scope: 2,
+          evidence_metadata_json: null,
+          created_at: '2026-09-01T00:00:00.000Z',
+        },
+        {
+          id: 'period_sem5_teaching',
+          academic_year_id: 'ay_2026_2027',
+          period_type: 'TEACHING',
+          program_semester: 5,
+          starts_on: '2026-09-01',
+          ends_on: '2026-12-31',
+          nominal_week_count: 16,
+          stage_scope: 3,
+          evidence_metadata_json: null,
+          created_at: '2026-09-01T00:00:00.000Z',
+        },
+        {
+          id: 'period_sem7_teaching',
+          academic_year_id: 'ay_2026_2027',
+          period_type: 'TEACHING',
+          program_semester: 7,
+          starts_on: '2026-09-01',
+          ends_on: '2026-12-31',
+          nominal_week_count: 16,
+          stage_scope: 4,
+          evidence_metadata_json: null,
+          created_at: '2026-09-01T00:00:00.000Z',
+        },
+        {
+          id: 'period_sem2_teaching',
+          academic_year_id: 'ay_2026_2027',
+          period_type: 'TEACHING',
+          program_semester: 2,
+          starts_on: '2027-02-01',
+          ends_on: '2027-06-15',
+          nominal_week_count: 16,
+          stage_scope: 1,
+          evidence_metadata_json: null,
+          created_at: '2026-09-01T00:00:00.000Z',
+        },
+        {
+          id: 'period_sem4_teaching',
+          academic_year_id: 'ay_2026_2027',
+          period_type: 'TEACHING',
+          program_semester: 4,
+          starts_on: '2027-02-01',
+          ends_on: '2027-06-15',
+          nominal_week_count: 16,
+          stage_scope: 2,
+          evidence_metadata_json: null,
+          created_at: '2026-09-01T00:00:00.000Z',
+        },
+        {
+          id: 'period_sem6_teaching',
+          academic_year_id: 'ay_2026_2027',
+          period_type: 'TEACHING',
+          program_semester: 6,
+          starts_on: '2027-02-01',
+          ends_on: '2027-06-15',
+          nominal_week_count: 16,
+          stage_scope: 3,
+          evidence_metadata_json: null,
+          created_at: '2026-09-01T00:00:00.000Z',
+        },
+        {
+          id: 'period_sem8_teaching',
+          academic_year_id: 'ay_2026_2027',
+          period_type: 'TEACHING',
+          program_semester: 8,
+          starts_on: '2027-02-01',
+          ends_on: '2027-06-15',
+          nominal_week_count: 16,
+          stage_scope: 4,
+          evidence_metadata_json: null,
+          created_at: '2026-09-01T00:00:00.000Z',
+        },
+      ] as unknown as T[];
+    }
+
     // 5. Curriculum versions query
     if (s.includes('FROM curriculum_versions')) {
       return [

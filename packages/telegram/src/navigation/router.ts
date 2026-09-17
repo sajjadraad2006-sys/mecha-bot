@@ -146,7 +146,7 @@ export class OnboardingRouter {
             student.stage,
             student.programSemester,
           ),
-          replyMarkup: createReturningStudentKeyboard(),
+          replyMarkup: createReturningStudentKeyboard(course.code),
           logger: this.logger,
         });
         return;
@@ -774,7 +774,7 @@ export class OnboardingRouter {
 
       await safeEditMenu(ctx, {
         text: renderStudyPlaceholderView(course.code, course.nameAr, calendarWeek),
-        replyMarkup: createStudyPlaceholderKeyboard(),
+        replyMarkup: createStudyPlaceholderKeyboard(course.code),
         logger: this.logger,
       });
       return;
@@ -991,10 +991,24 @@ export class OnboardingRouter {
       return;
     }
 
-    // --- 19. Course Files List: m:files:<courseCode> ---
-    const filesMatch = data.match(/^m:files:([A-Za-z0-9_]+)$/);
+    // --- 19. Course Files List: m:files or m:files:<courseCode> ---
+    const filesMatch = data.match(/^m:files(?::([A-Za-z0-9_]+))?$/);
     if (filesMatch) {
-      const courseCode = filesMatch[1]!;
+      let courseCode = filesMatch[1];
+      if (!courseCode) {
+        const student = this.studentRepo.findByTelegramId(telegramUserId);
+        if (student?.activeCourseId) {
+          const c = this.academicRepo.findCourseById(student.activeCourseId);
+          courseCode = c?.code;
+        }
+      }
+
+      if (!courseCode) {
+        await ctx.answerCallbackQuery({ text: 'يرجى اختيار مادة أولاً لعرض الملفات' });
+        await this.handleCourses(ctx);
+        return;
+      }
+
       if (!this.bridge) return;
 
       const studentKey = this.bridge.resolveStudentKey(ctx);
@@ -1023,10 +1037,24 @@ export class OnboardingRouter {
       return;
     }
 
-    // --- 20. Exams & Quizzes View: m:exams:<courseCode> ---
-    const examsMatch = data.match(/^m:exams:([A-Za-z0-9_]+)$/);
+    // --- 20. Exams & Quizzes View: m:exams or m:exams:<courseCode> ---
+    const examsMatch = data.match(/^m:exams(?::([A-Za-z0-9_]+))?$/);
     if (examsMatch) {
-      const courseCode = examsMatch[1]!;
+      let courseCode = examsMatch[1];
+      if (!courseCode) {
+        const student = this.studentRepo.findByTelegramId(telegramUserId);
+        if (student?.activeCourseId) {
+          const c = this.academicRepo.findCourseById(student.activeCourseId);
+          courseCode = c?.code;
+        }
+      }
+
+      if (!courseCode) {
+        await ctx.answerCallbackQuery({ text: 'يرجى اختيار مادة أولاً لعرض الامتحانات' });
+        await this.handleCourses(ctx);
+        return;
+      }
+
       if (!this.bridge) return;
 
       const { text, events } = this.bridge.handleExamsView(ctx, courseCode);

@@ -266,20 +266,41 @@ export function createFilesKeyboard(
   return kb;
 }
 
-export function createReturningStudentKeyboard(): InlineKeyboard {
-  return new InlineKeyboard()
-    .text('▶️ متابعة', 'm1:start_course')
-    .row()
-    .text('🔄 تغيير المادة', 'm1:chg:course')
-    .row()
-    .text('⚙️ الإعدادات', 'm1:settings');
+export function createReturningStudentKeyboard(activeCourseCode?: string): InlineKeyboard {
+  const kb = new InlineKeyboard();
+  if (activeCourseCode) {
+    kb.text(`🚀 لوحة المادة (${activeCourseCode})`, `m:c:${activeCourseCode}`).row();
+    kb.text('📊 لوحة التحكم', 'm:dashboard').text('📅 الجدول', 'm:tt').row();
+    kb.text('📁 ملفات المادة', `m:files:${activeCourseCode}`)
+      .text('📝 امتحانات وكويزات', `m:exams:${activeCourseCode}`)
+      .row();
+    kb.text('▶️ متابعة', 'm1:start_course').row();
+    kb.text('🔄 تغيير المادة', 'm1:chg:course').row();
+    kb.text('⚙️ الإعدادات', 'm1:settings');
+  } else {
+    kb.text('▶️ متابعة', 'm1:start_course')
+      .row()
+      .text('🔄 تغيير المادة', 'm1:chg:course')
+      .row()
+      .text('⚙️ الإعدادات', 'm1:settings');
+  }
+  return kb;
 }
 
-export function createStudyPlaceholderKeyboard(): InlineKeyboard {
-  return new InlineKeyboard()
-    .text('↩️ رجوع للقائمة', 'm1:menu')
-    .row()
-    .text('🔄 تغيير المادة', 'm1:chg:course');
+export function createStudyPlaceholderKeyboard(courseCode?: string): InlineKeyboard {
+  const kb = new InlineKeyboard();
+  if (courseCode) {
+    kb.text('📍 وين وصلنا؟', `m:where:${courseCode}`)
+      .text('🧭 أني ضايع', `m:lost:${courseCode}`)
+      .row()
+      .text('📁 ملفات المادة', `m:files:${courseCode}`)
+      .text('📝 أسئلة وامتحانات', `m:exams:${courseCode}`)
+      .row()
+      .text('🔍 بحث بالمادة', `m:search:${courseCode}`)
+      .row();
+  }
+  kb.text('↩️ رجوع للقائمة', 'm1:menu').row().text('🔄 تغيير المادة', 'm1:chg:course');
+  return kb;
 }
 
 export function createSettingsKeyboard(): InlineKeyboard {
