@@ -29,8 +29,9 @@ export const STAGE_SEMESTERS_MAP: Record<Stage, [ProgramSemester, ProgramSemeste
  * Clean UI label shortening for courses on inline keyboard buttons
  * Prevents excessively wide buttons on mobile Telegram clients.
  */
-export function formatCourseButtonLabel(code: string, nameAr: string): string {
-  // If Arabic name is long, truncate or clean up for button
-  const cleanName = nameAr.length > 22 ? `${nameAr.slice(0, 20)}...` : nameAr;
-  return `${code} — ${cleanName}`;
+export function formatCourseButtonLabel(code?: string, nameAr?: string): string {
+  const safeCode = code || '';
+  const safeName = nameAr || '';
+  const cleanName = safeName.length > 22 ? `${safeName.slice(0, 20)}...` : safeName;
+  return cleanName ? `${safeCode} — ${cleanName}` : safeCode;
 }

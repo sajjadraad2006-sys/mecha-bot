@@ -6,7 +6,7 @@
  */
 
 import type { DatabaseConnection, QueryResultInfo } from '@mecha-bot/database';
-import { OFFICIAL_COURSES } from './courses-data.js';
+import { OFFICIAL_COURSES, OFFICIAL_OFFERINGS } from './courses-data.js';
 
 export interface StoredStudentProfile {
   id: string;
@@ -114,31 +114,71 @@ export class WorkerDatabaseConnection implements DatabaseConnection {
   query<T = Record<string, unknown>>(sql: string, params: unknown[] = []): T[] {
     const s = sql.trim();
 
-    // 1. Courses queries
+    // 1. Course offerings query (must be evaluated before general courses query)
+    if (s.includes('FROM course_offerings')) {
+      // a) findOfferingByCourseCodeAndSemester: WHERE c.code = ? AND co.program_semester = ?
+      if (s.includes('c.code = ?')) {
+        const code = String(params[0]).toUpperCase();
+        const sem = Number(params[1]);
+        const match = OFFICIAL_OFFERINGS.find(
+          (o) => o.code.toUpperCase() === code && o.program_semester === sem && o.is_active === 1,
+        );
+        return (match ? [match] : []) as unknown as T[];
+      }
+
+      // b) findOfferingById: WHERE id = ?
+      if (s.includes('WHERE id = ?') || s.includes('co.id = ?')) {
+        const id = String(params[0]);
+        const match = OFFICIAL_OFFERINGS.find((o) => o.id === id);
+        return (match ? [match] : []) as unknown as T[];
+      }
+
+      // c) listOfferingsByCourse: WHERE course_id = ?
+      if (s.includes('WHERE course_id = ?') || s.includes('co.course_id = ?')) {
+        const courseId = String(params[0]);
+        return OFFICIAL_OFFERINGS.filter((o) => o.course_id === courseId).sort(
+          (a, b) => a.program_semester - b.program_semester,
+        ) as unknown as T[];
+      }
+
+      // d) listOfferingsBySemester: WHERE co.academic_year_id = ? AND co.program_semester = ?
+      if (s.includes('co.program_semester = ?') || s.includes('program_semester = ?')) {
+        const sem = s.includes('co.academic_year_id = ?') ? Number(params[1]) : Number(params[0]);
+        return OFFICIAL_OFFERINGS.filter(
+          (o) => o.program_semester === sem && o.is_active === 1,
+        ).sort((a, b) => a.code.localeCompare(b.code)) as unknown as T[];
+      }
+
+      return OFFICIAL_OFFERINGS as unknown as T[];
+    }
+
+    // 2. Courses queries
     if (s.includes('FROM courses')) {
       if (s.includes('default_stage =') && s.includes('default_program_semester =')) {
-        const stage = params[0] as number;
-        const sem = params[1] as number;
+        const stage = Number(params[0]);
+        const sem = Number(params[1]);
         return OFFICIAL_COURSES.filter(
           (c) =>
             c.default_stage === stage && c.default_program_semester === sem && c.is_active === 1,
-        ) as unknown as T[];
+        ).sort((a, b) => a.code.localeCompare(b.code)) as unknown as T[];
       }
       if (s.includes('code =')) {
-        const code = params[0] as string;
-        return OFFICIAL_COURSES.filter((c) => c.code === code) as unknown as T[];
+        const code = String(params[0]).toUpperCase();
+        return OFFICIAL_COURSES.filter((c) => c.code.toUpperCase() === code) as unknown as T[];
       }
       if (s.includes('id =')) {
-        const id = params[0] as string;
+        const id = String(params[0]);
         return OFFICIAL_COURSES.filter((c) => c.id === id) as unknown as T[];
       }
       if (s.includes('is_active = 1')) {
-        return OFFICIAL_COURSES as unknown as T[];
+        return OFFICIAL_COURSES.filter((c) => c.is_active === 1).sort((a, b) =>
+          a.code.localeCompare(b.code),
+        ) as unknown as T[];
       }
       return OFFICIAL_COURSES as unknown as T[];
     }
 
-    // 2. Student profiles query
+    // 3. Student profiles query
     if (s.includes('FROM student_profiles')) {
       if (s.includes('telegram_user_id =')) {
         const tgId = params[0] as number;
@@ -152,7 +192,7 @@ export class WorkerDatabaseConnection implements DatabaseConnection {
       }
     }
 
-    // 3. Academic years query
+    // 4. Academic years query
     if (s.includes('FROM academic_years')) {
       return [
         {
@@ -166,7 +206,7 @@ export class WorkerDatabaseConnection implements DatabaseConnection {
       ] as unknown as T[];
     }
 
-    // 4. Curriculum versions query
+    // 5. Curriculum versions query
     if (s.includes('FROM curriculum_versions')) {
       return [
         {
@@ -177,23 +217,6 @@ export class WorkerDatabaseConnection implements DatabaseConnection {
           created_at: '2026-09-01T00:00:00.000Z',
         },
       ] as unknown as T[];
-    }
-
-    // 5. Course offerings query
-    if (s.includes('FROM course_offerings')) {
-      if (s.includes('course_id =')) {
-        const courseId = params[0] as string;
-        return [
-          {
-            id: `off_${courseId}_ay2026`,
-            course_id: courseId,
-            academic_year_id: 'ay_2026_2027',
-            stage: 1,
-            program_semester: 1,
-            is_active: 1,
-          },
-        ] as unknown as T[];
-      }
     }
 
     // 6. Idempotency keys query
@@ -281,6 +304,22 @@ export class WorkerDatabaseConnection implements DatabaseConnection {
             existing.active_course_id = null;
             existing.active_course_offering_id = null;
             existing.updated_at = now;
+          } else {
+            const newP: StoredStudentProfile = {
+              id: `student_${tgId}`,
+              telegram_user_id: tgId,
+              stage: Math.ceil(sem / 2),
+              program_semester: sem,
+              active_course_id: null,
+              active_course_offering_id: null,
+              locale: 'ar',
+              timezone: 'Asia/Baghdad',
+              notification_preferences: '{}',
+              created_at: now,
+              updated_at: now,
+            };
+            this.studentProfilesByTgId.set(tgId, newP);
+            this.studentProfilesById.set(newP.id, newP);
           }
           this.dispatchD1Async(sql, params);
           return { changes: 1, lastInsertRowid: 1 };
@@ -297,6 +336,22 @@ export class WorkerDatabaseConnection implements DatabaseConnection {
             existing.active_course_id = crsId;
             existing.active_course_offering_id = offId;
             existing.updated_at = now;
+          } else {
+            const newP: StoredStudentProfile = {
+              id: `student_${tgId}`,
+              telegram_user_id: tgId,
+              stage: null,
+              program_semester: null,
+              active_course_id: crsId,
+              active_course_offering_id: offId,
+              locale: 'ar',
+              timezone: 'Asia/Baghdad',
+              notification_preferences: '{}',
+              created_at: now,
+              updated_at: now,
+            };
+            this.studentProfilesByTgId.set(tgId, newP);
+            this.studentProfilesById.set(newP.id, newP);
           }
           this.dispatchD1Async(sql, params);
           return { changes: 1, lastInsertRowid: 1 };
