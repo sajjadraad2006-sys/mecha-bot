@@ -235,8 +235,13 @@ export interface SearchResultButton {
 export function createSearchResultsKeyboard(
   files: SearchResultButton[] = [],
   courseCode?: string,
+  downloadUrl?: string,
 ): InlineKeyboard {
   const kb = new InlineKeyboard();
+
+  if (downloadUrl) {
+    kb.url('📥 تحميل الملف مباشرة', downloadUrl).row();
+  }
 
   for (const f of files) {
     if (f.fileId) {

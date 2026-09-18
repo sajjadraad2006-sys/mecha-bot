@@ -13,7 +13,7 @@ import {
   loadAcademicCoreDataset,
   type AcademicCoreDataset,
 } from '@mecha-bot/academic';
-import { FakeClock, JsonLogger, SystemClock } from '@mecha-bot/shared';
+import { FakeClock, JsonLogger } from '@mecha-bot/shared';
 import {
   StudyNavigatorService,
   InMemoryStudentCoursePositionRepository,
@@ -142,10 +142,10 @@ describe('End-to-End Student Journey: Full Lifecycle', () => {
     navigatorService = new StudyNavigatorService({ dataset, repository: navigatorRepo });
     companionService = new CompanionService(companionRepo);
     timetableService = new TimetableService({
-      clock: new SystemClock(),
+      clock,
       initialSlots: SYNTHETIC_STAGE2_SLOTS,
     });
-    schedulerService = new ReminderSchedulerService({ clock: new SystemClock() });
+    schedulerService = new ReminderSchedulerService({ clock });
     searchEngine = new SearchEngine();
     distributionService = new FileDistributionService({ repository: distributionRepo });
     examsService = new ExamsService(examsRepo, { clock });

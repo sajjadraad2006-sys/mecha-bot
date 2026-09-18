@@ -983,9 +983,25 @@ export class OnboardingRouter {
           show_alert: true,
         });
       }
+
+      if (
+        decision.status === 'READY_TELEGRAM_FILE' &&
+        decision.fileRecord?.storageReference?.kind === 'TELEGRAM_FILE_ID'
+      ) {
+        try {
+          await ctx.replyWithDocument(decision.fileRecord.storageReference.value);
+        } catch {
+          // Graceful fallback to text menu if send document fails
+        }
+      }
+
       await safeEditMenu(ctx, {
         text,
-        replyMarkup: createSearchResultsKeyboard([], decision.fileRecord?.courseCode),
+        replyMarkup: createSearchResultsKeyboard(
+          [],
+          decision.fileRecord?.courseCode,
+          decision.externalUrl,
+        ),
         logger: this.logger,
       });
       return;

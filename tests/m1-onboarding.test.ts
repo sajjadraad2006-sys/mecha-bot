@@ -294,12 +294,12 @@ describe('Milestone M1 — Student Onboarding & Course Selection Router', () => 
     const text = editMessageText.mock.calls[0]![0] as string;
 
     expect(text).toContain('MCT314 — أنظمة السيطرة 1');
-    expect(text).toContain('ميزات الدراسة ستتوفر في المراحل القادمة.');
+    expect(text).toContain('لوحة المادة الدراسية');
     // Academic week computed from seed calendar period (September 20 to October 15 ≈ Week 4)
     expect(text).toMatch(/أنت حالياً تقريباً بالأسبوع \d حسب التقويم\./);
     // Preserves product rule: infer -> suggest -> confirm, never silently assume
     expect(text).toContain('إذا دخلت البوت بنص الفصل، مو مشكلة.');
-    expect(text).toContain('لاحقاً تگدر تحدد آخر موضوع أخذتوه حتى أضبط المادة عليك.');
+    expect(text).toContain('تگدر تحدد آخر موضوع أخذتوه');
   });
 
   it('8. Deterministically clears dependent state on stage or semester changes', async () => {

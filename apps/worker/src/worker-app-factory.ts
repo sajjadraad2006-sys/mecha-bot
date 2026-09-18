@@ -14,7 +14,7 @@ import {
 import { CompanionService, InMemoryCompanionRepository } from '@mecha-bot/companion';
 import { TimetableService } from '@mecha-bot/timetable';
 import { ReminderSchedulerService } from '@mecha-bot/scheduler';
-import { SearchEngine } from '@mecha-bot/search';
+import { SearchEngine, normalizeText } from '@mecha-bot/search';
 import { FileDistributionService, InMemoryFileCatalogRepository } from '@mecha-bot/distribution';
 import {
   ExamsService,
@@ -178,14 +178,16 @@ export function createWorkerMechaBotApp(
 
   // Index all bundled academic materials
   for (const m of BUNDLED_ACADEMIC_MATERIALS) {
+    const notesText = m.notes ? ` ${m.notes}` : '';
+    const fullText = `${m.title} - ${m.documentType} لمادة ${m.courseCode}${notesText}`;
     searchEngine.indexDocument({
       id: `mat_${m.id}`,
       documentId: m.id,
       courseCode: m.courseCode,
       topicKeys: [],
       title: m.title,
-      textOriginal: `${m.title} - ${m.documentType} لمادة ${m.courseCode}`,
-      textNormalized: `${m.title} ${m.documentType} ${m.courseCode}`.toLowerCase(),
+      textOriginal: fullText,
+      textNormalized: normalizeText(fullText),
       documentType: m.documentType,
       sourceAuthority: 'OFFICIAL_DEPARTMENT',
       evidenceScope: 'EXACT_COURSE',
@@ -199,14 +201,15 @@ export function createWorkerMechaBotApp(
 
   // Index curriculum topics
   for (const t of BUNDLED_TOPICS) {
+    const fullText = `${t.titleAr} ${t.titleEn} ${t.topicKey} ${t.courseCode}`;
     searchEngine.indexDocument({
       id: `topic_${t.courseCode}_${t.topicKey}`,
       documentId: `topic_${t.topicKey}`,
       courseCode: t.courseCode,
       topicKeys: [t.topicKey],
       title: t.titleAr || t.titleEn,
-      textOriginal: `${t.titleAr} ${t.titleEn} ${t.topicKey} ${t.courseCode}`,
-      textNormalized: `${t.titleAr} ${t.titleEn} ${t.topicKey} ${t.courseCode}`.toLowerCase(),
+      textOriginal: fullText,
+      textNormalized: normalizeText(fullText),
       documentType: 'CURRICULUM_TOPIC',
       sourceAuthority: 'OFFICIAL_DEPARTMENT',
       evidenceScope: 'EXACT_COURSE',
@@ -220,14 +223,15 @@ export function createWorkerMechaBotApp(
 
   // Index exam milestones
   for (const ev of BUNDLED_EXAM_EVENTS) {
+    const fullText = `${ev.title} ${ev.type} ${ev.courseCode}`;
     searchEngine.indexDocument({
       id: `exam_${ev.courseCode}_${ev.type}`,
       documentId: `exam_${ev.courseCode}_${ev.type}`,
       courseCode: ev.courseCode,
       topicKeys: [],
       title: ev.title,
-      textOriginal: `${ev.title} ${ev.type} ${ev.courseCode}`,
-      textNormalized: `${ev.title} ${ev.type} ${ev.courseCode}`.toLowerCase(),
+      textOriginal: fullText,
+      textNormalized: normalizeText(fullText),
       documentType: 'EXAM_SCHEDULE',
       sourceAuthority: 'OFFICIAL_DEPARTMENT',
       evidenceScope: 'EXACT_COURSE',

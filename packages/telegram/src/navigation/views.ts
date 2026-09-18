@@ -338,20 +338,28 @@ export function renderDeliveryResultView(decision: DeliveryDecision): string {
   }
 
   if (decision.status === 'READY_EXTERNAL_LINK' && decision.externalUrl) {
-    return [
+    const lines = [
       '📥 *رابط تحميل الملف:*',
       '',
       `الملف: *${decision.fileRecord?.title ?? 'ملف أكاديمي'}*`,
       `🔗 [اضغط هنا لتحميل الملف](${decision.externalUrl})`,
-    ].join('\n');
+    ];
+    if (decision.fileRecord?.notes) {
+      lines.push('', '📝 *ملخص المحتوى والملاحظات الأكاديمية:*', decision.fileRecord.notes);
+    }
+    return lines.join('\n');
   }
 
   if (decision.status === 'READY_TELEGRAM_FILE') {
-    return [
+    const lines = [
       '📥 *تم تجهيز الملف للإرسال عبر تيليجرام:*',
       '',
       `الملف: *${decision.fileRecord?.title ?? 'ملف أكاديمي'}*`,
-    ].join('\n');
+    ];
+    if (decision.fileRecord?.notes) {
+      lines.push('', '📝 *ملخص المحتوى والملاحظات الأكاديمية:*', decision.fileRecord.notes);
+    }
+    return lines.join('\n');
   }
 
   if (decision.status === 'NOT_FOUND') {
@@ -515,7 +523,11 @@ export function renderStudyPlaceholderView(
   nameAr: string,
   calendarWeek?: number | null,
 ): string {
-  const lines = [`🎛 ${code} — ${nameAr}`, '', 'ميزات الدراسة ستتوفر في المراحل القادمة.'];
+  const lines = [
+    `🎛 *${code} — ${nameAr}*`,
+    '',
+    '📚 *لوحة المادة الدراسية:* جميع ملفات وميزات المادة مفعلة بالكامل.',
+  ];
 
   if (calendarWeek && calendarWeek > 0) {
     lines.push('');
@@ -524,7 +536,7 @@ export function renderStudyPlaceholderView(
 
   lines.push('');
   lines.push('إذا دخلت البوت بنص الفصل، مو مشكلة.');
-  lines.push('لاحقاً تگدر تحدد آخر موضوع أخذتوه حتى أضبط المادة عليك.');
+  lines.push('تگدر تحدد آخر موضوع أخذتوه من زر "وين وصلنا؟" حتى أضبط المادة عليك.');
 
   return lines.join('\n');
 }

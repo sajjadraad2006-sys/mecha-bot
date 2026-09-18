@@ -32,7 +32,7 @@ for (const course of cur.courses) {
       },
       storageReference: {
         kind: 'EXTERNAL_URL',
-        value: `https://mechatronics.uobasrah.edu.iq/textbooks/${code.toLowerCase()}-primary.pdf`,
+        value: `https://archive.org/download/${code.toLowerCase()}-primary/${code.toLowerCase()}-primary.pdf`,
       },
       visibility: 'COURSE_SHARED',
       createdAt: '2026-09-01T00:00:00.000Z',
@@ -58,7 +58,7 @@ for (const course of cur.courses) {
       },
       storageReference: {
         kind: 'EXTERNAL_URL',
-        value: `https://mechatronics.uobasrah.edu.iq/textbooks/${code.toLowerCase()}-secondary.pdf`,
+        value: `https://archive.org/download/${code.toLowerCase()}-secondary/${code.toLowerCase()}-secondary.pdf`,
       },
       visibility: 'COURSE_SHARED',
       createdAt: '2026-09-01T00:00:00.000Z',
@@ -83,7 +83,7 @@ for (const course of cur.courses) {
     },
     storageReference: {
       kind: 'EXTERNAL_URL',
-      value: `https://mechatronics.uobasrah.edu.iq/syllabus/${code.toLowerCase()}.pdf`,
+      value: `https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/syllabus/${code.toLowerCase()}.pdf`,
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -107,7 +107,7 @@ for (const course of cur.courses) {
     },
     storageReference: {
       kind: 'EXTERNAL_URL',
-      value: `https://mechatronics.uobasrah.edu.iq/notes/${code.toLowerCase()}-notes.pdf`,
+      value: `https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/notes/${code.toLowerCase()}-notes.pdf`,
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
