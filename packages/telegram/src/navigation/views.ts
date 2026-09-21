@@ -295,7 +295,7 @@ export function renderSearchResultsView(response: SearchAndDeliverResponse, quer
       `🔍 *نتائج البحث عن:* "${query}"`,
       '',
       'لم يتم العثور على أي نتائج مطابقة في مصادر القسم أو المقررات.',
-      'جرب البحث بكلمات أخرى أو رمز المادة (مثلاً: MCT211 أو Laplace).',
+      '💡 نصيحة: جرب البحث بكلمات أخرى أو اسم المادة (مثلاً: ستاتيك، موائع، اهتزازات، MCT211).',
     ].join('\n');
   }
 
@@ -304,21 +304,37 @@ export function renderSearchResultsView(response: SearchAndDeliverResponse, quer
     '',
   ];
 
+  const docTypeLabels: Record<string, string> = {
+    LECTURER_NOTE: '📖 ملزمة أستاذ',
+    TEXTBOOK: '📚 كتاب منهجي معتمد',
+    STUDENT_SUMMARY: '📝 ملخص دراسي معتمد',
+    OFFICIAL_SYLLABUS: '📑 مفردات المنهج الرسمي',
+    EXAM_SCHEDULE: '📅 موعد امتحان رسمي',
+    CURRICULUM_TOPIC: '📑 مفردة منهج مقررة',
+  };
+
   response.hits.slice(0, 5).forEach((hit, idx) => {
     const doc = hit.searchResult;
     const course = doc.courseCode ? `[${doc.courseCode}] ` : '';
-    const deliveryNote = hit.deliveryDecision
-      ? ` [تسليم: ${hit.deliveryDecision.status}]` +
-        (hit.deliveryDecision.status === 'BLOCKED_POLICY'
-          ? '\n   🚫 _(توزيع محجوب وفق سياسة المصدر)_'
-          : hit.deliveryDecision.status === 'READY_TELEGRAM_FILE' ||
-              hit.deliveryDecision.status === 'READY_EXTERNAL_LINK'
-            ? '\n   📥 _(متاح للتحميل)_'
-            : '')
-      : '';
+    const typeLabel = docTypeLabels[doc.documentType] || '📄 مصدر أكاديمي';
 
-    lines.push(`${idx + 1}. *${course}${doc.documentType}*`);
-    lines.push(`   "${doc.textExcerpt}"${deliveryNote}`);
+    let statusLine = '';
+    if (hit.deliveryDecision?.status === 'READY_TELEGRAM_FILE') {
+      statusLine = '\n   📥 _(متاح للتحميل الفوري عبر تيليجرام)_';
+    } else if (hit.deliveryDecision?.status === 'READY_EXTERNAL_LINK') {
+      statusLine = '\n   🔗 _(رابط تحميل مباشر)_';
+    } else if (
+      hit.deliveryDecision?.status === 'BLOCKED_POLICY' &&
+      doc.documentType !== 'EXAM_SCHEDULE' &&
+      doc.documentType !== 'CURRICULUM_TOPIC'
+    ) {
+      statusLine = '\n   ℹ️ _(مرجع للمعاينة والبحث الأكاديمي — BLOCKED_POLICY)_';
+    }
+
+    const docTitle = hit.deliveryDecision?.fileRecord?.title || doc.textExcerpt;
+    lines.push(`${idx + 1}. *${course}${typeLabel} [${doc.documentType}]*`);
+    lines.push(`   ${docTitle}${statusLine}`);
+    lines.push('');
   });
 
   return lines.join('\n');
@@ -649,10 +665,11 @@ export function renderStudentDashboardView(
   lines.push('');
 
   // 1. Stage, Semester & Academic Week
+  const isPreSem = academicProgress.academicWeek === 0 || !academicProgress.isTeachingWeek;
   const weekLabel =
     academicProgress.academicWeek > 0
       ? `الأسبوع ${academicProgress.academicWeek} (${academicProgress.isTeachingWeek ? 'دراسي' : 'غير تدريسي'})`
-      : 'قبل بدء الفصل / عطلة';
+      : '🌴 عطلة صيفية / فترة الاستعداد والتسجيل (يبدأ الدوام في 4 تشرين الأول / أكتوبر)';
 
   lines.push(
     `🎓 *المرحلة:* ${STAGE_NAMES_AR[academicProgress.stage]} › ${SEMESTER_NAMES_AR[academicProgress.programSemester]}`,
@@ -668,7 +685,11 @@ export function renderStudentDashboardView(
   lines.push(
     `  • التقدير الزمني للتقويم: *${academicProgress.overallCalendarExpectedPercentage}%* (المتوقع للأسبوع الحالي)`,
   );
-  if (academicProgress.coursesNeedingCatchUpCount > 0) {
+  if (isPreSem) {
+    lines.push(
+      '  🌴 *فترة الاستعداد الصيفي*: العام الدراسي يبدأ قريباً. المناهج والملازم متوفرة للتحضير المسبق.',
+    );
+  } else if (academicProgress.coursesNeedingCatchUpCount > 0) {
     lines.push(
       `  ⚠️ *${academicProgress.coursesNeedingCatchUpCount}* مواد تحتاج إلى مراجعة أو تحديد نقطة انطلاق.`,
     );
@@ -687,8 +708,9 @@ export function renderStudentDashboardView(
     } else {
       const confirmedPct = c.confirmedMasteryPercentage ?? 0;
       const expectedPct = c.calendarExpectedPercentage ?? 0;
-      const statusIcon =
-        c.catchUpStatus === 'BEHIND'
+      const statusIcon = isPreSem
+        ? '🌴 تحضير صيفي'
+        : c.catchUpStatus === 'BEHIND'
           ? '🔻 متأخر'
           : c.catchUpStatus === 'AHEAD'
             ? '🔹 متقدم'
@@ -718,17 +740,24 @@ export function renderStudentDashboardView(
 
   // 5. Timetable Today
   lines.push('⏰ *جدول اليوم:*');
-  lines.push(`  • عدد المحاضرات: *${timetable.todayLectureCount}*`);
-  if (timetable.nextLecture) {
-    lines.push(
-      `  • المحاضرة القادمة: *${timetable.nextLecture.subjectName}* (${timetable.nextLecture.room}) في *${timetable.nextLecture.startTime}*`,
-    );
+  if (isPreSem) {
+    lines.push('  • 🌴 العطلة الصيفية — لا توجد محاضرات اليوم.');
+    lines.push('  • يبدأ جدول المحاضرات الأسبوعي مع انطلاق الفصل الدراسي.');
+  } else {
+    lines.push(`  • عدد المحاضرات: *${timetable.todayLectureCount}*`);
+    if (timetable.nextLecture) {
+      lines.push(
+        `  • المحاضرة القادمة: *${timetable.nextLecture.subjectName}* (${timetable.nextLecture.room}) في *${timetable.nextLecture.startTime}*`,
+      );
+    }
   }
   lines.push('');
 
   // 6. Exams & Quizzes
   lines.push('📝 *الامتحانات والكويزات:*');
-  if (upcomingEvents.length > 0) {
+  if (isPreSem) {
+    lines.push('  • ℹ️ لا توجد امتحانات معلنة خلال فترة العطلة الصيفية.');
+  } else if (upcomingEvents.length > 0) {
     const nextEv = upcomingEvents[0]!;
     const remainingText = nextEv.daysRemaining === 0 ? 'اليوم!' : `بعد ${nextEv.daysRemaining} يوم`;
     lines.push(`  • القادم: *${nextEv.title}* (${nextEv.courseCode}) — ${remainingText}`);

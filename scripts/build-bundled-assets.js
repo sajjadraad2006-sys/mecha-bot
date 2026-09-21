@@ -82,8 +82,8 @@ for (const course of cur.courses) {
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value: `https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/syllabus/${code.toLowerCase()}.pdf`,
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -106,8 +106,8 @@ for (const course of cur.courses) {
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value: `https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/notes/${code.toLowerCase()}-notes.pdf`,
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',

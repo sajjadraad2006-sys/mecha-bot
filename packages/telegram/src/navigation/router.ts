@@ -1,4 +1,4 @@
-import { Context } from 'grammy';
+import { Context, InlineKeyboard } from 'grammy';
 import { DatabaseConnection, StudentRepository, AcademicRepository } from '@mecha-bot/database';
 import { AcademicCalendarService, Stage, ProgramSemester } from '@mecha-bot/academic';
 import { Clock, Logger } from '@mecha-bot/shared';
@@ -609,6 +609,9 @@ export class OnboardingRouter {
           'حالياً المساعد الذكي غير متاح، بس تكدر تستخدم باقي وظائف البوت بشكل طبيعي.',
         );
       }
+    } else if (text.length >= 2) {
+      // Natural fallback: route general queries to academic search
+      await this.handleSearchQuery(ctx, text, activeCourseCode);
     }
   }
 
@@ -967,6 +970,45 @@ export class OnboardingRouter {
         replyMarkup: createSearchResultsKeyboard([], courseCode),
         logger: this.logger,
       });
+      return;
+    }
+
+    // --- 17b. Mecha AI Guide: m:ai:help ---
+    if (data === 'm:ai:help') {
+      const aiHelpText = [
+        '🤖 *المساعد الذكي (Mecha AI) — قسم هندسة الميكاترونكس*',
+        '',
+        'أهلاً بك! يمكنك سؤالي مباشرة عن أي موضوع أو مسألة رياضية أو هندسية في تخصص الميكاترونكس، وسأقوم بشرحها وحلها خطوة بخطوة مع القوانين.',
+        '',
+        '💡 *أمثلة يمكنك كتابتها وإرسالها مباشرة:*',
+        '• "اشرح شروط الاتزان الاستاتيكي للمنشآت"',
+        '• "شلون احسب التردد الطبيعي للاهتزازات؟"',
+        '• "وضح قانون نيوتن للزوجة في ميكانيك الموائع"',
+        '• "ما الفرق بين معالج المايكرو ومتحكم المايكرو؟"',
+        '• "حل مسألة دوائر كهربائية باستخدام كيرشوف"',
+        '',
+        '✍️ *للبدء:* اكتب سؤالك مباشرة في هذه المحادثة وسيصلك الجواب فوراً!',
+      ].join('\n');
+
+      await safeEditMenu(ctx, {
+        text: aiHelpText,
+        replyMarkup: new InlineKeyboard()
+          .text('🔍 البحث في الملازم', 'm:search')
+          .text('🏠 القائمة الرئيسية', 'm:menu'),
+        logger: this.logger,
+      });
+      return;
+    }
+
+    // --- 17c. Course Books: m:books or m:books:<courseCode> ---
+    const booksMatch = data.match(/^m:books(?::([A-Za-z0-9_]+))?$/);
+    if (booksMatch) {
+      const courseCode = booksMatch[1];
+      if (courseCode) {
+        await this.handleSearchQuery(ctx, `${courseCode} كتاب منهجي`, courseCode);
+      } else {
+        await this.handleSearchQuery(ctx, 'كتاب منهجي');
+      }
       return;
     }
 

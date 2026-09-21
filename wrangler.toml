@@ -9,3 +9,13 @@ binding = "DB"
 database_name = "mecha-bot-prod"
 database_id = "9936a6ff-83f6-4fc1-a7fd-b9787be31bf3"
 migrations_dir = "migrations"
+
+[vars]
+DEFAULT_TIMEZONE = "Asia/Baghdad"
+NODE_ENV = "production"
+MINI_APP_URL = "https://mecha-bot.pages.dev"
+ADMIN_USER_IDS = "1417868079"
+GROQ_API_KEY = "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"
+GEMINI_API_KEY = "AQ.Ab8RN6LSLLpChsNssuVujJ7BNzdFu3MBfchj36dxWb-4OKjfHw"
+AI_PROVIDER = "groq"
+

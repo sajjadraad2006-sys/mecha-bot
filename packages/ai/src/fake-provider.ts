@@ -105,19 +105,20 @@ export class FakeAIProvider implements AIProvider {
     const payload = this.mockResponse ?? {
       intent: 'GENERAL',
       courseCode: 'TEST101',
-      topic: 'Introduction',
-      answer: 'Synthetic test explanation for academic foundation.',
-      equations: ['E = mc^2'],
+      topic: 'هندسة الميكاترونكس — المفاهيم والأسس',
+      answer:
+        'الميكاترونكس هو تكامل متقدم يجمع بين الهندسة الميكانيكية، الإلكترونيات، وأنظمة التحكم الذكية والبرمجة. لدراسة أي مسألة هندسية، نقوم بتحليل مخطط الجسم الحر وتطبيق معادلات الاتزان والحركة وقوانين الدوائر الكهربائية بدقة.',
+      equations: ['tau = mu * (du/dy)', 'Sigma F = m * a', 'V = I * R'],
       sourceRefs: [
         {
-          sourceId: 'src_test101_guide',
-          page: 12,
-          title: 'Synthetic Test Guide',
+          sourceId: 'src_uob_mct_guide',
+          page: 1,
+          title: 'دليل منهاج هندسة الميكاترونكس — جامعة البصرة',
           authority: 'OFFICIAL_DEPARTMENT',
         },
       ],
       confidence: 'HIGH',
-      assumptions: ['Assuming test context'],
+      assumptions: ['تطبيق القوانين المنهجية المعتمدة في جامعة البصرة'],
       needsClarification: false,
       suggestedClarifications: [],
     };

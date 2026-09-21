@@ -50,20 +50,18 @@ export function createCourseHomeKeyboard(courseCode?: string): InlineKeyboard {
   const kb = new InlineKeyboard();
 
   if (code) {
-    kb.text('📍 وين وصلنا؟', `m:where:${code}`)
-      .row()
-      .text('🧭 أني ضايع', `m:lost:${code}`)
-      .row()
-      .text('🔍 بحث بالمادة', `m:search:${code}`)
+    kb.text('📁 ملفات وملازم المادة', `m:files:${code}`)
       .row()
       .text('📝 أسئلة وامتحانات', `m:exams:${code}`)
+      .text('🔍 بحث بالمادة', `m:search:${code}`)
       .row()
-      .text('📁 ملفات المادة', `m:files:${code}`)
+      .text('📍 موضع المنهج', `m:where:${code}`)
+      .text('🧭 خطة المراجعة', `m:lost:${code}`)
       .row()
-      .text('📚 موادي', 'm:courses')
-      .text('🏠 القائمة الرئيسية', 'm:menu');
+      .text('📚 كل موادي', 'm:courses')
+      .text('🏠 الرئيسية', 'm:menu');
   } else {
-    kb.text('🚀 ابدأ بالمادة', 'm1:start_course')
+    kb.text('🚀 تصفح المادة', 'm1:start_course')
       .row()
       .text('🔄 تغيير المادة', 'm1:chg:course')
       .row()
@@ -75,8 +73,8 @@ export function createCourseHomeKeyboard(courseCode?: string): InlineKeyboard {
 }
 
 export function createMainMenuKeyboard(
-  hasActiveCourse: boolean,
-  activeCourseCode?: string | null,
+  _hasActiveCourse: boolean,
+  _activeCourseCode?: string | null,
   miniAppUrl?: string | null,
 ): InlineKeyboard {
   const kb = new InlineKeyboard();
@@ -85,17 +83,17 @@ export function createMainMenuKeyboard(
     kb.webApp('📱 التطبيق المصغر', miniAppUrl).row();
   }
 
-  kb.text('📊 لوحة التحكم', 'm:dashboard').text('📚 موادي', 'm:courses').row();
+  // Row 1: Core Curriculum & Courses
+  kb.text('📚 المواد والمناهج الدراسية', 'm:courses').row();
 
-  if (hasActiveCourse && activeCourseCode) {
-    kb.text('📍 وين وصلنا؟', `m:where:${activeCourseCode}`)
-      .text('🧭 أني ضايع', `m:lost:${activeCourseCode}`)
-      .row();
-  }
+  // Row 2: Instant Search
+  kb.text('🔍 البحث السريع في الملازم والمصادر', 'm:search').row();
 
-  kb.text('📅 الجدول', 'm:tt').text('🔔 التذكيرات', 'm:rem').row();
-  kb.text('🔍 البحث الأكاديمي', 'm:search').row();
-  kb.text('⚙️ الإعدادات', 'm1:settings');
+  // Row 3: Timetable & AI Assistant
+  kb.text('📅 الجدول والتقويم', 'm:tt').text('🤖 المساعد الذكي', 'm:ai:help').row();
+
+  // Row 4: Dashboard & Settings
+  kb.text('📊 لوحة التحكم', 'm:dashboard').text('⚙️ الإعدادات', 'm1:settings');
 
   return kb;
 }

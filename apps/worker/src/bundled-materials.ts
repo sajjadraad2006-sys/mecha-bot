@@ -21,9 +21,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/1651836034.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMmarFQSDfcDZft9OOrBox6hobDKqMAArK2AAI6EZFJhI-7NoBK5xI9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -46,9 +45,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/1662098990.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMnarFYCorsVHt6q66uPzY9QPuFE6cAAj63AAI6EZFJIGkYfN4Yg2Y9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -71,9 +69,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/1687380480.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMparFYE7b705P7iDPKAAEH14EDcmHKAAJBtwACOhGRSV6Xpf2OjtgFPQQ',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -96,9 +93,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/1688291090.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMqarFYFs1RGulIml8yBgy97yAUmHkAAkK3AAI6EZFJw5CN6Vc_cuQ9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -121,9 +117,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/1746991329.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMsarFYIsaMShROJuBJORbuGhuQaTEAAkS3AAI6EZFJgwz9Q2fkS649BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -146,9 +141,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/1687296365.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMoarFYDTz1Rwe-_Nj81bK2COzEAAEXAAJAtwACOhGRSYvewZc-dQyCPQQ',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -171,9 +165,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/1727623180.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMrarFYGUHaiL8_mzuFkTFR3pYcw4IAAkO3AAI6EZFJLw7OE-meu_k9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -222,9 +215,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/3437Mechatronics%20Engineering.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -247,9 +239,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/sajjadraad2006-sys/mecha-bot/main/curriculum/official-materials/6193mec.%20courses.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMuarFYJ_IkM4dq4ErWglCgDOathqYAAka3AAI6EZFJZgLSl9bvYbY9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -780,9 +771,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/uobasrah-mechatronics/academic-archive/main/curriculum/3437Mechatronics%20Engineering.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -1439,9 +1429,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/uobasrah-mechatronics/academic-archive/main/curriculum/3437Mechatronics%20Engineering.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -1488,9 +1477,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/uobasrah-mechatronics/academic-archive/main/curriculum/3437Mechatronics%20Engineering.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -2044,9 +2032,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/uobasrah-mechatronics/academic-archive/main/curriculum/3437Mechatronics%20Engineering.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -2704,9 +2691,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/uobasrah-mechatronics/academic-archive/main/curriculum/3437Mechatronics%20Engineering.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -2753,9 +2739,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/uobasrah-mechatronics/academic-archive/main/curriculum/3437Mechatronics%20Engineering.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -4526,9 +4511,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/uobasrah-mechatronics/academic-archive/main/curriculum/3437Mechatronics%20Engineering.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -4552,9 +4536,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/uobasrah-mechatronics/academic-archive/main/curriculum/6193mec.%20courses.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMuarFYJ_IkM4dq4ErWglCgDOathqYAAka3AAI6EZFJZgLSl9bvYbY9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -4577,9 +4560,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/uobasrah-mechatronics/academic-archive/main/curriculum/3437Mechatronics%20Engineering.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',
@@ -4602,9 +4584,8 @@ export const BUNDLED_ACADEMIC_MATERIALS: AcademicFileRecord[] = [
       policyState: 'ALLOWED',
     },
     storageReference: {
-      kind: 'EXTERNAL_URL',
-      value:
-        'https://raw.githubusercontent.com/uobasrah-mechatronics/academic-archive/main/curriculum/3437Mechatronics%20Engineering.pdf',
+      kind: 'TELEGRAM_FILE_ID',
+      value: 'BQACAgIAAxkDAAMtarFYJk8FXdcruUgUefU-K1OH658AAkW3AAI6EZFJbdheQWM0MYk9BA',
     },
     visibility: 'COURSE_SHARED',
     createdAt: '2026-09-01T00:00:00.000Z',

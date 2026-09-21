@@ -42,14 +42,14 @@ import { BUNDLED_EXAM_EVENTS, BUNDLED_PRACTICE_QUIZZES } from './bundled-exams-d
 import type { WorkerEnv } from './index.js';
 
 export const WORKER_ACADEMIC_PERIODS: AcademicCalendarPeriod[] = [
-  // Semester 1 (Fall 2026)
+  // Semester 1 (Fall 2026 - Teaching commences Oct 4, 2026)
   {
     id: 'period_sem1_teaching',
     academicYearId: 'ay_2026_2027',
     periodType: 'TEACHING',
     programSemester: 1,
-    startsOn: '2026-09-01',
-    endsOn: '2026-12-31',
+    startsOn: '2026-10-04',
+    endsOn: '2027-01-20',
     nominalWeekCount: 16,
     stageScope: 1,
     evidenceMetadataJson: null,
@@ -60,8 +60,8 @@ export const WORKER_ACADEMIC_PERIODS: AcademicCalendarPeriod[] = [
     academicYearId: 'ay_2026_2027',
     periodType: 'TEACHING',
     programSemester: 3,
-    startsOn: '2026-09-01',
-    endsOn: '2026-12-31',
+    startsOn: '2026-10-04',
+    endsOn: '2027-01-20',
     nominalWeekCount: 16,
     stageScope: 2,
     evidenceMetadataJson: null,
@@ -72,8 +72,8 @@ export const WORKER_ACADEMIC_PERIODS: AcademicCalendarPeriod[] = [
     academicYearId: 'ay_2026_2027',
     periodType: 'TEACHING',
     programSemester: 5,
-    startsOn: '2026-09-01',
-    endsOn: '2026-12-31',
+    startsOn: '2026-10-04',
+    endsOn: '2027-01-20',
     nominalWeekCount: 16,
     stageScope: 3,
     evidenceMetadataJson: null,
@@ -84,8 +84,8 @@ export const WORKER_ACADEMIC_PERIODS: AcademicCalendarPeriod[] = [
     academicYearId: 'ay_2026_2027',
     periodType: 'TEACHING',
     programSemester: 7,
-    startsOn: '2026-09-01',
-    endsOn: '2026-12-31',
+    startsOn: '2026-10-04',
+    endsOn: '2027-01-20',
     nominalWeekCount: 16,
     stageScope: 4,
     evidenceMetadataJson: null,
